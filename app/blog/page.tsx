@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
+"use client";
+
 import { BookOpen, ChevronRight } from 'lucide-react';
-import { SEO } from '../components/SEO';
 
 const blogPosts = [
   {
@@ -58,13 +58,6 @@ const blogPosts = [
 export default function Blog() {
   return (
     <>
-      <SEO 
-        title="Dicas de Axé | Blog Raiz de Santo"
-        description="Aprenda sobre fundamentos, cuidados com suas roupas de santo e tendências de vestimentas para Umbanda e Candomblé."
-        keywords="blog roupas de santo, dicas umbanda, curiosidades candomblé"
-        canonical="/blog"
-      />
-      
       <header className="pt-40 pb-20 px-6 bg-brand-bg text-center">
         <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">
           Dicas de <span className="italic text-brand-secondary">Axé</span>
@@ -78,23 +71,22 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, i) => (
-              <motion.div 
+              <div 
                 key={i}
-                whileHover={{ y: -5 }}
-                className="p-8 border border-brand-accent/30 rounded-[2.5rem] flex flex-col justify-between hover:shadow-xl transition-all"
+                className="p-8 border border-brand-accent/30 rounded-[2.5rem] flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all group cursor-pointer"
               >
                 <div>
-                  <div className="w-10 h-10 bg-brand-bg rounded-xl flex items-center justify-center mb-6">
-                    <BookOpen className="w-5 h-5 text-brand-secondary" />
+                  <div className="w-10 h-10 bg-brand-bg rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all">
+                    <BookOpen className="w-5 h-5" />
                   </div>
                   <h2 className="font-serif text-2xl text-brand-primary mb-4 leading-tight">{post.title}</h2>
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-ink/40 mb-2">Keyword: {post.keyword}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-ink/40 mb-2">Tema: {post.keyword}</p>
                 </div>
                 <div className="mt-8 pt-6 border-t border-brand-accent/20 flex items-center justify-between">
                    <span className="text-[10px] font-bold uppercase text-brand-secondary">{post.objective}</span>
                    <ChevronRight className="w-4 h-4 text-brand-primary" />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

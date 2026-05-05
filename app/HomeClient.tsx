@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { 
   Scissors, 
@@ -10,35 +12,13 @@ import {
   Zap, 
   Quote 
 } from 'lucide-react';
-import { SEO } from '../components/SEO';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
 
-export default function Home() {
+export default function HomeClient() {
   return (
     <>
-      <SEO 
-        title="Roupas de Santo Sob Medida em SP | Umbanda e Candomblé"
-        description="Confecção artesanal de roupas de santo sob medida em São Paulo. Saias, roupas de ração e panos da costa com fundamento e acabamento premium. Peça o seu orçamento!"
-        keywords="roupas de santo sob medida, roupa de ração umbanda, roupas candomblé são paulo, costura de santo sp, saias umbanda personalizadas"
-        canonical="/"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Raiz de Santo",
-          "description": "Confecção de roupas de santo sob medida para Umbanda e Candomblé em São Paulo.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "São Paulo",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
-          },
-          "url": "https://raizdesanto.com.br",
-          "telephone": "+5511969035273"
-        }}
-      />
-      
-      {/* 1. Hero Section */}
+      {/* Hero Section */}
       <header className="relative pt-32 md:pt-48 pb-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <motion.div 
@@ -95,12 +75,11 @@ export default function Home() {
                  <Scissors className="w-8 h-8 text-brand-secondary/40" />
                </motion.div>
             </div>
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-brand-secondary/5 blur-[120px] rounded-full" />
           </motion.div>
         </div>
       </header>
 
-      {/* 2. Como Funciona */}
+      {/* Como Funciona */}
       <section className="py-24 md:py-32 px-6 bg-white border-y border-brand-accent/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-20">
@@ -135,7 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Seção de Diferencial */}
+      {/* Diferenciais */}
       <section className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
           <div className="flex-1 space-y-10">
@@ -197,12 +176,11 @@ export default function Home() {
                  <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Fé em cada Ponto</p>
               </motion.div>
             </div>
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-primary/5 rounded-full blur-[80px]" />
           </div>
         </div>
       </section>
 
-      {/* 4. Valor e Mercado */}
+      {/* Valor e Mercado */}
       <section className="py-24 md:py-32 px-6 bg-brand-primary text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -219,9 +197,6 @@ export default function Home() {
                 </div>
                 <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary">
                    <Check className="w-5 h-5 text-brand-primary" /> Costura Artesanal Superior
-                </div>
-                <div className="absolute -top-3 -right-3 bg-brand-secondary text-brand-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-xl">
-                   Oferta
                 </div>
               </div>
             </div>
@@ -251,7 +226,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Lista de Produtos SEO */}
+      {/* Lista de Produtos SEO */}
       <section className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
            <div className="flex-1">
@@ -291,7 +266,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Final Trust & CTA */}
+      {/* Final Trust & CTA */}
       <section className="py-24 px-6 bg-brand-primary relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <Quote className="w-12 h-12 text-brand-secondary mx-auto mb-10 opacity-30" />

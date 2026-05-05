@@ -1,17 +1,10 @@
-import { motion } from 'motion/react';
-import { Quote, Sparkles, Scissors, ShieldCheck } from 'lucide-react';
-import { SEO } from '../components/SEO';
+"use client";
+
+import { Quote, Sparkles, ShieldCheck } from 'lucide-react';
 
 export default function Sobre() {
   return (
     <>
-      <SEO 
-        title="Sobre a Raiz de Santo | História e Tradição na Costura"
-        description="Conheça a história da Raiz de Santo. Especialistas na confecção de roupas de santo sob medida para Umbanda e Candomblé. Fé e respeito costurados em cada detalhe."
-        keywords="história raiz de santo, costureira roupas de santo sp, tradição afro religiosa"
-        canonical="/sobre"
-      />
-      
       <header className="pt-40 pb-20 px-6 bg-brand-bg relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">

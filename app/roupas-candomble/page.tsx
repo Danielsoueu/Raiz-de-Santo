@@ -1,19 +1,12 @@
-import { motion } from 'motion/react';
-import { MessageCircle, Check, Sparkles } from 'lucide-react';
-import { SEO } from '../components/SEO';
+"use client";
+
+import { MessageCircle, Sparkles } from 'lucide-react';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de Candomblé.";
 
 export default function Candomble() {
   return (
     <>
-      <SEO 
-        title="Roupas de Candomblé Sob Medida | Trajes de Iyawó e Saída"
-        description="Confecção especializada em roupas de Candomblé. Panos da costa, camisus, saias de armação e trajes completos para iniciação em São Paulo. Alta costura religiosa."
-        keywords="roupas de candomblé sp, pano da costa candomblé, camisu feminino sob medida, traje de iyawó sp, roupas de santo candomblé preço"
-        canonical="/roupas-candomble"
-      />
-      
       <header className="pt-40 pb-20 px-6 bg-brand-primary text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="font-serif text-4xl md:text-7xl mb-8 leading-tight">
@@ -22,9 +15,6 @@ export default function Candomble() {
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             A elegância e a hierarquia do Candomblé refletidas em cada metro de tecido. Confeccionamos sob medida para todas as nações (Ketu, Angola, Jeje).
           </p>
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.05]">
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
         </div>
       </header>
 
@@ -66,7 +56,6 @@ export default function Candomble() {
                     Orçar Kit Obrigação
                   </a>
                </div>
-               <div className="absolute -z-10 -top-5 -right-5 w-full h-full bg-brand-secondary rounded-[4rem] opacity-10 blur-2xl" />
             </div>
           </div>
         </div>
@@ -78,16 +67,6 @@ export default function Candomble() {
             <p className="text-brand-ink/70 mb-12 leading-relaxed">
                Nossas peças são enviadas impecáveis, prontas para o uso ritual. Temos orgulho de vestir filhos de santo de Norte a Sul do país com o mesmo carinho e fundamento.
             </p>
-            <div className="inline-flex gap-8 items-center bg-white border border-brand-accent/50 px-8 py-4 rounded-full">
-               <div className="flex -space-x-3">
-                  {[1,2,3].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-brand-accent/30 overflow-hidden flex items-center justify-center">
-                       <Check className="w-5 h-5 text-brand-primary" />
-                    </div>
-                  ))}
-               </div>
-               <p className="text-xs font-bold uppercase tracking-widest text-brand-primary/60">+500 peças enviadas com sucesso</p>
-            </div>
          </div>
       </section>
     </>

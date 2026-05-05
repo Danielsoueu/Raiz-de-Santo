@@ -1,19 +1,12 @@
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react';
-import { SEO } from '../components/SEO';
+"use client";
+
+import { Phone, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Vim pelo site e gostaria de um orçamento.";
 
 export default function Contato() {
   return (
     <>
-      <SEO 
-        title="Contato Raiz de Santo | Orçamentos e Agendamentos em SP"
-        description="Fale com a Raiz de Santo. Orçamentos ágeis via WhatsApp, agendamento de visitas em São Paulo e envio de roupas de santo para todo o Brasil. Entre em contato!"
-        keywords="contato raiz de santo, whatsapp roupas de santo, agendar costura sp, onde comprar roupas religiosas sp"
-        canonical="/contato"
-      />
-      
       <header className="pt-40 pb-20 px-6 bg-brand-bg text-center">
         <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">
           Estamos aqui para <br/> <span className="italic text-brand-secondary">Te Ouvir</span>
@@ -85,7 +78,6 @@ export default function Contato() {
                      Iniciar conversa agora
                   </a>
                </div>
-               <div className="absolute top-0 right-0 w-80 h-80 bg-brand-secondary/10 rounded-full blur-[100px] -mr-40 -mt-40" />
             </div>
           </div>
         </div>

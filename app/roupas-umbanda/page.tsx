@@ -1,19 +1,12 @@
-import { motion } from 'motion/react';
+"use client";
+
 import { MessageCircle, Check, Scissors } from 'lucide-react';
-import { SEO } from '../components/SEO';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de Umbanda.";
 
 export default function Umbanda() {
   return (
     <>
-      <SEO 
-        title="Roupas de Umbanda em São Paulo | Brancas e Coloridas"
-        description="Confecção de roupas de Umbanda sob medida. Roupas de ração, fardas de trabalho, saias de baiana e trajes para entidades. Tradição e qualidade em São Paulo."
-        keywords="roupas de umbanda sp, roupa de ração branca, saia de umbanda personalizada, farda de umbanda masculina, roupa de pombagira sob medida"
-        canonical="/roupas-umbanda"
-      />
-      
       <header className="pt-40 pb-20 px-6 bg-brand-bg relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">

@@ -1,19 +1,12 @@
-import { motion } from 'motion/react';
+"use client";
+
 import { Scissors, MapPin, MessageCircle, Clock, Zap, ShieldCheck } from 'lucide-react';
-import { SEO } from '../components/SEO';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para costura sob medida.";
 
 export default function Costura() {
   return (
     <>
-      <SEO 
-        title="Costura Sob Medida de Roupas de Santo em São Paulo"
-        description="Serviço especializado de alta costura para Umbanda e Candomblé. Modelagens exclusivas, ajuste perfeito e tecidos premium. Conheça nossa costureira em SP."
-        keywords="costura sob medida roupas de santo sp, costureira de umbanda são paulo, alfaiataria religiosa, modelagem exclusiva trajes de santo"
-        canonical="/costura-sob-medida"
-      />
-      
       <header className="pt-40 pb-20 px-6 bg-brand-bg relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 text-center lg:text-left z-10">
@@ -72,7 +65,6 @@ export default function Costura() {
                      <MapPin className="w-5 h-5" />
                      Pedir Endereço no WhatsApp
                   </a>
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
                </div>
             </div>
             <div className="flex-1">
