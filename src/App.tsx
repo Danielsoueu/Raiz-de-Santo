@@ -47,6 +47,7 @@ export default function App() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Fazer orçamento pelo WhatsApp"
             className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-primary/90 transition-all shadow-lg flex items-center gap-2"
           >
             <MessageCircle className="w-4 h-4" />
@@ -71,7 +72,7 @@ export default function App() {
               Roupas de Santo com <br />
               <span className="italic text-brand-secondary">Respeito e Tradição.</span>
             </h2>
-            <p className="text-sm md:text-xl text-brand-ink/70 max-w-xl mx-auto lg:mx-0 mb-8 md:mb-10 leading-relaxed">
+            <p className="text-sm md:text-xl text-brand-ink/80 max-w-xl mx-auto lg:mx-0 mb-8 md:mb-10 leading-relaxed">
               Traduza sua fé em trajes exclusivos. Cada costura é feita sob medida em São Paulo, unindo sofisticação e o axé da tradição.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6">
@@ -99,10 +100,10 @@ export default function App() {
                <div className="absolute inset-8 border border-brand-secondary/30 rounded-[3.5rem] border-dashed" />
                <div className="z-10 bg-white p-10 rounded-[3rem] shadow-2xl border border-brand-accent/30 text-center max-w-[280px]">
                   <Sparkles className="w-10 h-10 text-brand-secondary mx-auto mb-6" />
-                  <p className="font-serif text-xl font-bold text-brand-primary mb-2">Costura de Santo</p>
-                  <p className="text-[10px] text-brand-ink/40 uppercase tracking-[0.2em] font-bold">Acabamento Superior</p>
+                  <h3 className="font-serif text-xl font-bold text-brand-primary mb-2">Costura de Santo</h3>
+                  <p className="text-[10px] text-brand-ink/70 uppercase tracking-[0.2em] font-bold">Acabamento Superior</p>
                   <div className="mt-6 pt-6 border-t border-brand-accent/30">
-                    <p className="text-xs italic text-brand-ink/60">"Cada ponto um fundamento, <br/>cada detalhe um respeito."</p>
+                    <p className="text-xs italic text-brand-ink/70">"Cada ponto um fundamento, <br/>cada detalhe um respeito."</p>
                   </div>
                </div>
                <motion.div 
@@ -124,7 +125,7 @@ export default function App() {
           <div className="text-center mb-12 md:mb-20">
             <h2 className="font-serif text-3xl md:text-5xl mb-6 text-brand-primary leading-tight">Processo de <br className="md:hidden"/><span className="italic">Criação Única</span></h2>
             <div className="w-16 h-1 bg-brand-secondary mx-auto rounded-full mb-6" />
-            <p className="text-brand-ink/50 max-w-xl mx-auto uppercase tracking-[0.2em] text-[9px] md:text-xs font-bold leading-relaxed px-4">Da primeira conversa ao traje pronto: simplicidade e respeito.</p>
+            <p className="text-brand-ink/70 max-w-xl mx-auto uppercase tracking-[0.2em] text-[9px] md:text-xs font-bold leading-relaxed px-4">Da primeira conversa ao traje pronto: simplicidade e respeito.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8 lg:gap-16">
@@ -146,7 +147,7 @@ export default function App() {
                   <step.icon className="w-6 h-6 text-brand-primary group-hover:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 font-serif text-brand-primary">{step.title}</h3>
-                <p className="text-brand-ink/60 text-sm leading-relaxed font-light">{step.desc}</p>
+                <p className="text-brand-ink/70 text-sm leading-relaxed font-light">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -161,7 +162,7 @@ export default function App() {
               <h2 className="font-serif text-3xl md:text-5xl leading-[1.2] mb-8 text-brand-primary">
                 Sua roupa de santo não <br /> deve ser <span className="italic text-brand-secondary">"tamanho padrão".</span>
               </h2>
-              <p className="text-lg text-brand-ink/70 leading-relaxed font-light">
+              <p className="text-lg text-brand-ink/80 leading-relaxed font-light">
                 Diferente de grandes lojas que oferecem tamanhos genéricos, a <span className="font-bold text-brand-primary">Raiz de Santo</span> posiciona-se como um serviço especializado de alta costura religiosa.
               </p>
             </div>
@@ -172,8 +173,8 @@ export default function App() {
                    <Scissors className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
-                   <h4 className="font-bold text-brand-primary mb-1">Flexibilidade no Tecido</h4>
-                   <p className="text-sm text-brand-ink/60">Traga seu próprio tecido de estimação ou confie na nossa curadoria de materiais premium.</p>
+                   <h3 className="font-bold text-brand-primary mb-1">Flexibilidade no Tecido</h3>
+                   <p className="text-sm text-brand-ink/70">Traga seu próprio tecido de estimação ou confie na nossa curadoria de materiais premium.</p>
                 </div>
               </div>
               <div className="flex gap-5 items-start">
@@ -181,8 +182,8 @@ export default function App() {
                    <MapPin className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
-                   <h4 className="font-bold text-brand-primary mb-1">Atendimento Local (SP) e Digital</h4>
-                   <p className="text-sm text-brand-ink/60">Medições guiadas via WhatsApp para todo o Brasil ou agendamento presencial em São Paulo.</p>
+                   <h3 className="font-bold text-brand-primary mb-1">Atendimento Local (SP) e Digital</h3>
+                   <p className="text-sm text-brand-ink/70">Medições guiadas via WhatsApp para todo o Brasil ou agendamento presencial em São Paulo.</p>
                 </div>
               </div>
             </div>
@@ -198,21 +199,21 @@ export default function App() {
           <div className="flex-1 relative w-full max-w-lg">
             <div className="grid grid-cols-2 gap-3 md:gap-4 font-serif">
               <motion.div whileHover={{ y: -5 }} className="bg-brand-primary rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end text-white relative overflow-hidden shadow-xl">
-                 <h4 className="text-base md:text-2xl mb-1 md:mb-2 relative z-10 font-medium leading-tight">Roupas de Ração</h4>
-                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest opacity-60 font-sans font-bold relative z-10">Conforto</p>
+                 <h3 className="text-base md:text-2xl mb-1 md:mb-2 relative z-10 font-medium leading-tight">Roupas de Ração</h3>
+                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest opacity-80 font-sans font-bold relative z-10">Conforto</p>
                  <Sparkles className="absolute -top-5 -right-5 w-32 h-32 opacity-10" />
               </motion.div>
               <motion.div whileHover={{ y: -5 }} className="bg-brand-accent/40 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-accent shadow-sm">
-                 <h4 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Saias <br className="md:hidden"/>Exclusivas</h4>
-                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-40 font-sans font-bold">Volume</p>
+                 <h3 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Saias <br className="md:hidden"/>Exclusivas</h3>
+                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Volume</p>
               </motion.div>
               <motion.div whileHover={{ y: -5 }} className="bg-brand-bg rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-secondary/30 shadow-sm">
-                 <h4 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Panos da <br className="md:hidden"/>Costa</h4>
-                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-40 font-sans font-bold">Tradição</p>
+                 <h3 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Panos da <br className="md:hidden"/>Costa</h3>
+                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Tradição</p>
               </motion.div>
               <motion.div whileHover={{ y: -5 }} className="bg-brand-secondary/10 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-secondary/20 shadow-sm">
-                 <h4 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Fé & Fundamento</h4>
-                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-40 font-sans font-bold">Respeito</p>
+                 <h3 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Fé & Fundamento</h3>
+                 <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Respeito</p>
               </motion.div>
             </div>
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-primary/5 rounded-full blur-[80px]" />
@@ -225,20 +226,20 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative z-10">
-              <h2 className="font-serif text-4xl md:text-6xl mb-8 leading-tight">Sofisticação com <br /><span className="italic text-brand-secondary">Preço Justo.</span></h2>
-              <p className="text-lg md:text-xl opacity-80 mb-10 leading-relaxed font-light">
+              <h2 className="font-serif text-4xl md:text-6xl mb-8 leading-tight">Sofisticação com <br /><span className="italic text-brand-secondary drop-shadow-sm">Preço Justo.</span></h2>
+              <p className="text-lg md:text-xl text-white mb-10 leading-relaxed font-light">
                 No mercado comum, roupas genéricas chegam a custar R$ 300. Na <span className="font-bold text-brand-secondary">Raiz de Santo</span>, unimos o valor de um serviço artesanal ao preço acessível.
               </p>
-              <div className="inline-flex flex-col bg-white/5 backdrop-blur-sm px-10 py-8 rounded-[3rem] border border-white/20 mb-8">
-                <span className="text-[10px] uppercase font-bold tracking-[0.3em] block mb-2 opacity-50">Confecção Inicial Médio</span>
+              <div className="inline-flex flex-col bg-white px-10 py-8 rounded-[3rem] border border-white/30 mb-8 shadow-2xl transition-transform hover:scale-[1.02] group">
+                <span className="text-[10px] uppercase font-bold tracking-[0.3em] block mb-2 text-brand-primary/60">Confecção Inicial Médio</span>
                 <div className="flex items-baseline gap-2">
-                   <span className="text-2xl font-serif text-brand-secondary opacity-60">R$</span>
-                   <span className="text-6xl md:text-8xl font-serif font-bold text-brand-secondary">150</span>
+                   <span className="text-2xl font-serif text-brand-primary">R$</span>
+                   <span className="text-6xl md:text-8xl font-serif font-bold text-brand-primary">150</span>
                 </div>
-                <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest opacity-80">
-                   <Check className="w-4 h-4 text-brand-secondary" /> Mão de obra artesanal
+                <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-primary">
+                   <Check className="w-5 h-5 text-brand-primary" /> Mão de obra artesanal
                 </div>
-                <div className="absolute -top-3 -right-3 bg-brand-secondary text-brand-primary px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-tighter shadow-lg translate-y-1 group-hover:translate-y-0 transition-transform">
+                <div className="absolute -top-3 -right-3 bg-brand-secondary text-brand-primary px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-xl">
                    Destaque
                 </div>
               </div>
@@ -246,21 +247,21 @@ export default function App() {
             
             <div className="grid gap-6 relative z-10">
                {[
-                 { title: "Custo-Benefício Real", desc: "Você paga pela precisão da costura e respeito ao pano, sem taxas abusivas de revenda." },
-                 { title: "Transparência", desc: "Ajudamos você a escolher o melhor tecido dentro do seu orçamento desejado." },
-                 { title: "Durabilidade", desc: "Uma roupa Raiz de Santo é feita para resistir aos rituais, durando muito mais que peças prontas." },
+                 { title: "Custo-Benefício Real", desc: "Você paga pela precisão da costura e respeito ao pano, sem taxas abusivas de revenda.", icon: ShieldCheck },
+                 { title: "Transparência", desc: "Ajudamos você a escolher o melhor tecido dentro do seu orçamento desejado.", icon: Scissors },
+                 { title: "Durabilidade", desc: "Uma roupa Raiz de Santo é feita para resistir aos rituais, durando muito mais que peças prontas.", icon: Zap },
                ].map((card, i) => (
                  <motion.div 
                    key={i}
                    whileHover={{ x: 10 }}
-                   className="p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all flex gap-6 items-start"
+                   className="p-8 rounded-[2rem] bg-white/10 border border-white/20 hover:bg-white/20 transition-all flex gap-6 items-start"
                  >
-                   <div className="bg-brand-secondary/20 p-3 rounded-2xl">
-                      <ShieldCheck className="w-6 h-6 text-brand-secondary" />
+                   <div className="bg-brand-secondary p-3 rounded-2xl shadow-lg">
+                      <card.icon className="w-6 h-6 text-brand-primary" />
                    </div>
                    <div>
-                      <h4 className="font-bold text-lg mb-2">{card.title}</h4>
-                      <p className="text-white/60 text-sm leading-relaxed">{card.desc}</p>
+                      <h3 className="font-bold text-xl mb-2 text-white">{card.title}</h3>
+                      <p className="text-white/90 text-sm leading-relaxed">{card.desc}</p>
                    </div>
                  </motion.div>
                ))}
@@ -289,8 +290,8 @@ export default function App() {
                   "Kits para Obrigações"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-5 rounded-2xl border border-brand-accent/30 hover:border-brand-secondary transition-all group">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary opacity-40 group-hover:opacity-100 transition-opacity" />
-                    <span className="text-sm font-medium text-brand-ink/70 group-hover:text-brand-primary">{item}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <span className="text-sm font-medium text-brand-ink/80 group-hover:text-brand-primary">{item}</span>
                   </div>
                 ))}
               </div>
@@ -299,7 +300,7 @@ export default function App() {
            <div className="bg-brand-bg rounded-[3.5rem] p-10 md:p-16 border border-brand-accent transition-all hover:shadow-2xl">
               <div className="mb-10">
                 <h2 className="font-serif text-3xl mb-4 text-brand-primary leading-tight">Presencial em <span className="italic font-light">São Paulo</span> <br/> ou em qualquer lugar do <span className="italic font-light">Brasil</span></h2>
-                <p className="text-brand-ink/50 text-sm leading-relaxed">Não importa se você busca <span className="italic">roupas de santo perto de mim</span> em SP ou está em outro estado brasileiro.</p>
+                <p className="text-brand-ink/70 text-sm leading-relaxed">Não importa se você busca <span className="italic">roupas de santo perto de mim</span> em SP ou está em outro estado brasileiro.</p>
               </div>
               
               <div className="space-y-12">
@@ -308,8 +309,8 @@ export default function App() {
                        <MapPin className="w-6 h-6 text-brand-primary" />
                     </div>
                     <div>
-                       <h4 className="font-bold text-brand-primary mb-2">Atendimento São Paulo</h4>
-                       <p className="text-brand-ink/60 text-sm">Disponível para entrega local, retiradas e agendamentos presenciais para medição precisa.</p>
+                       <h3 className="font-bold text-brand-primary mb-2">Atendimento São Paulo</h3>
+                       <p className="text-brand-ink/70 text-sm">Disponível para entrega local, retiradas e agendamentos presenciais para medição precisa.</p>
                     </div>
                  </div>
                  <div className="flex gap-6 items-start">
@@ -317,8 +318,8 @@ export default function App() {
                        <Zap className="w-6 h-6 text-brand-primary" />
                     </div>
                     <div>
-                       <h4 className="font-bold text-brand-primary mb-2">Envio para Todo o Brasil</h4>
-                       <p className="text-brand-ink/60 text-sm">Logística otimizada para que seu traje chegue seguro e impecável em qualquer região do país.</p>
+                       <h3 className="font-bold text-brand-primary mb-2">Envio para Todo o Brasil</h3>
+                       <p className="text-brand-ink/70 text-sm">Logística otimizada para que seu traje chegue seguro e impecável em qualquer região do país.</p>
                     </div>
                  </div>
               </div>
@@ -367,9 +368,9 @@ export default function App() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-brand-secondary text-brand-primary px-10 md:px-12 py-5 md:py-6 rounded-full text-lg md:text-xl font-black hover:scale-105 active:scale-95 transition-all shadow-2xl flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto bg-white text-brand-primary px-10 md:px-14 py-5 md:py-7 rounded-full text-lg md:text-2xl font-black hover:bg-brand-secondary hover:text-brand-primary transition-all shadow-[0_20px_50px_rgba(255,255,255,0.2)] flex items-center justify-center gap-4"
                 >
-                  <MessageCircle className="w-6 h-6" />
+                  <MessageCircle className="w-7 h-7" />
                   Iniciar Orçamento
                 </a>
               </div>
@@ -398,13 +399,13 @@ export default function App() {
               />
               <span className="font-serif text-3xl font-bold tracking-tight text-brand-primary">Raiz de Santo</span>
             </div>
-            <p className="text-brand-ink/50 max-w-sm leading-relaxed text-base font-light">
+            <p className="text-brand-ink/70 max-w-sm leading-relaxed text-base font-light">
               Tornando-se referência em <span className="font-medium text-brand-primary">roupas de santo sob medida</span> através do respeito à tradição e ao cliente. Confeccionando fé em cada detalhe.
             </p>
           </div>
           
           <div>
-            <h3 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-30 mb-10">Explorar</h3>
+            <h3 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-50 mb-10">Explorar</h3>
             <ul className="space-y-6 text-sm font-medium">
               <li><a href="#" className="hover:text-brand-secondary transition-colors underline-offset-8">Início</a></li>
               <li><a href="#como-funciona" className="hover:text-brand-secondary transition-colors underline-offset-8">Como Funciona</a></li>
@@ -414,18 +415,18 @@ export default function App() {
           </div>
           
           <div>
-            <h3 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-30 mb-10">Presença Social</h3>
+            <h3 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-50 mb-10">Presença Social</h3>
             <div className="flex gap-4">
               <a href="#" aria-label="Instagram" className="w-12 h-12 rounded-2xl bg-brand-bg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-500 hover:rotate-6 border border-brand-accent/40 shadow-sm"><Instagram className="w-6 h-6" /></a>
               <a href="#" aria-label="Facebook" className="w-12 h-12 rounded-2xl bg-brand-bg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-500 hover:-rotate-6 border border-brand-accent/40 shadow-sm"><Facebook className="w-6 h-6" /></a>
             </div>
             <div className="mt-10 pt-10 border-t border-brand-accent/20">
-               <p className="text-xs text-brand-ink/40 font-medium">Atendimento Humanizado <br/> em todo o território nacional.</p>
+               <p className="text-xs text-brand-ink/70 font-medium">Atendimento Humanizado <br/> em todo o território nacional.</p>
             </div>
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto pt-12 border-t border-brand-accent/20 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.4em] opacity-20 text-center">
+        <div className="max-w-7xl mx-auto pt-12 border-t border-brand-accent/20 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.4em] opacity-50 text-center">
           <p>© 2026 Raiz de Santo. São Paulo | Brasil</p>
           <div className="flex gap-10">
             <span>Privacidade</span>

@@ -5,9 +5,9 @@
   --font-serif: "Playfair Display", serif;
   --font-sans: "Poppins", sans-serif;
   
-  --color-brand-primary: #6b4f2c;    /* Brown - good contrast */
-  --color-brand-secondary: #94763a;  /* Darker Gold for better accessibility (WCAG AA) */
+  --color-brand-primary: #523c21;    /* Deep Earthy Brown */
+  --color-brand-secondary: #d4af37;  /* Vibrant Metallic Gold for high contrast on dark */
   --color-brand-bg: #faf9f6;        /* Off-white/Cream */
-  --color-brand-ink: #2c2c2c;       /* Near Black */
-  --color-brand-accent: #e5d5b7;    /* Light Beige */
+  --color-brand-ink: #1a1a1a;       /* Rich Black */
+  --color-brand-accent: #d4c2a3;    /* Warm Clay */
 }
