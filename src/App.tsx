@@ -21,14 +21,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-brand-bg text-brand-ink font-sans selection:bg-brand-secondary/30">
-      {/* Visual SEO Heading - Hidden */}
+      {/* Social SEO Heading - Hidden */}
       <h1 className="sr-only">Raiz de Santo - Roupas de Santo Sob Medida em São Paulo - Umbanda e Candomblé</h1>
 
-      {/* Navigation */}
+      <main>
+        {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-accent/30">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={LOGO_URL} alt="Logo Raiz de Santo" className="h-10 w-10 rounded-full object-cover shadow-sm border border-brand-primary/10" />
+            <img 
+              src={LOGO_URL} 
+              alt="Logo Raiz de Santo" 
+              width="40" 
+              height="40" 
+              className="h-10 w-10 rounded-full object-cover shadow-sm border border-brand-primary/10" 
+            />
             <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-brand-primary">Raiz de Santo</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -269,7 +276,7 @@ export default function App() {
       <section id="pecas" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 lg:gap-40">
            <div>
-              <h3 className="font-serif text-3xl md:text-4xl mb-12 text-brand-primary">Confecção Especializada <br/> <span className="italic text-brand-secondary font-light">Umbanda e Candomblé</span></h3>
+              <h2 className="font-serif text-3xl md:text-4xl mb-12 text-brand-primary">Confecção Especializada <br/> <span className="italic text-brand-secondary font-light">Umbanda e Candomblé</span></h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   "Roupa de Ração Personalizada",
@@ -291,7 +298,7 @@ export default function App() {
 
            <div className="bg-brand-bg rounded-[3.5rem] p-10 md:p-16 border border-brand-accent transition-all hover:shadow-2xl">
               <div className="mb-10">
-                <h3 className="font-serif text-3xl mb-4 text-brand-primary leading-tight">Presencial em <span className="italic font-light">São Paulo</span> <br/> ou em qualquer lugar do <span className="italic font-light">Brasil</span></h3>
+                <h2 className="font-serif text-3xl mb-4 text-brand-primary leading-tight">Presencial em <span className="italic font-light">São Paulo</span> <br/> ou em qualquer lugar do <span className="italic font-light">Brasil</span></h2>
                 <p className="text-brand-ink/50 text-sm leading-relaxed">Não importa se você busca <span className="italic">roupas de santo perto de mim</span> em SP ou está em outro estado brasileiro.</p>
               </div>
               
@@ -381,7 +388,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 md:gap-20 mb-16 md:mb-20">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-10">
-              <img src={LOGO_URL} alt="Raiz de Santo" className="h-12 w-12 rounded-full border border-brand-primary/5" />
+              <img 
+                src={LOGO_URL} 
+                alt="Raiz de Santo" 
+                width="48" 
+                height="48" 
+                loading="lazy"
+                className="h-12 w-12 rounded-full border border-brand-primary/5" 
+              />
               <span className="font-serif text-3xl font-bold tracking-tight text-brand-primary">Raiz de Santo</span>
             </div>
             <p className="text-brand-ink/50 max-w-sm leading-relaxed text-base font-light">
@@ -390,7 +404,7 @@ export default function App() {
           </div>
           
           <div>
-            <h5 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-30 mb-10">Explorar</h5>
+            <h3 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-30 mb-10">Explorar</h3>
             <ul className="space-y-6 text-sm font-medium">
               <li><a href="#" className="hover:text-brand-secondary transition-colors underline-offset-8">Início</a></li>
               <li><a href="#como-funciona" className="hover:text-brand-secondary transition-colors underline-offset-8">Como Funciona</a></li>
@@ -400,10 +414,10 @@ export default function App() {
           </div>
           
           <div>
-            <h5 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-30 mb-10">Presença Social</h5>
+            <h3 className="font-bold text-[10px] uppercase tracking-[0.3em] opacity-30 mb-10">Presença Social</h3>
             <div className="flex gap-4">
-              <a href="#" className="w-12 h-12 rounded-2xl bg-brand-bg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-500 hover:rotate-6 border border-brand-accent/40 shadow-sm"><Instagram className="w-6 h-6" /></a>
-              <a href="#" className="w-12 h-12 rounded-2xl bg-brand-bg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-500 hover:-rotate-6 border border-brand-accent/40 shadow-sm"><Facebook className="w-6 h-6" /></a>
+              <a href="#" aria-label="Instagram" className="w-12 h-12 rounded-2xl bg-brand-bg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-500 hover:rotate-6 border border-brand-accent/40 shadow-sm"><Instagram className="w-6 h-6" /></a>
+              <a href="#" aria-label="Facebook" className="w-12 h-12 rounded-2xl bg-brand-bg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-500 hover:-rotate-6 border border-brand-accent/40 shadow-sm"><Facebook className="w-6 h-6" /></a>
             </div>
             <div className="mt-10 pt-10 border-t border-brand-accent/20">
                <p className="text-xs text-brand-ink/40 font-medium">Atendimento Humanizado <br/> em todo o território nacional.</p>
@@ -435,6 +449,7 @@ export default function App() {
            </span>
          </a>
       </div>
+      </main>
     </div>
   );
 }
