@@ -210,7 +210,7 @@ export default function UmbandaClient() {
             <div className="flex-1 bg-brand-primary rounded-[4rem] p-12 text-white shadow-2xl relative overflow-hidden">
                <Quote className="w-16 h-16 text-brand-secondary opacity-20 mb-8" />
                <h3 className="font-serif text-3xl md:text-4xl italic leading-tight mb-8">
-                 "Cada ponto é um fundamento. Cada costura, um respeito. É assim que a gente trabalha."
+                 &quot;Cada ponto é um fundamento. Cada costura, um respeito. É assim que a gente trabalha.&quot;
                </h3>
                <p className="text-sm font-bold uppercase tracking-[0.4em] text-white/50">— Raiz de Santo</p>
                <Sparkles className="absolute -bottom-10 -right-10 w-48 h-48 opacity-10" />

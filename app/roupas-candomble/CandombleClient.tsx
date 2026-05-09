@@ -123,7 +123,7 @@ export default function CandombleClient() {
                     <h3 className="font-serif text-3xl text-brand-primary mb-4 italic">Kits de Obrigação</h3>
                     <p className="text-sm font-medium opacity-50 uppercase tracking-widest mb-6">Tranquilidade para o seu Axé</p>
                     <div className="h-0.5 w-12 bg-brand-secondary mx-auto mb-6" />
-                    <p className="text-xs text-brand-ink/60 italic leading-relaxed">"Preparar uma obrigação envolve muito mais do que escolher roupas. Cuidamos do seu traje com zelo."</p>
+                    <p className="text-xs text-brand-ink/60 italic leading-relaxed">&quot;Preparar uma obrigação envolve muito mais do que escolher roupas. Cuidamos do seu traje com zelo.&quot;</p>
                  </div>
               </div>
            </div>
@@ -252,7 +252,7 @@ export default function CandombleClient() {
                   </div>
                   <h3 className="font-serif text-3xl text-brand-primary mb-6">Confiança Consolidada</h3>
                   <p className="text-brand-ink/70 leading-relaxed mb-8">Mais de 500 filhos de santo vestidos de norte a sul do Brasil. Da primeira roupa de ração até o traje de saída de santo.</p>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-primary/40 italic">"Cada ponto é um fundamento. Cada costura, um respeito."</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-primary/40 italic">&quot;Cada ponto é um fundamento. Cada costura, um respeito.&quot;</p>
                </div>
                <Sparkles className="absolute -top-10 -right-10 w-48 h-48 opacity-10" />
             </div>

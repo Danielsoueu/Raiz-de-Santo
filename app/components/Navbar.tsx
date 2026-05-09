@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   MessageCircle, 
   Menu, 
@@ -39,11 +40,12 @@ export default function Navbar() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-bg/95 backdrop-blur-md shadow-sm border-b border-brand-accent/20 h-16' : 'bg-transparent h-20 md:h-24'}`}>
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group" onClick={() => setIsOpen(false)}>
-            <img 
+            <Image 
               src={LOGO_URL} 
               alt="Logo Raiz de Santo" 
-              width="40" 
-              height="40" 
+              width={40} 
+              height={40} 
+              referrerPolicy="no-referrer"
               className={`rounded-full object-cover shadow-sm border border-brand-primary/10 transition-all ${scrolled ? 'h-8 w-8' : 'h-10 w-10 md:h-12 md:w-12'}`} 
             />
             <span className={`font-serif font-bold tracking-tight text-brand-primary transition-all ${scrolled ? 'text-lg' : 'text-xl md:text-2xl'}`}>Raiz de Santo</span>
@@ -97,7 +99,7 @@ export default function Navbar() {
           >
             <div className="h-20 flex items-center justify-between px-6 border-b border-brand-accent/20">
               <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-                <img src={LOGO_URL} alt="Logo" width="32" height="32" className="h-8 w-8 rounded-full" />
+                <Image src={LOGO_URL} alt="Logo" width={32} height={32} referrerPolicy="no-referrer" className="h-8 w-8 rounded-full" />
                 <span className="font-serif font-bold text-lg text-brand-primary">Raiz de Santo</span>
               </Link>
               <button 

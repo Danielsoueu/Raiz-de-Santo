@@ -55,7 +55,7 @@ export default function CosturaClient() {
           <h2 className="font-serif text-3xl md:text-4xl mb-8 text-brand-primary">O problema com as roupas de santo prontas — e como a gente resolve.</h2>
           <div className="space-y-6 text-brand-ink/80 text-lg leading-relaxed font-light">
             <p>
-              Quem pratica Umbanda ou Candomblé sabe a dificuldade: entrar em uma loja de artigos religiosos, pegar uma roupa de ração no cabide e torcer para que o "M" ou o "G" sirva. Às vezes aperta na cintura. Às vezes a saia não tem roda suficiente. Às vezes o tecido é tão fino que não dura nem três lavagens.
+              Quem pratica Umbanda ou Candomblé sabe a dificuldade: entrar em uma loja de artigos religiosos, pegar uma roupa de ração no cabide e torcer para que o &quot;M&quot; ou o &quot;G&quot; sirva. Às vezes aperta na cintura. Às vezes a saia não tem roda suficiente. Às vezes o tecido é tão fino que não dura nem três lavagens.
             </p>
             <p>
               Roupa de santo não é roupa qualquer. Ela precisa respeitar o corpo de quem vai usá-la, aguentar rituais intensos, sobreviver a muitas lavagens e ainda chegar ao pé do santo com dignidade. Isso não acontece com tamanho padrão.
@@ -126,7 +126,7 @@ export default function CosturaClient() {
                <div className="aspect-[4/5] bg-brand-bg rounded-[4rem] relative overflow-hidden shadow-2xl flex items-center justify-center p-12">
                   <div className="absolute inset-0 bg-brand-primary opacity-5" />
                   <div className="bg-white p-12 rounded-[3rem] shadow-2xl relative z-10 text-center max-w-xs border border-brand-accent/20">
-                     <p className="font-serif text-3xl text-brand-primary mb-6 italic italic">"A fé não cabe em padrões industriais."</p>
+                     <p className="font-serif text-3xl text-brand-primary mb-6 italic italic">&quot;A fé não cabe em padrões industriais.&quot;</p>
                      <div className="h-0.5 w-12 bg-brand-secondary mx-auto mb-6" />
                      <p className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40">— Alinhado ao seu Corpo</p>
                   </div>
@@ -218,7 +218,7 @@ export default function CosturaClient() {
            <div className="flex-1 bg-white p-12 rounded-[4rem] shadow-2xl border border-brand-accent/20 text-center">
               <Quote className="w-12 h-12 text-brand-secondary mx-auto mb-10 opacity-30" />
               <h3 className="font-serif text-3xl md:text-4xl italic text-brand-primary leading-tight mb-8">
-                "Feito para o seu corpo. Costurado para o seu axé. Entregue com o respeito que a sua fé merece."
+                &quot;Feito para o seu corpo. Costurado para o seu axé. Entregue com o respeito que a sua fé merece.&quot;
               </h3>
               <p className="text-sm font-bold uppercase tracking-[0.4em] text-brand-ink/40">— Raiz de Santo</p>
            </div>

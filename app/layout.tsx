@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Link from "next/link"; // Next.js version of Link
+import Image from "next/image";
 import { 
   MessageCircle, 
   Instagram, 
@@ -38,12 +39,13 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 md:gap-20 mb-16 md:mb-20">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-10">
-                <img 
+                <Image 
                   src={LOGO_URL} 
                   alt="Raiz de Santo" 
-                  width="48" 
-                  height="48" 
+                  width={48} 
+                  height={48} 
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                   className="h-12 w-12 rounded-full border border-brand-primary/5" 
                 />
                 <span className="font-serif text-3xl font-bold tracking-tight text-brand-primary">Raiz de Santo</span>

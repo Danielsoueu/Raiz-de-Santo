@@ -55,7 +55,7 @@ export default function Sobre() {
          <div className="max-w-4xl mx-auto">
             <Quote className="w-12 h-12 text-brand-secondary mx-auto mb-10 opacity-30" />
             <h2 className="font-serif text-3xl md:text-5xl text-brand-primary italic leading-tight mb-8">
-               "Minha missão é garantir que você chegue ao pé do seu santo sentindo-se impecável, confortável e digno da sua fé."
+               &quot;Minha missão é garantir que você chegue ao pé do seu santo sentindo-se impecável, confortável e digno da sua fé.&quot;
             </h2>
             <p className="text-sm font-bold uppercase tracking-[0.4em] text-brand-primary opacity-50">— Fundadora Raiz de Santo</p>
          </div>

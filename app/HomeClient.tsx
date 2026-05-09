@@ -65,7 +65,7 @@ export default function HomeClient() {
                   <p className="font-serif text-xl font-bold text-brand-primary mb-2">Costura de Santo</p>
                   <p className="text-[10px] text-brand-ink/70 uppercase tracking-[0.2em] font-bold">Acabamento Superior</p>
                   <div className="mt-6 pt-6 border-t border-brand-accent/30">
-                    <p className="text-xs italic text-brand-ink/70">"Cada ponto um fundamento, <br/>cada detalhe um respeito."</p>
+                    <p className="text-xs italic text-brand-ink/70">&quot;Cada ponto um fundamento, <br/>cada detalhe um respeito.&quot;</p>
                   </div>
                </div>
                <motion.div 
@@ -121,7 +121,7 @@ export default function HomeClient() {
           <div className="flex-1 space-y-10">
             <div>
               <h2 className="font-serif text-3xl md:text-5xl leading-[1.2] mb-8 text-brand-primary">
-                Sua roupa de santo não <br /> deve ser <span className="italic text-brand-secondary">"tamanho padrão".</span>
+                Sua roupa de santo não <br /> deve ser <span className="italic text-brand-secondary">&quot;tamanho padrão&quot;.</span>
               </h2>
               <p className="text-lg text-brand-ink/80 leading-relaxed font-light">
                 Diferente de lojas de artigos religiosos genéricos, a <span className="font-bold text-brand-primary text-xl">Raiz de Santo</span> oferece exclusividade. Nossas roupas para Umbanda e Candomblé respeitam o corpo e o fundamento.
@@ -276,7 +276,7 @@ export default function HomeClient() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <Quote className="w-12 h-12 text-brand-secondary mx-auto mb-10 opacity-30" />
           <h2 className="font-serif text-3xl md:text-5xl mb-12 text-white italic leading-tight">
-            "Confecção de roupas de santo é fundamento. Cada detalhe é uma oração costurada."
+            &quot;Confecção de roupas de santo é fundamento. Cada detalhe é uma oração costurada.&quot;
           </h2>
           <a 
             href={whatsappUrl}

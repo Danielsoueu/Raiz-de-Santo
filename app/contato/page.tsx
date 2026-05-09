@@ -66,7 +66,7 @@ export default function Contato() {
             <div className="bg-brand-primary rounded-[4rem] p-10 md:p-16 text-white shadow-2xl relative overflow-hidden">
                <h2 className="font-serif text-3xl md:text-5xl mb-8 relative z-10 leading-tight">Envie-nos uma <br/><span className="italic text-brand-secondary">Mensagem</span></h2>
                <p className="text-white/70 mb-12 relative z-10 leading-relaxed italic">
-                  "O respeito ao sagrado começa com uma conversa honesta. Deixe-nos saber o que você precisa."
+                  &quot;O respeito ao sagrado começa com uma conversa honesta. Deixe-nos saber o que você precisa.&quot;
                </p>
                <div className="space-y-6 relative z-10">
                   <div className="p-10 border border-white/20 rounded-[2rem] bg-white/5 backdrop-blur-sm">
