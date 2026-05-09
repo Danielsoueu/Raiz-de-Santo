@@ -19,7 +19,7 @@ const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orça
 
 export default function UmbandaClient() {
   return (
-    <>
+    <div className="min-h-screen">
       {/* Hero Section */}
       <header className="pt-32 md:pt-48 pb-20 px-6 bg-brand-bg relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -246,6 +246,6 @@ export default function UmbandaClient() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

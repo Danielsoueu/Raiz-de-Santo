@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { 
   Scissors, 
   MessageCircle, 
@@ -159,19 +160,23 @@ export default function HomeClient() {
           <div className="flex-1 relative w-full max-w-lg">
             <div className="grid grid-cols-2 gap-3 md:gap-4 font-serif">
               <motion.div whileHover={{ y: -5 }} className="bg-brand-primary rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end text-white relative overflow-hidden shadow-xl">
+                 <Link href="/roupas-umbanda" className="absolute inset-0 z-20" aria-label="Ver roupas de Umbanda" />
                  <h3 className="text-base md:text-2xl mb-1 md:mb-2 relative z-10 font-medium leading-tight text-white">Roupas de Ração</h3>
                  <p className="text-[7px] md:text-[10px] uppercase tracking-widest opacity-80 font-sans font-bold relative z-10">Conforto Essencial</p>
                  <Sparkles className="absolute -top-5 -right-5 w-32 h-32 opacity-10" />
               </motion.div>
-              <motion.div whileHover={{ y: -5 }} className="bg-brand-accent/40 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-accent shadow-sm">
+              <motion.div whileHover={{ y: -5 }} className="bg-brand-accent/40 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-accent shadow-sm relative overflow-hidden">
+                 <Link href="/roupas-umbanda" className="absolute inset-0 z-20" aria-label="Ver saias de Umbanda" />
                  <h3 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Saias Exclusivas</h3>
                  <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Volume e Roda</p>
               </motion.div>
-              <motion.div whileHover={{ y: -5 }} className="bg-brand-bg rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-secondary/30 shadow-sm">
+              <motion.div whileHover={{ y: -5 }} className="bg-brand-bg rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-secondary/30 shadow-sm relative overflow-hidden">
+                 <Link href="/roupas-candomble" className="absolute inset-0 z-20" aria-label="Ver roupas de Candomblé" />
                  <h3 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Panos da Costa</h3>
                  <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Respeito à Tradição</p>
               </motion.div>
-              <motion.div whileHover={{ y: -5 }} className="bg-brand-secondary/10 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-secondary/20 shadow-sm">
+              <motion.div whileHover={{ y: -5 }} className="bg-brand-secondary/10 rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 min-h-[140px] md:aspect-square flex flex-col justify-end border border-brand-secondary/20 shadow-sm relative overflow-hidden">
+                 <Link href="/costura-sob-medida" className="absolute inset-0 z-20" aria-label="Ver alta costura" />
                  <h3 className="text-base md:text-2xl mb-1 md:mb-2 text-brand-primary font-medium leading-tight">Alta Costura</h3>
                  <p className="text-[7px] md:text-[10px] uppercase tracking-widest text-brand-primary opacity-60 font-sans font-bold">Fé em cada Ponto</p>
               </motion.div>
