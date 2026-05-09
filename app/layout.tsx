@@ -8,6 +8,8 @@ import {
   Facebook 
 } from 'lucide-react';
 
+import Navbar from "./components/Navbar";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
@@ -26,40 +28,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30`}>
-        {/* Navigation */}
-        <nav className="fixed top-0 w-full z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-accent/30">
-          <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <img 
-                src={LOGO_URL} 
-                alt="Logo Raiz de Santo" 
-                width="40" 
-                height="40" 
-                className="h-10 w-10 rounded-full object-cover shadow-sm border border-brand-primary/10" 
-              />
-              <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-brand-primary">Raiz de Santo</span>
-            </Link>
-            <div className="hidden lg:flex items-center gap-8">
-              <Link href="/roupas-umbanda" className="text-[10px] font-bold uppercase tracking-widest hover:text-brand-secondary transition-colors">Umbanda</Link>
-              <Link href="/roupas-candomble" className="text-[10px] font-bold uppercase tracking-widest hover:text-brand-secondary transition-colors">Candomblé</Link>
-              <Link href="/costura-sob-medida" className="text-[10px] font-bold uppercase tracking-widest hover:text-brand-secondary transition-colors">Sob Medida</Link>
-              <Link href="/sobre" className="text-[10px] font-bold uppercase tracking-widest hover:text-brand-secondary transition-colors">Sobre Nós</Link>
-              <Link href="/blog" className="text-[10px] font-bold uppercase tracking-widest hover:text-brand-secondary transition-colors">Blog</Link>
-              <Link href="/contato" className="text-[10px] font-bold uppercase tracking-widest hover:text-brand-secondary transition-colors">Contato</Link>
-            </div>
-            <a 
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Fazer orçamento pelo WhatsApp"
-              className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-primary/90 transition-all shadow-lg flex items-center gap-2"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span className="hidden sm:inline">Orçamento</span>
-            </a>
-          </div>
-        </nav>
+      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-20 md:pt-24`}>
+        <Navbar />
 
         <main>{children}</main>
 
