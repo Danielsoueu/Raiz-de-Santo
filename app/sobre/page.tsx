@@ -4,7 +4,7 @@ import { Quote, Sparkles, ShieldCheck } from 'lucide-react';
 
 export default function Sobre() {
   return (
-    <>
+    <div className="min-h-screen">
       <header className="pt-40 pb-20 px-6 bg-brand-bg relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">
@@ -56,6 +56,6 @@ export default function Sobre() {
             <p className="text-sm font-bold uppercase tracking-[0.4em] text-brand-primary opacity-50">— Fundadora Raiz de Santo</p>
          </div>
       </section>
-    </>
+    </div>
   );
 }

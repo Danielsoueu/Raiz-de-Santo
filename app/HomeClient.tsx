@@ -18,7 +18,7 @@ const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orça
 
 export default function HomeClient() {
   return (
-    <>
+    <div className="min-h-screen font-sans">
       {/* Hero Section */}
       <header className="relative pt-32 md:pt-48 pb-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
@@ -287,6 +287,6 @@ export default function HomeClient() {
           </a>
         </div>
       </section>
-    </>
+    </div>
   );
 }

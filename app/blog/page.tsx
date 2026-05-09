@@ -57,7 +57,7 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <>
+    <div className="min-h-screen">
       <header className="pt-40 pb-20 px-6 bg-brand-bg text-center">
         <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">
           Dicas de <span className="italic text-brand-secondary">Axé</span>
@@ -91,6 +91,6 @@ export default function Blog() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

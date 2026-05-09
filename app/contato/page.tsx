@@ -6,7 +6,7 @@ const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Vim pelo site e gost
 
 export default function Contato() {
   return (
-    <>
+    <div className="min-h-screen">
       <header className="pt-40 pb-20 px-6 bg-brand-bg text-center">
         <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">
           Estamos aqui para <br/> <span className="italic text-brand-secondary">Te Ouvir</span>
@@ -82,6 +82,6 @@ export default function Contato() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
