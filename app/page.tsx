@@ -3,7 +3,8 @@ import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
   title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
-  description: "Confecção artesanal de roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Respeito à tradição e acabamento premium.",
+  description: "Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal. Mão de obra a partir de R$150. Atendimento presencial e envio para todo o Brasil.",
+  keywords: "roupas de santo sob medida, confecção afro-religiosa São Paulo, roupa de umbanda SP, roupa de candomblé sob medida, costureira roupas religiosas, atelier roupas de santo",
 };
 
 export default function Home() {
