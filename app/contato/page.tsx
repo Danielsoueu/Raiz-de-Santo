@@ -1,6 +1,10 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Phone, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Contato Raiz de Santo | Fale com nossa Costureira de Santo em SP",
+  description: "Solicite seu orçamento de roupas de santo sob medida via WhatsApp, telefone ou venha nos visitar em nosso atelier em São Paulo.",
+};
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Vim pelo site e gostaria de um orçamento.";
 

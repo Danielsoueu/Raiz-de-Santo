@@ -1,6 +1,10 @@
-"use client";
-
+import type { Metadata } from "next";
 import { BookOpen, ChevronRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Blog Raiz de Santo | Dicas de Axé e Cuidados com Roupas de Santo",
+  description: "Dicas de como lavar roupas de santo, o significado das cores, tipos de tecidos e fundamentos das vestimentas na Umbanda e Candomblé.",
+};
 
 const blogPosts = [
   {

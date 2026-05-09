@@ -1,6 +1,10 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Quote, Sparkles, ShieldCheck } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Sobre a Raiz de Santo | Referência em Roupas de Santo em São Paulo",
+  description: "Conheça a história da Raiz de Santo, nosso atelier em São Paulo e nosso compromisso com o fundamento e a dignidade na confecção afro-religiosa.",
+};
 
 export default function Sobre() {
   return (
