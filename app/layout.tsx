@@ -16,7 +16,10 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif"
 
 export const metadata: Metadata = {
   title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
-  description: "Confecção artesanal de roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Respeito à tradição e acabamento premium.",
+  description: "Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal. Mão de obra a partir de R$150. Atendimento presencial e envio para todo o Brasil.",
+  verification: {
+    google: "googleb370d7549e62df93",
+  },
 };
 
 const LOGO_URL = "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png";
