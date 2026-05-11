@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Link from "next/link"; // Next.js version of Link
 import Image from "next/image";
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-20 md:pt-24`}>
         <Navbar />
+        <GoogleAnalytics gaId="G-M0P4QCM8JW" />
 
         <main>{children}</main>
 
