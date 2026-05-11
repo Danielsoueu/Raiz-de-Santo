@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://raizdesanto.com.br/sitemap.xml',
+    sitemap: 'https://raiz-de-santo.vercel.app/sitemap.xml',
   }
 }
