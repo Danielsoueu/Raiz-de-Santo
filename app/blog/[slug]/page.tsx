@@ -10,8 +10,9 @@ const posts = [
   }
 ];
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = posts.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = posts.find((p) => p.slug === resolvedParams.slug);
   
   return {
     title: post?.title || "Blog | Raiz de Santo",
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  return <BlogPostClient slug={params.slug} />;
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  return <BlogPostClient slug={resolvedParams.slug} />;
 }
