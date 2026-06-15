@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
  * Centralized metadata and Open Graph configuration
  */
 
-const BASE_URL = process.env.APP_URL || 'https://raizdesanto.com.br';
+const BASE_URL = process.env.APP_URL || 'https://raiz-de-santo.vercel.app';
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -109,4 +109,47 @@ export const localBusinessSchema = {
  */
 export function generateStructuredData(schema: object): string {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+/**
+ * Helper to build metadata with Open Graph and canonical URL
+ */
+interface BuildMetadataOptions {
+  title: string;
+  description: string;
+  keywords?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+export function buildMetadata({
+  title,
+  description,
+  keywords,
+  canonical = '/',
+  ogImage,
+}: BuildMetadataOptions): Metadata {
+  const fullUrl = `${BASE_URL}${canonical}`;
+  
+  return {
+    title,
+    description,
+    keywords: keywords ? keywords.split(', ').map(k => k.trim()) : defaultMetadata.keywords,
+    openGraph: {
+      ...openGraph,
+      title,
+      description,
+      url: fullUrl,
+      images: ogImage ? [{ url: ogImage, width: 1200, height: 630, alt: title }] : openGraph.images,
+    },
+    twitter: {
+      ...twitter,
+      title,
+      description,
+      images: ogImage ? [ogImage] : twitter.images,
+    },
+    alternates: {
+      canonical: fullUrl,
+    },
+  };
 }

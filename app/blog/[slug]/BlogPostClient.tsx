@@ -152,9 +152,84 @@ const blogPosts: Record<string, BlogPost> = {
     author: "Raiz de Santo",
     readTime: "6 min de leitura",
     content: (
-      <div className="space-y-8">
-        <p className="lead text-xl italic font-light">Em breve, um guia detalhado sobre as melhores rendas (Lese, Guipir, Renascença) para o seu saião.</p>
-        <p>Estamos preparando este conteúdo com todo carinho e fundamento.</p>
+      <div className="space-y-12">
+        <section className="prose prose-lg max-w-none prose-brand">
+          <p className="lead text-xl text-brand-ink/80 leading-relaxed font-light italic border-l-4 border-brand-secondary pl-6">
+            O saião é uma das peças mais importantes do Candomblé. A renda escolhida não é apenas estética — ela carrega simbolismo, tradição e respeito ao Orixá.
+          </p>
+          <p>
+            Neste guia, apresentamos 5 tipos de rendas ideais para confeccionar seu saião com elegância e fundamento. Cada uma tem características únicas que valorizam sua peça.
+          </p>
+        </section>
+
+        <section className="bg-brand-bg md:p-10 p-6 rounded-[2.5rem] border border-brand-accent/30">
+          <h3 className="font-serif text-2xl text-brand-primary mb-6">As 5 rendas mais recomendadas</h3>
+          <ul className="grid md:grid-cols-2 gap-4 list-none p-0 text-brand-ink/70">
+            {[
+              "Renda Lese — leve e delicada, ideal para Saias de Alodê",
+              "Renda Guipir — mais encorpada, perfeita para bainhas reforçadas",
+              "Renda Renascença — tradicional e elegante, excelente acabamento",
+              "Renda Richelieu — sofisticada, para ocasiões especiais",
+              "Renda Bordada à mão — única e exclusiva, para saídas de santo"
+            ].map((item, i) => (
+              <li key={i} className="flex gap-3 items-start text-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary mt-2 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="font-serif text-3xl text-brand-primary">1. Renda Lese: Leveza e Tradição</h2>
+          <p>A renda Lese é uma das mais tradicionais no Candomblé. Sua trama aberta e leveza a tornam perfeita para saias de alodê e camisas de Orixá.</p>
+          <p><strong>Características:</strong> Tecido fino, transparente, com desenhos florais ou geométricos. Requer forro em tecido opaco como cetim ou seda.</p>
+          <p><strong>Preço médio:</strong> R$ 80–150/metro</p>
+          <p><strong>Onde usar:</strong> Saias de Alodê, Saiões de Iemanjá, Oxum e outras divindades femininas.</p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="font-serif text-3xl text-brand-primary">2. Renda Guipir: Resistência e Elegância</h2>
+          <p>O Guipir é uma renda mais encorpada, com desenhos aplicados sobre uma base que depois é removida. O resultado é uma trama robusta e durável.</p>
+          <p><strong>Características:</strong> Mais grossa que a Lese, não precisa de forro em algumas aplicações. Ideal para bainhas e detalhes decorativos.</p>
+          <p><strong>Preço médio:</strong> R$ 120–250/metro</p>
+          <p><strong>Onde usar:</strong> Bainhas de saia, gola de camisa, detalhes em pano da costa.</p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="font-serif text-3xl text-brand-primary">3. Renda Renascença: Clássica e Versátil</h2>
+          <p>A Renda Renascença é feita com técnica de agulha e linha, criando desenhos elaborados. É uma das preferidas para peças cerimoniais.</p>
+          <p><strong>Características:</strong> Alta durabilidade, desenho rebuscado, acabamento premium.</p>
+          <p><strong>Preço médio:</strong> R$ 150–300/metro</p>
+          <p><strong>Onde usar:</strong> Saias completas, capas, trajes de cerimônia.</p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="font-serif text-3xl text-brand-primary">Dicas de Conservação</h2>
+          <div className="p-8 bg-brand-bg rounded-3xl border border-brand-accent/20">
+            <h4 className="font-bold text-brand-primary mb-4">Cuidados essenciais com suas rendas</h4>
+            <ol className="space-y-4 list-decimal pl-5 text-brand-ink/80">
+              <li>Lave sempre à mão, com sabão neutro.</li>
+              <li>Nunca torça a renda — pressione suavemente para retirar o excesso de água.</li>
+              <li>Seque à sombra, estendida sobre uma toalha branca.</li>
+              <li>Guarde em local seco, enrolada em tecido de algodão branco.</li>
+              <li>Evite contato direto com perfumes ou produtos químicos.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section className="py-12 border-y border-brand-accent/20">
+           <blockquote className="text-center italic font-serif text-2xl text-brand-primary max-w-2xl mx-auto leading-relaxed">
+             &quot;A renda certa transforma um simples tecido em uma vestimenta sagrada.&quot;
+           </blockquote>
+        </section>
+
+        <section className="space-y-8">
+           <h2 className="font-serif text-4xl text-brand-primary text-center">Conclusão</h2>
+           <p className="text-center text-lg text-brand-ink/80 max-w-3xl mx-auto leading-relaxed">
+             Escolher a renda ideal para seu saião é um ato de cuidado e respeito. Cada tipo tem sua função, beleza e significado. Conte conosco para orientar sua escolha!
+           </p>
+        </section>
       </div>
     )
   },
@@ -164,9 +239,51 @@ const blogPosts: Record<string, BlogPost> = {
     author: "Raiz de Santo",
     readTime: "7 min de leitura",
     content: (
-      <div className="space-y-8">
-        <p className="lead text-xl italic font-light">O significado ancestral do Pano da Costa e como ele atua como escudo energético.</p>
-        <p>Estamos preparando este conteúdo com todo carinho e fundamento.</p>
+      <div className="space-y-12">
+        <section className="prose prose-lg max-w-none prose-brand">
+          <p className="lead text-xl text-brand-ink/80 leading-relaxed font-light italic border-l-4 border-brand-secondary pl-6">
+            O Pano da Costa não é apenas um acessório — é um símbolo ancestral que conecta o Iyawó às suas raízes africanas e atua como verdadeiro escudo energético durante a iniciação.
+          </p>
+          <p>
+            Neste artigo, exploramos o significado profundo desta peça fundamental e seu papel protetor no processo de feitura do santo.
+          </p>
+        </section>
+
+        <section className="bg-brand-bg md:p-10 p-6 rounded-[2.5rem] border border-brand-accent/30">
+          <h3 className="font-serif text-2xl text-brand-primary mb-6">Principais funções do Pano da Costa</h3>
+          <ul className="grid md:grid-cols-2 gap-4 list-none p-0 text-brand-ink/70">
+            {[
+              "Proteção energética contra influências negativas",
+              "Conexão com as tradições africanas ancestrais",
+              "Símbolo de status dentro do Candomblé",
+              "Elemento estético que valoriza a vestimenta do Iyawó"
+            ].map((item, i) => (
+              <li key={i} className="flex gap-3 items-start text-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary mt-2 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="font-serif text-3xl text-brand-primary">Origem Histórica</h2>
+          <p>O Pano da Costa tem origem nas tecelãs africanas, especialmente das regiões da Costa da Mina e Daomé. Era tradicionalmente tecido em teares manuais com fios de algodão tingidos naturalmente.</p>
+          <p><strong>Curiosidade:</strong> Antigamente, quanto mais elaborado o pano, maior o status social de quem o usava na África.</p>
+        </section>
+
+        <section className="py-12 border-y border-brand-accent/20">
+           <blockquote className="text-center italic font-serif text-2xl text-brand-primary max-w-2xl mx-auto leading-relaxed">
+             &quot;O Pano da Costa carrega em cada fio a sabedoria de nossos ancestrais.&quot;
+           </blockquote>
+        </section>
+
+        <section className="space-y-8">
+           <h2 className="font-serif text-4xl text-brand-primary text-center">Conclusão</h2>
+           <p className="text-center text-lg text-brand-ink/80 max-w-3xl mx-auto leading-relaxed">
+             Entender o significado do Pano da Costa é honrar nossa herança cultural e espiritual. Esta peça continua sendo essencial no Candomblé contemporâneo.
+           </p>
+        </section>
       </div>
     )
   },
@@ -176,9 +293,45 @@ const blogPosts: Record<string, BlogPost> = {
     author: "Raiz de Santo",
     readTime: "5 min de leitura",
     content: (
-      <div className="space-y-8">
-        <p className="lead text-xl italic font-light">Um checklist completo para filhos de santo iniciantes e veteranos.</p>
-        <p>Estamos preparando este conteúdo com todo carinho e fundamento.</p>
+      <div className="space-y-12">
+        <section className="prose prose-lg max-w-none prose-brand">
+          <p className="lead text-xl text-brand-ink/80 leading-relaxed font-light italic border-l-4 border-brand-secondary pl-6">
+            Montar uma ração completa é essencial para qualquer filho de santo. Este checklist ajuda iniciantes e veteranos a organizarem seu enxoval religioso.
+          </p>
+        </section>
+
+        <section className="bg-brand-bg md:p-10 p-6 rounded-[2.5rem] border border-brand-accent/30">
+          <h3 className="font-serif text-2xl text-brand-primary mb-6">Itens essenciais da ração básica</h3>
+          <ul className="space-y-3 list-none p-0 text-brand-ink/70">
+            {[
+              "3 camisas brancas de manga longa (algodão ou percal)",
+              "3 calças brancas confortáveis",
+              "Meias brancas de algodão",
+              "Roupa íntima branca nova",
+              "Toalha pessoal exclusiva para uso religioso",
+              "Pano da Costa branco",
+              "Terço ou guia branca"
+            ].map((item, i) => (
+              <li key={i} className="flex gap-3 items-start text-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary mt-2 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="py-12 border-y border-brand-accent/20">
+           <blockquote className="text-center italic font-serif text-2xl text-brand-primary max-w-2xl mx-auto leading-relaxed">
+             &quot;Uma ração bem organizada é o primeiro passo para uma vida religiosa equilibrada.&quot;
+           </blockquote>
+        </section>
+
+        <section className="space-y-8">
+           <h2 className="font-serif text-4xl text-brand-primary text-center">Conclusão</h2>
+           <p className="text-center text-lg text-brand-ink/80 max-w-3xl mx-auto leading-relaxed">
+             Ter seu enxoval completo traz tranquilidade e organização para sua jornada espiritual. Consulte sempre seu Zelador para orientações específicas da sua casa.
+           </p>
+        </section>
       </div>
     )
   },
@@ -188,9 +341,45 @@ const blogPosts: Record<string, BlogPost> = {
     author: "Raiz de Santo",
     readTime: "10 min de leitura",
     content: (
-      <div className="space-y-8">
-        <p className="lead text-xl italic font-light">Como as cores vibram e atraem a falange correta para o seu trabalho espiritual.</p>
-        <p>Estamos preparando este conteúdo com todo carinho e fundamento.</p>
+      <div className="space-y-12">
+        <section className="prose prose-lg max-w-none prose-brand">
+          <p className="lead text-xl text-brand-ink/80 leading-relaxed font-light italic border-l-4 border-brand-secondary pl-6">
+            Cada cor vibra em uma frequência específica e atrai a falange correta para o trabalho espiritual. Conhecer esses significados é fundamental para escolher as roupas adequadas.
+          </p>
+        </section>
+
+        <section className="bg-brand-bg md:p-10 p-6 rounded-[2.5rem] border border-brand-accent/30">
+          <h3 className="font-serif text-2xl text-brand-primary mb-6">Cores principais e suas entidades</h3>
+          <div className="grid gap-4">
+            {[
+              { color: "Branco", entities: "Oxalá, todas as falanges (neutro)", meaning: "Paz, pureza e elevação espiritual" },
+              { color: "Azul", entities: "Iemanjá, Oxum", meaning: "Calma, serenidade e maternidade" },
+              { color: "Rosa", entities: "Oxum, Iansã", meaning: "Amor, delicadeza e feminilidade" },
+              { color: "Vermelho", entities: "Iansã, Exu", meaning: "Força, paixão e movimento" },
+              { color: "Verde", entities: "Oxossi, Caboclos", meaning: "Natureza, cura e fartura" },
+              { color: "Preto", entities: "Exu, Pombagira", meaning: "Proteção, transformação e mistério" },
+            ].map((item, i) => (
+              <div key={i} className="p-4 bg-white rounded-2xl border border-brand-accent/20">
+                <p className="font-bold text-brand-primary">{item.color}</p>
+                <p className="text-sm text-brand-ink/70"><strong>Entidades:</strong> {item.entities}</p>
+                <p className="text-sm text-brand-ink/60"><strong>Significado:</strong> {item.meaning}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-12 border-y border-brand-accent/20">
+           <blockquote className="text-center italic font-serif text-2xl text-brand-primary max-w-2xl mx-auto leading-relaxed">
+             &quot;As cores são pontes vibracionais entre o físico e o espiritual.&quot;
+           </blockquote>
+        </section>
+
+        <section className="space-y-8">
+           <h2 className="font-serif text-4xl text-brand-primary text-center">Conclusão</h2>
+           <p className="text-center text-lg text-brand-ink/80 max-w-3xl mx-auto leading-relaxed">
+             Escolher a cor certa potencializa seu trabalho mediúnico e demonstra respeito à entidade que incorpora. Sempre consulte seu dirigente para confirmar as cores da sua casa.
+           </p>
+        </section>
       </div>
     )
   }
