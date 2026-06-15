@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
-import Link from "next/link"; // Next.js version of Link
+import Link from "next/link";
 import Image from "next/image";
 import { 
   MessageCircle, 
@@ -11,16 +11,16 @@ import {
 } from 'lucide-react';
 
 import Navbar from "./components/Navbar";
+import { defaultMetadata, openGraph, twitter, localBusinessSchema } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
 export const metadata: Metadata = {
-  title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
-  description: "Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal. Mão de obra a partir de R$150. Atendimento presencial e envio para todo o Brasil.",
-  verification: {
-    google: "googleb370d7549e62df93",
-  },
+  ...defaultMetadata,
+  metadataBase: new URL(process.env.APP_URL || 'https://raiz-de-santo.vercel.app'),
+  openGraph: openGraph,
+  twitter: twitter,
 };
 
 const LOGO_URL = "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png";
@@ -33,6 +33,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-20 md:pt-24`}>
         <Navbar />
         <GoogleAnalytics gaId="G-M0P4QCM8JW" />
