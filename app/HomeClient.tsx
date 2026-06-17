@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Scissors, 
   MessageCircle, 
@@ -127,7 +128,15 @@ export default function HomeClient() {
               className="bg-white rounded-[3.5rem] border border-brand-accent/40 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group"
             >
               <div className="aspect-[4/3] bg-brand-bg relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/umbanda/800/600')] bg-cover grayscale opacity-10 group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                  <Image
+                    src="https://picsum.photos/seed/umbanda/800/600"
+                    alt="Fundo de roupas de Umbanda"
+                    fill
+                    referrerPolicy="no-referrer"
+                    className="object-cover grayscale opacity-10"
+                  />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="w-20 h-20 rounded-3xl bg-white/90 backdrop-blur-sm flex items-center justify-center border border-brand-accent shadow-sm">
                       <Sparkles className="w-8 h-8 text-brand-primary" />
@@ -149,7 +158,15 @@ export default function HomeClient() {
               className="bg-brand-primary rounded-[3.5rem] overflow-hidden shadow-2xl transition-all duration-500 group"
             >
               <div className="aspect-[4/3] bg-white/10 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/candomble/800/600')] bg-cover grayscale opacity-20 group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                  <Image
+                    src="https://picsum.photos/seed/candomble/800/600"
+                    alt="Fundo de roupas de Candomblé"
+                    fill
+                    referrerPolicy="no-referrer"
+                    className="object-cover grayscale opacity-20"
+                  />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="w-20 h-20 rounded-3xl bg-brand-primary/90 backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-sm">
                       <Compass className="w-8 h-8 text-brand-secondary" />
@@ -171,7 +188,15 @@ export default function HomeClient() {
               className="bg-white rounded-[3.5rem] border border-brand-accent/40 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group"
             >
               <div className="aspect-[4/3] bg-brand-bg relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/alfaiate/800/600')] bg-cover grayscale opacity-10 group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                  <Image
+                    src="https://picsum.photos/seed/alfaiate/800/600"
+                    alt="Fundo de alfaiataria afro-religiosa"
+                    fill
+                    referrerPolicy="no-referrer"
+                    className="object-cover grayscale opacity-10"
+                  />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="w-20 h-20 rounded-3xl bg-white/90 backdrop-blur-sm flex items-center justify-center border border-brand-accent shadow-sm">
                       <Scissors className="w-8 h-8 text-brand-primary" />
@@ -280,7 +305,15 @@ export default function HomeClient() {
            
            <div className="flex-1 relative flex items-center justify-center">
               <div className="w-full aspect-square bg-brand-bg rounded-[4rem] border border-brand-accent/50 relative overflow-hidden group">
-                 <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/process/1000/1000')] bg-cover grayscale opacity-10 transition-transform duration-1000 group-hover:scale-110" />
+                 <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
+                   <Image
+                     src="https://picsum.photos/seed/process/1000/1000"
+                     alt="Fundo de processo de costura do atelier"
+                     fill
+                     referrerPolicy="no-referrer"
+                     className="object-cover grayscale opacity-10"
+                   />
+                 </div>
                  <div className="absolute inset-0 flex items-center justify-center p-12">
                    <div className="bg-white/80 backdrop-blur-md p-10 rounded-[3rem] border border-brand-accent/30 shadow-2xl space-y-6 max-w-xs text-center">
                       <Clock className="w-12 h-12 text-brand-secondary mx-auto opacity-70" />
@@ -325,6 +358,101 @@ export default function HomeClient() {
                   <p className="text-xs uppercase tracking-widest text-brand-ink/40 mt-1">{testimony.city}</p>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção Nova: Últimas Dicas de Axé (Blog) */}
+      <section className="py-24 md:py-32 px-6 bg-white border-y border-brand-accent/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="font-serif text-3xl md:text-5xl text-brand-primary leading-tight">Dicas de <span className="italic text-brand-secondary">Axé & Conservação</span></h2>
+              <p className="mt-4 text-brand-ink/50 uppercase tracking-[0.2em] text-xs font-bold font-sans">Aprenda a cuidar e honrar suas roupas de santo</p>
+            </div>
+            <Link 
+              href="/blog" 
+              className="group flex items-center gap-2 text-brand-primary font-bold uppercase tracking-widest text-xs border-b-2 border-brand-secondary pb-1 hover:text-brand-secondary transition-colors"
+            >
+              Ver todas as dicas do blog <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                slug: "como-lavar-sua-roupa-de-santo-sem-danificar-o-axe",
+                title: "Como lavar sua roupa de santo sem danificar o axé passo a passo",
+                desc: "Aprenda técnicas de lavagem artesanal para preservar e manter o brilho do axé.",
+                date: "16 Mai, 2026",
+                tag: "Informativo"
+              },
+              {
+                slug: "5-tipos-de-rendas-ideais",
+                title: "5 tipos de rendas ideais para saiões de Candomblé",
+                desc: "Descubra as rendas mais tradicionais como Lese, Guipir e Renascença.",
+                date: "12 Mai, 2026",
+                tag: "Técnico"
+              },
+              {
+                slug: "importancia-pano-da-costa",
+                title: "A importância do Pano da Costa no fundamento do Iyawó",
+                desc: "Entenda o significado essencial e a força de proteção do Alaká.",
+                date: "08 Mai, 2026",
+                tag: "Tradição"
+              }
+            ].map((post, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-brand-bg/50 p-8 rounded-[3rem] border border-brand-accent/20 hover:shadow-lg transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-ink/40 block mb-4">{post.date}</span>
+                  <h3 className="font-serif text-xl font-bold text-brand-primary group-hover:text-brand-secondary transition-colors leading-tight mb-4 line-clamp-2">{post.title}</h3>
+                  <p className="text-brand-ink/70 text-sm font-light leading-relaxed mb-8">{post.desc}</p>
+                </div>
+                <div className="flex items-center justify-between pt-6 border-t border-brand-accent/10">
+                  <span className="px-2.5 py-0.5 rounded-full bg-brand-secondary/10 text-brand-primary text-[9px] font-bold uppercase tracking-widest border border-brand-secondary/20">{post.tag}</span>
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1.5 text-brand-primary font-bold text-[10px] uppercase tracking-widest group-hover:text-brand-secondary transition-colors">
+                    Ler <ChevronRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção Nova: Linhas de Orixás & Entidades sob Medida - Interlinkings SEO */}
+      <section className="py-20 px-6 bg-brand-bg/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="font-serif text-2xl text-brand-primary italic">Confecções Personalizadas por Fundamento</h3>
+            <p className="text-xs uppercase tracking-widest text-brand-ink/40 font-bold mt-2">Dedicamos carinho especial para cada Orixá e Entidade</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+            {[
+              { name: "Roupa de Oxum sob medida", href: "/roupas-candomble" },
+              { name: "Roupa de Iemanjá de Candomblé", href: "/roupas-candomble" },
+              { name: "Saia de Baiana sob medida", href: "/roupas-umbanda" },
+              { name: "Roupa de Ogum Umbanda", href: "/roupas-umbanda" },
+              { name: "Pano da Costa e Alaká", href: "/roupas-candomble" },
+              { name: "Ojá e Pano de Cabeça", href: "/roupas-candomble" },
+              { name: "Roupa de Raça Masculina", href: "/roupas-umbanda" },
+              { name: "Eparrei: Roupa de Iansã", href: "/roupas-candomble" },
+              { name: "São Paulo (SP) & Envio Nacional", href: "/contato" }
+            ].map((tag, idx) => (
+              <Link 
+                key={idx} 
+                href={tag.href}
+                className="bg-white hover:bg-brand-primary hover:text-white transition-all text-brand-primary font-medium text-xs py-2 px-4 rounded-full border border-brand-accent/40 shadow-sm"
+              >
+                {tag.name}
+              </Link>
             ))}
           </div>
         </div>

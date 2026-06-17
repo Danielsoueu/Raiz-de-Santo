@@ -15,15 +15,44 @@ import Navbar from "./components/Navbar";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
+import { localBusinessSchema } from "../lib/seo";
+
+const LOGO_URL = "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png";
+
 export const metadata: Metadata = {
   title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
   description: "Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal. Mão de obra a partir de R$150. Atendimento presencial e envio para todo o Brasil.",
+  metadataBase: new URL("https://raiz-de-santo.vercel.app"),
+  alternates: {
+    canonical: "https://raiz-de-santo.vercel.app",
+  },
   verification: {
     google: "googleb370d7549e62df93",
   },
+  openGraph: {
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+    description: "Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal. Mão de obra a partir de R$150. Atendimento presencial e envio para todo o Brasil.",
+    url: "https://raiz-de-santo.vercel.app",
+    siteName: "Raiz de Santo",
+    images: [
+      {
+        url: LOGO_URL,
+        width: 1200,
+        height: 630,
+        alt: "Raiz de Santo",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida",
+    description: "Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal.",
+    images: [LOGO_URL],
+  },
 };
 
-const LOGO_URL = "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png";
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
 
 export default function RootLayout({
@@ -33,6 +62,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-20 md:pt-24`}>
         <Navbar />
         <GoogleAnalytics gaId="G-M0P4QCM8JW" />

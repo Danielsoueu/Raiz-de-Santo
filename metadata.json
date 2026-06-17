@@ -2,5 +2,7 @@
   "name": "Raiz de Santo",
   "description": "Alta costura afro-religiosa sob medida em São Paulo. Especialistas em roupas para Umbanda e Candomblé com respeito e tradição.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

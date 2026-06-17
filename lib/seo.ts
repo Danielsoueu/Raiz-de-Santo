@@ -1,112 +1,89 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-/**
- * SEO Configuration
- * Centralized metadata and Open Graph configuration
- */
+export const BASE_URL = "https://raiz-de-santo.vercel.app";
 
-const BASE_URL = process.env.APP_URL || 'https://raizdesanto.com.br';
-
-export const defaultMetadata: Metadata = {
-  title: {
-    template: '%s | Raiz de Santo',
-    default: 'Raiz de Santo | Roupas de Santo Sob Medida em São Paulo',
-  },
-  description:
-    'Roupas de Umbanda e Candomblé sob medida em São Paulo. Modelagem exclusiva, tecidos premium e acabamento artesanal. Mão de obra a partir de R$150.',
-  keywords: [
-    'roupas de santo sob medida',
-    'confecção afro-religiosa São Paulo',
-    'roupa de umbanda SP',
-    'roupa de candomblé sob medida',
-    'costureira roupas religiosas',
-    'atelier roupas de santo',
-  ],
-  authors: [{ name: 'Raiz de Santo' }],
-  creator: 'Raiz de Santo',
-  publisher: 'Raiz de Santo',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'googleb370d7549e62df93',
-  },
-};
-
-export const openGraph = {
-  type: 'website',
-  locale: 'pt_BR',
-  url: BASE_URL,
-  siteName: 'Raiz de Santo',
-  title: 'Raiz de Santo | Roupas de Santo Sob Medida',
-  description:
-    'Confeccionamos roupas de Umbanda e Candomblé sob medida em São Paulo — com respeito ao seu corpo, ao seu Orixá e ao fundamento da sua casa.',
-  images: [
-    {
-      url: `${BASE_URL}/og-image.jpg`,
-      width: 1200,
-      height: 630,
-      alt: 'Raiz de Santo - Roupas de Santo Sob Medida',
-    },
-  ],
-};
-
-export const twitter = {
-  card: 'summary_large_image',
-  title: 'Raiz de Santo | Roupas de Santo Sob Medida',
-  description:
-    'Confeccionamos roupas de Umbanda e Candomblé sob medida em São Paulo.',
-  images: [`${BASE_URL}/og-image.jpg`],
-  creator: '@raizdesanto',
-};
-
-/**
- * Schema.org JSON-LD for LocalBusiness
- */
 export const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Raiz de Santo',
-  description:
-    'Atelier especializado em roupas de Umbanda e Candomblé sob medida',
-  url: BASE_URL,
-  telephone: '+5511969035273',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'São Paulo',
-    addressRegion: 'SP',
-    addressCountry: 'BR',
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Raiz de Santo",
+  "image": "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png",
+  "@id": `${BASE_URL}/#organization`,
+  "url": BASE_URL,
+  "telephone": "+5511969035273",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento Presencial com Hora Marcada",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "01000-000",
+    "addressCountry": "BR"
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '-23.5505',
-    longitude: '-46.6333',
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.55052,
+    "longitude": -46.633308
   },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '09:00',
-    closes: '18:00',
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
   },
-  priceRange: 'R$',
-  image: `${BASE_URL}/logo.png`,
-  sameAs: [
-    'https://www.instagram.com/raizdesanto',
-    'https://www.facebook.com/raizdesanto',
-  ],
+  "sameAs": [
+    "https://www.instagram.com/raizdesanto",
+    "https://www.facebook.com/raizdesanto"
+  ]
 };
 
-/**
- * Generate structured data script
- */
-export function generateStructuredData(schema: object): string {
-  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+interface BuildMetadataProps {
+  title: string;
+  description: string;
+  path: string;
+  keywords?: string;
+  image?: string;
+}
+
+export function buildMetadata({ title, description, path, keywords, image }: BuildMetadataProps): Metadata {
+  const url = `${BASE_URL}${path}`;
+  const defaultImage = "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png";
+  const ogImage = image || defaultImage;
+
+  return {
+    title,
+    description,
+    keywords: keywords || "roupa de santo, roupas de umbanda, roupas de candomblé, costura religiosa, roupas sob medida sp",
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Raiz de Santo",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      locale: "pt_BR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
 }
