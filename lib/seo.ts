@@ -39,7 +39,7 @@ export const localBusinessSchema = {
   },
   "sameAs": [
     "https://www.instagram.com/raizdesanto",
-    "https://www.facebook.com/raizdesanto"
+    "https://wa.me/5511969035273"
   ]
 };
 
@@ -59,9 +59,28 @@ export function buildMetadata({ title, description, path, keywords, image }: Bui
   return {
     title,
     description,
-    keywords: keywords || "roupa de santo, roupas de umbanda, roupas de candomblé, costura religiosa, roupas sob medida sp",
+    keywords: keywords || "roupa de santo sob medida, roupas de umbanda são paulo, roupas de candomblé sob medida sp, costura afro-religiosa, pano da costa, saia de baiana, roupa de ração, atelier roupas de santo",
+    metadataBase: new URL(BASE_URL),
     alternates: {
       canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    icons: {
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/favicon.svg", type: "image/svg+xml" },
+      ],
+      apple: "/icon.svg",
     },
     openGraph: {
       title,

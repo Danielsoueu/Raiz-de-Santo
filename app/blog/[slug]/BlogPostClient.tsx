@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ChevronLeft, Calendar, User, Clock, Share2, BookOpen } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, Calendar, User, Clock, Share2, BookOpen, Check, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 interface BlogPost {
@@ -449,29 +450,58 @@ const blogPosts: Record<string, BlogPost> = {
 
 export default function BlogPostClient({ slug }: { slug: string }) {
   const post = blogPosts[slug];
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async () => {
+    if (typeof window === "undefined") return;
+    const url = window.location.href;
+    const title = post?.title || "Artigo Raiz de Santo";
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, url });
+        return;
+      } catch {
+        // Fallback to clipboard
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // Ignored
+    }
+  };
 
   if (!post) {
     return (
-      <div className="min-h-screen pt-48 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="font-serif text-4xl text-brand-primary mb-4">Post não encontrado</h1>
-          <Link href="/blog" className="text-brand-secondary hover:underline">Voltar para o blog</Link>
+      <div className="min-h-[60vh] py-24 flex items-center justify-center px-4">
+        <div className="text-center max-w-md">
+          <h1 className="font-serif text-3xl sm:text-4xl text-brand-primary mb-4 font-bold">Artigo não encontrado</h1>
+          <p className="text-brand-ink/70 mb-6 text-sm">O texto que você procura pode ter sido reorganizado.</p>
+          <Link href="/blog" className="inline-flex items-center gap-2 bg-brand-primary text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-primary/90 transition-colors">
+            Voltar para o blog
+          </Link>
         </div>
       </div>
     );
   }
 
+  const postWhatsappUrl = `https://wa.me/5511969035273?text=${encodeURIComponent(
+    `Olá! Estava lendo o artigo "${post.title}" na Raiz de Santo e gostaria de tirar uma dúvida sobre confecção sob medida.`
+  )}`;
+
   return (
-    <div className="min-h-screen bg-brand-bg font-sans text-brand-ink">
-      <div className="pt-32 md:pt-48 pb-20 px-6">
+    <div className="min-h-screen bg-brand-bg font-sans text-brand-ink overflow-x-hidden">
+      <div className="pt-10 md:pt-16 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* Back Link */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-12"
+            className="mb-8"
           >
-            <Link href="/blog" className="inline-flex items-center gap-2 text-brand-ink/50 hover:text-brand-primary transition-colors font-bold uppercase tracking-widest text-xs">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-brand-ink/60 hover:text-brand-primary transition-colors font-bold uppercase tracking-widest text-xs min-h-[44px]">
               <ChevronLeft className="w-4 h-4" /> Voltar para o Blog
             </Link>
           </motion.div>
@@ -480,14 +510,14 @@ export default function BlogPostClient({ slug }: { slug: string }) {
           <motion.header
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-16"
+            className="mb-12"
           >
-            <div className="flex flex-wrap gap-6 mb-8 text-xs font-bold uppercase tracking-widest text-brand-ink/40">
+            <div className="flex flex-wrap gap-4 sm:gap-6 mb-6 text-xs font-bold uppercase tracking-widest text-brand-ink/50">
               <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-brand-secondary" /> {post.date}</div>
               <div className="flex items-center gap-2"><User className="w-4 h-4 text-brand-secondary" /> {post.author}</div>
               <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-brand-secondary" /> {post.readTime}</div>
             </div>
-            <h1 className="font-serif text-4xl md:text-6xl text-brand-primary leading-tight md:leading-[1.1] mb-8">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-primary leading-tight font-bold mb-6">
               {post.title}
             </h1>
           </motion.header>
@@ -497,7 +527,7 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-white p-8 md:p-16 rounded-[4rem] border border-brand-accent/20 shadow-sm"
+            className="bg-white p-6 sm:p-10 md:p-14 rounded-[3rem] border border-brand-accent/20 shadow-sm overflow-hidden"
           >
             <div className="relative">
               {/* Decorative elements */}
@@ -511,34 +541,46 @@ export default function BlogPostClient({ slug }: { slug: string }) {
             </div>
 
             {/* Footer / Share */}
-            <div className="mt-20 pt-10 border-t border-brand-accent/20 flex flex-col md:flex-row items-center justify-between gap-6">
-               <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-bg rounded-xl flex items-center justify-center">
-                     <Share2 className="w-5 h-5 text-brand-primary" />
+            <div className="mt-16 pt-8 border-t border-brand-accent/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+               <button 
+                 type="button"
+                 onClick={handleShare}
+                 className="inline-flex items-center gap-3 text-brand-primary hover:text-brand-secondary transition-colors p-2 rounded-xl focus:outline-none"
+                 aria-label="Compartilhar artigo"
+               >
+                  <div className="w-10 h-10 bg-brand-bg rounded-xl flex items-center justify-center border border-brand-accent/30">
+                     {copied ? <Check className="w-5 h-5 text-emerald-600" /> : <Share2 className="w-5 h-5 text-brand-primary" />}
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-brand-ink/60 underline cursor-pointer hover:text-brand-primary transition-colors">Compartilhe este conhecimento</p>
-               </div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-ink/70">
+                    {copied ? "Link copiado!" : "Compartilhar artigo"}
+                  </span>
+               </button>
                
                <a 
-                 href="https://wa.me/5511969035273"
-                 className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:scale-105 transition-all shadow-lg"
+                 href={postWhatsappUrl}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-7 py-3.5 rounded-full font-bold text-xs tracking-wider uppercase hover:bg-emerald-600 transition-all shadow-md"
                >
+                 <MessageCircle className="w-4 h-4" />
                  Tirar dúvidas no WhatsApp
                </a>
             </div>
           </motion.article>
 
           {/* More posts */}
-          <div className="mt-32">
-             <h3 className="font-serif text-3xl text-brand-primary mb-12 text-center md:text-left">Continue sua leitura</h3>
-             <div className="grid md:grid-cols-2 gap-8">
-                <Link href="/blog" className="p-8 bg-brand-bg rounded-[2.5rem] border border-brand-accent/30 hover:shadow-lg transition-all group">
-                   <p className="text-[10px] font-bold uppercase tracking-widest text-brand-ink/40 mb-4">Veja mais</p>
-                   <h4 className="font-serif text-xl text-brand-primary group-hover:text-brand-secondary transition-colors">Confira outros artigos em nosso blog</h4>
+          <div className="mt-20">
+             <h3 className="font-serif text-2xl sm:text-3xl text-brand-primary mb-8 text-center sm:text-left font-bold">
+               Continue sua leitura
+             </h3>
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <Link href="/blog" className="p-6 sm:p-8 bg-white rounded-[2rem] border border-brand-accent/30 hover:shadow-lg transition-all group">
+                   <p className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary mb-2">Artigos Relacionados</p>
+                   <h4 className="font-serif text-lg sm:text-xl text-brand-primary group-hover:text-brand-secondary transition-colors font-bold">Confira outros artigos em nosso blog</h4>
                 </Link>
-                <Link href="/" className="p-8 bg-brand-bg rounded-[2.5rem] border border-brand-accent/30 hover:shadow-lg transition-all group">
-                   <p className="text-[10px] font-bold uppercase tracking-widest text-brand-ink/40 mb-4">Voltar ao Início</p>
-                   <h4 className="font-serif text-xl text-brand-primary group-hover:text-brand-secondary transition-colors">Ir para a página principal</h4>
+                <Link href="/" className="p-6 sm:p-8 bg-white rounded-[2rem] border border-brand-accent/30 hover:shadow-lg transition-all group">
+                   <p className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary mb-2">Conhecer Atelier</p>
+                   <h4 className="font-serif text-lg sm:text-xl text-brand-primary group-hover:text-brand-secondary transition-colors font-bold">Voltar para a página principal</h4>
                 </Link>
              </div>
           </div>

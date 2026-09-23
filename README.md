@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Raiz de Santo — Alta Costura Afro-Religiosa Sob Medida
 
-# Run and deploy your AI Studio app
+Atelier especializado na confecção artesanal sob medida de roupas litúrgicas para **Umbanda** e **Candomblé** (Ketu, Angola e Jeje) em São Paulo, com atendimento presencial e envio para todo o Brasil.
 
-This contains everything you need to run your app locally.
+## Funcionalidades e Recursos
 
-View your app in AI Studio: https://ai.studio/apps/f62fd49a-a142-44e2-95fc-0a0f3820832c
+- **Confecção Sob Medida:** Roupas de ração, camisus, saias de baiana com roda ampla, panos da costa (alaká), ojás e trajes de saída de santo.
+- **SEO Otimizado:** Metadados dinâmicos, OpenGraph, Twitter Cards e marcação Schema.org (`LocalBusiness`, `BlogPosting`, `BreadcrumbList`).
+- **Design Responsivo & Mobile First:** Menu gaveta fluido com controle de scroll, layout adaptável e botões acessíveis.
+- **Contato & Orçamentos:** Integração direta com WhatsApp e formulário de orçamento com validação em tempo real.
+- **Blog & Conteúdo:** Artigos completos sobre conservação, tecidos e fundamentos das vestimentas religiosas.
 
-## Run Locally
+## Tecnologias Utilizadas
 
-**Prerequisites:**  Node.js
+- **Framework:** Next.js (App Router, Turbopack)
+- **Linguagem:** TypeScript
+- **Estilização:** Tailwind CSS
+- **Animações:** Motion (`motion/react`)
+- **Ícones:** Lucide React
+- **Imagens:** Next.js Image com suporte a AVIF e WebP
 
+## Como Rodar Localmente
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. Clone o repositório ou baixe os arquivos do projeto.
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+4. Acesse `http://localhost:3000` no seu navegador.

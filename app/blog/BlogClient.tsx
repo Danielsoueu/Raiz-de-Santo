@@ -46,22 +46,22 @@ export default function BlogClient() {
   return (
     <div className="min-h-screen bg-brand-bg font-sans">
       {/* Hero Section */}
-      <header className="pt-32 md:pt-48 pb-20 px-6 relative">
+      <header className="pt-12 md:pt-16 pb-14 px-4 sm:px-6 relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-secondary/10 text-brand-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6">
-              Nosso Blog
+            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-secondary/15 text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-6">
+              Nosso Blog • Sabedoria e Tradição
             </div>
-            <h1 className="font-serif text-4xl md:text-7xl mb-8 text-brand-primary leading-tight">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl mb-6 text-brand-primary leading-tight font-bold">
               Dicas de <span className="italic text-brand-secondary">Axé</span> & <br />
               Fundamentos da <span className="italic">Costura</span>
             </h1>
-            <p className="text-lg md:text-2xl text-brand-ink/70 leading-relaxed font-light mx-auto max-w-2xl">
-              Conhecimento e informação para quem busca honrar sua fé com o zelo que o sagrado exige.
+            <p className="text-base sm:text-lg md:text-xl text-brand-ink/75 leading-relaxed font-light mx-auto max-w-2xl">
+              Conhecimento e informação prática para você cuidar das suas vestimentas sagradas com a dignidade que o ritual exige.
             </p>
           </motion.div>
         </div>
@@ -118,15 +118,19 @@ export default function BlogClient() {
       </section>
 
       {/* Blog Newsletter / CTA */}
-      <section className="py-24 px-6 bg-brand-primary relative overflow-hidden text-center">
+      <section className="py-20 px-4 sm:px-6 bg-brand-primary relative overflow-hidden text-center">
          <div className="max-w-4xl mx-auto relative z-10 text-white">
-            <h2 className="font-serif text-3xl md:text-5xl mb-8">Dúvidas sobre o <span className="italic text-brand-secondary">Axé da sua roupa?</span></h2>
-            <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-               Nossa costureira também é praticante e entende os preceitos de cada casa. Se não encontrou sua dúvida aqui, fale conosco.
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 font-bold">
+              Dúvidas sobre o <span className="italic text-brand-secondary">Axé da sua roupa?</span>
+            </h2>
+            <p className="text-white/80 text-base sm:text-lg mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+               Nossa costureira também é praticante e compreende os preceitos e particularidades de cada casa. Fale diretamente conosco pelo WhatsApp.
             </p>
             <a 
-              href="https://wa.me/5511969035273"
-              className="inline-flex items-center gap-4 bg-brand-secondary text-brand-primary px-12 py-6 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-2xl"
+              href="https://wa.me/5511969035273?text=Olá! Estava lendo o blog da Raiz de Santo e gostaria de tirar uma dúvida sobre roupas de santo."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 sm:px-10 py-4 rounded-full text-base sm:text-lg font-bold hover:bg-emerald-600 transition-all shadow-xl"
             >
                Tirar dúvidas no WhatsApp
             </a>
