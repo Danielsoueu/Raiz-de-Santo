@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import BlogClient from "./BlogClient";
-import { buildMetadata } from "../../lib/seo";
+import { buildMetadata, generateBreadcrumbSchema } from "../../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog Raiz de Santo | Dicas de Axé e Cuidados com Roupas de Santo",
-  description: "Dicas de como lavar roupas de santo, o significado das cores, tipos de tecidos e fundamentos das vestimentas na Umbanda e Candomblé.",
+  description: "Artigos práticos sobre lavagem correta de roupas de santo, escolha de tecidos, significados das cores e fundamentos das vestimentas sagradas.",
   path: "/blog",
-  keywords: "lavar roupa de santo, cuidar de roupa de candomblé, axé nas roupas, costura religiosa umbanda, dicas roupas de santo"
+  keywords: "lavar roupa de santo, tecidos para candomble, cores roupas umbanda, dicas axé roupas"
 });
 
 export default function Blog() {
-  return <BlogClient />;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Blog & Dicas de Axé", path: "/blog" }
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <BlogClient />
+    </>
+  );
 }

@@ -551,6 +551,90 @@ export default function HomeClient() {
         </div>
       </section>
 
+      {/* Seção Blog / Dicas de Axé */}
+      <section className="py-20 px-4 sm:px-6 bg-brand-bg/50 border-t border-brand-accent/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-secondary block mb-2">
+                Conteúdo & Tradição
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-primary font-bold">
+                Dicas de Axé e Cuidados Litúrgicos
+              </h2>
+            </div>
+            <Link 
+              href="/blog"
+              className="text-xs font-bold uppercase tracking-widest text-brand-primary hover:text-brand-secondary inline-flex items-center gap-1.5 transition-colors border-b border-brand-secondary pb-0.5"
+            >
+              Ver todos os artigos do blog <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <article className="p-8 bg-white rounded-[2.5rem] border border-brand-accent/30 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary block mb-2">
+                  Cuidados & Lavagem
+                </span>
+                <h3 className="font-serif text-xl font-bold text-brand-primary mb-3 leading-snug">
+                  Como lavar roupa de santo sem danificar o axé
+                </h3>
+                <p className="text-xs sm:text-sm text-brand-ink/70 leading-relaxed font-light mb-6">
+                  Passo a passo artesanal para higienizar batas, saias e panos da costa preservando a energia sagrada e o tecido.
+                </p>
+              </div>
+              <Link
+                href="/blog/como-lavar-sua-roupa-de-santo-sem-danificar-o-axe"
+                className="font-bold text-xs uppercase tracking-wider text-brand-primary hover:text-brand-secondary inline-flex items-center gap-1 transition-colors"
+              >
+                Ler guia completo de lavagem <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </article>
+
+            <article className="p-8 bg-white rounded-[2.5rem] border border-brand-accent/30 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary block mb-2">
+                  Tecidos & Nobreza
+                </span>
+                <h3 className="font-serif text-xl font-bold text-brand-primary mb-3 leading-snug">
+                  5 tipos de rendas ideais para saiões de Candomblé
+                </h3>
+                <p className="text-xs sm:text-sm text-brand-ink/70 leading-relaxed font-light mb-6">
+                  Entenda as diferenças entre lese, guipir e renascença para garantir roda impecável e conforto térmico.
+                </p>
+              </div>
+              <Link
+                href="/blog/5-tipos-de-rendas-ideais"
+                className="font-bold text-xs uppercase tracking-wider text-brand-primary hover:text-brand-secondary inline-flex items-center gap-1 transition-colors"
+              >
+                Conhecer rendas recomendadas <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </article>
+
+            <article className="p-8 bg-white rounded-[2.5rem] border border-brand-accent/30 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary block mb-2">
+                  Fundamento do Iyawó
+                </span>
+                <h3 className="font-serif text-xl font-bold text-brand-primary mb-3 leading-snug">
+                  A importância do Pano da Costa (Alaká)
+                </h3>
+                <p className="text-xs sm:text-sm text-brand-ink/70 leading-relaxed font-light mb-6">
+                  A força de proteção espiritual e a tradição ancestral do alaká usado por filhas de santo no barracão.
+                </p>
+              </div>
+              <Link
+                href="/blog/importancia-pano-da-costa"
+                className="font-bold text-xs uppercase tracking-wider text-brand-primary hover:text-brand-secondary inline-flex items-center gap-1 transition-colors"
+              >
+                Compreender o fundamento do alaká <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Seção Fechamento */}
       <section className="py-20 md:py-24 px-4 sm:px-6 bg-brand-primary text-white text-center">
         <div className="max-w-4xl mx-auto space-y-8">

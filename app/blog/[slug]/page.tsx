@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import BlogPostClient from "./BlogPostClient";
-import { buildMetadata, BASE_URL } from "../../../lib/seo";
+import { buildMetadata, BASE_URL, LOGO_URL } from "../../../lib/seo";
 
 const posts = [
   {
@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       "name": "Raiz de Santo",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png"
+        "url": LOGO_URL
       }
     }
   } : null;

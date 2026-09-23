@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'i.ibb.co',
         port: '',
         pathname: '/**',

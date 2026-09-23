@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import CosturaClient from "./CosturaClient";
-import { buildMetadata } from "../../lib/seo";
+import { buildMetadata, generateBreadcrumbSchema } from "../../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Costura Sob Medida para Roupas de Santo em SP | Raiz de Santo",
-  description: "Roupas de santo sob medida em São Paulo: modelagem do zero, tecidos premium e acabamento artesanal para Umbanda e Candomblé. Atendimento presencial e à distância. Mão de obra a partir de R$150.",
+  description: "Costura de roupas de santo sob medida em São Paulo: molde do zero, tecidos nobres e acabamento reforçado. Mão de obra a partir de R$ 150.",
   path: "/costura-sob-medida",
-  keywords: "costura sob medida roupas de santo, confecção afro-religiosa SP, costureira de umbanda, alfaiataria religiosa, modelagem exclusiva roupa de santo, costura candomblé sob medida"
+  keywords: "costura sob medida roupas de santo, atelier roupas de santo sp, modelagem exclusiva roupa de santo"
 });
 
 export default function CosturaPage() {
-  return <CosturaClient />;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Costura Sob Medida", path: "/costura-sob-medida" }
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <CosturaClient />
+    </>
+  );
 }

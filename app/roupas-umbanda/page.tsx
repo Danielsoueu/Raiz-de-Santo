@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 import UmbandaClient from "./UmbandaClient";
-import { buildMetadata } from "../../lib/seo";
+import { buildMetadata, generateBreadcrumbSchema } from "../../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Roupas de Umbanda Sob Medida em SP | Raiz de Santo",
-  description: "Confeccionamos roupas de Umbanda sob medida: roupas de ração, saias, calças, trajes para entidades e muito mais. Atelier em São Paulo e envio para todo o Brasil. Preço justo e respeito ao fundamento.",
+  description: "Roupas de Umbanda sob medida em São Paulo: roupas de ração, saias, calças e batas em percal e lese 100% algodão. Conforto na gira e envio nacional.",
   path: "/roupas-umbanda",
-  keywords: "roupas de umbanda sob medida, roupa de ração umbanda, saia de umbanda, roupas de santo SP, confecção de roupas religiosas, trajes para umbanda, costura de terreiro"
+  keywords: "roupas de umbanda sob medida, roupa de ração umbanda, saia de umbanda sp, bata branca umbanda"
 });
 
 export default function UmbandaPage() {
-  return <UmbandaClient />;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Roupas de Umbanda", path: "/roupas-umbanda" }
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <UmbandaClient />
+    </>
+  );
 }

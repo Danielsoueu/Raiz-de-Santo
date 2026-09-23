@@ -13,8 +13,8 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { LOGO_URL } from '../../lib/seo';
 
-const LOGO_URL = "https://i.ibb.co/5xFmZ0MS/An-ncio-do-Instagram-para-Nova-Cole-o-com-Desconto-Rosa-e-Branco.png";
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
 const phoneHref = "tel:+5511969035273";
 
@@ -72,7 +72,7 @@ export default function Navbar() {
           >
             <Image 
               src={LOGO_URL} 
-              alt="Logo Raiz de Santo" 
+              alt="Logotipo Raiz de Santo - Atelier de Alta Costura Afro-Religiosa em São Paulo" 
               width={44} 
               height={44} 
               priority
@@ -188,7 +188,7 @@ export default function Navbar() {
                 >
                   <Image 
                     src={LOGO_URL} 
-                    alt="Logo" 
+                    alt="Logotipo Raiz de Santo - Atelier de Alta Costura Afro-Religiosa em São Paulo" 
                     width={36} 
                     height={36} 
                     referrerPolicy="no-referrer" 
