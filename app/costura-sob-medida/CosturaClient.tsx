@@ -15,6 +15,8 @@ import {
   Video
 } from 'lucide-react';
 import Link from 'next/link';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { trackWhatsAppClick } from '../../lib/analytics';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de agendar uma medição ou orçamento para costura sob medida de roupas de santo.";
 const phoneHref = "tel:+5511969035273";
@@ -22,6 +24,8 @@ const phoneHref = "tel:+5511969035273";
 export default function CosturaClient() {
   return (
     <div className="min-h-screen bg-brand-bg font-sans overflow-x-hidden">
+      <Breadcrumbs items={[{ label: "Costura Sob Medida" }]} />
+
       {/* Hero Section */}
       <header className="pt-8 md:pt-14 pb-16 px-4 sm:px-6 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">

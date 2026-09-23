@@ -19,6 +19,7 @@ import {
   Heart,
   Phone
 } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
 const phoneHref = "tel:+5511969035273";
@@ -39,17 +40,18 @@ export default function HomeClient() {
               Alta Costura Afro-Religiosa em São Paulo
             </div>
             <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-[1.1] mb-6 text-brand-primary">
-              Sua Roupa de Santo, <br />
-              Feita do Jeito que a <span className="italic text-brand-secondary">Fé Merece</span>
+              Roupas de Santo Sob Medida <br />
+              <span className="italic text-brand-secondary">em São Paulo</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-brand-ink/75 leading-relaxed font-light mx-auto lg:mx-0 mb-8 max-w-2xl">
-              Confeccionamos roupas de Umbanda e Candomblé sob medida em São Paulo — com respeito ao seu corpo, ao seu Orixá e ao fundamento da sua casa. Mão de obra a partir de <strong className="font-bold text-brand-primary">R$150</strong>. Atendimento presencial e envio seguro para todo o Brasil.
+              Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas com respeito ao seu corpo, ao seu Orixá e ao fundamento da sua casa. Mão de obra a partir de <strong className="font-bold text-brand-primary">R$150</strong>. Atendimento presencial na capital paulista e envio seguro para todo o Brasil.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
               <a 
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("hero_cta")}
                 className="w-full sm:w-auto bg-brand-primary text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-5 h-5 text-brand-secondary" />
@@ -147,14 +149,38 @@ export default function HomeClient() {
                 <p className="text-brand-ink/70 text-sm leading-relaxed font-light">
                   Do branco de ração às cores das entidades — costuramos com respeito ao fundamento da sua linha e à sua casa. Roupas de ração, saias rodadas, calças, trajes para caboclos, pretos velhos, marinheiros e guardiões.
                 </p>
+                <div className="pt-2 flex flex-wrap gap-2">
+                  <Link 
+                    href="/roupas-umbanda/roupa-de-racao"
+                    className="text-[11px] font-semibold text-brand-primary/80 bg-brand-bg hover:bg-brand-secondary/20 px-3 py-1.5 rounded-full transition-colors border border-brand-accent/20"
+                  >
+                    • Roupa de Ração
+                  </Link>
+                  <Link 
+                    href="/roupas-umbanda/saia-de-umbanda"
+                    className="text-[11px] font-semibold text-brand-primary/80 bg-brand-bg hover:bg-brand-secondary/20 px-3 py-1.5 rounded-full transition-colors border border-brand-accent/20"
+                  >
+                    • Saia de Gira
+                  </Link>
+                </div>
               </div>
-              <div className="p-8 sm:p-10 pt-0">
+              <div className="p-8 sm:p-10 pt-0 space-y-4">
                 <Link 
                   href="/roupas-umbanda" 
                   className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-widest text-xs group-hover:text-brand-secondary transition-colors"
                 >
                   Ver roupas de Umbanda <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("card_servico_umbanda")}
+                  className="w-full py-3.5 px-5 rounded-full bg-brand-primary text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-brand-secondary hover:text-brand-primary transition-all shadow-md active:scale-95"
+                >
+                  <MessageCircle className="w-4 h-4 text-brand-secondary" />
+                  Pedir orçamento pelo WhatsApp
+                </a>
               </div>
             </motion.div>
 
@@ -173,14 +199,38 @@ export default function HomeClient() {
                 <p className="text-white/75 text-sm leading-relaxed font-light">
                   Para todas as nações: Ketu, Angola e Jeje. Camisu com bico de algodão, Pano da Costa bordado, Saias de Alodê, kits de obrigação e trajes para saída de santo com acabamento de alta qualidade.
                 </p>
+                <div className="pt-2 flex flex-wrap gap-2">
+                  <Link 
+                    href="/roupas-candomble/pano-da-costa"
+                    className="text-[11px] font-semibold text-white/90 bg-white/10 hover:bg-brand-secondary hover:text-brand-primary px-3 py-1.5 rounded-full transition-colors border border-white/10"
+                  >
+                    • Pano da Costa (Alaká)
+                  </Link>
+                  <Link 
+                    href="/roupas-candomble/oja-pano-de-cabeca"
+                    className="text-[11px] font-semibold text-white/90 bg-white/10 hover:bg-brand-secondary hover:text-brand-primary px-3 py-1.5 rounded-full transition-colors border border-white/10"
+                  >
+                    • Ojá & Pano de Cabeça
+                  </Link>
+                </div>
               </div>
-              <div className="p-8 sm:p-10 pt-0">
+              <div className="p-8 sm:p-10 pt-0 space-y-4">
                 <Link 
                   href="/roupas-candomble" 
                   className="inline-flex items-center gap-2 text-brand-secondary font-bold uppercase tracking-widest text-xs group-hover:text-white transition-colors"
                 >
                   Ver roupas de Candomblé <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("card_servico_candomble")}
+                  className="w-full py-3.5 px-5 rounded-full bg-brand-secondary text-brand-primary text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white transition-all shadow-md active:scale-95"
+                >
+                  <MessageCircle className="w-4 h-4 text-brand-primary" />
+                  Pedir orçamento pelo WhatsApp
+                </a>
               </div>
             </motion.div>
 
@@ -199,14 +249,38 @@ export default function HomeClient() {
                 <p className="text-brand-ink/70 text-sm leading-relaxed font-light">
                   Costura sob medida com o rigor de alfaiataria: modelagem criada do zero para suas medidas exatas, com tecidos de alta durabilidade e caimento impecável para seus rituais.
                 </p>
+                <div className="pt-2 flex flex-wrap gap-2">
+                  <Link 
+                    href="/costura-sob-medida"
+                    className="text-[11px] font-semibold text-brand-primary/80 bg-brand-bg hover:bg-brand-secondary/20 px-3 py-1.5 rounded-full transition-colors border border-brand-accent/20"
+                  >
+                    • Molde Anatômico do Zero
+                  </Link>
+                  <Link 
+                    href="/contato"
+                    className="text-[11px] font-semibold text-brand-primary/80 bg-brand-bg hover:bg-brand-secondary/20 px-3 py-1.5 rounded-full transition-colors border border-brand-accent/20"
+                  >
+                    • Prova em São Paulo
+                  </Link>
+                </div>
               </div>
-              <div className="p-8 sm:p-10 pt-0">
+              <div className="p-8 sm:p-10 pt-0 space-y-4">
                 <Link 
                   href="/costura-sob-medida" 
                   className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-widest text-xs group-hover:text-brand-secondary transition-colors"
                 >
                   Conhecer a costura sob medida <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("card_servico_sob_medida")}
+                  className="w-full py-3.5 px-5 rounded-full bg-brand-primary text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-brand-secondary hover:text-brand-primary transition-all shadow-md active:scale-95"
+                >
+                  <MessageCircle className="w-4 h-4 text-brand-secondary" />
+                  Pedir orçamento pelo WhatsApp
+                </a>
               </div>
             </motion.div>
           </div>
@@ -541,12 +615,28 @@ export default function HomeClient() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick(`atendimento_${item.title.toLowerCase().replace(/\s+/g, '_')}`)}
                   className="font-bold text-xs uppercase tracking-widest text-brand-primary border-b border-brand-secondary pb-1 hover:text-brand-secondary transition-colors inline-block mx-auto"
                 >
                   Falar com a costureira
                 </a>
               </div>
             ))}
+          </div>
+
+          {/* Bloco Textual Factual de Atendimento Local em SP sem endereço público inventado */}
+          <div className="mt-12 p-8 sm:p-10 rounded-[2.5rem] bg-brand-bg/80 border border-brand-accent/30 text-center max-w-4xl mx-auto">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-primary mb-3">
+              Atendimento Presencial em São Paulo com Hora Marcada
+            </h3>
+            <p className="text-sm sm:text-base text-brand-ink/80 leading-relaxed font-light mb-6">
+              Para garantir exclusividade e respeito litúrgico a cada cliente, realizamos atendimentos presenciais na capital paulista sob agendamento prévio. Você pode conhecer as opções de tecidos (percal 200 fios, lese 100% algodão, rendas e bordados), conferir amostras de acabamento e tirar medidas anatômicas com a costureira. Para quem reside em outros estados ou prefere comodidade, oferecemos atendimento completo por WhatsApp/videochamada com envio pelos Correios e transportadoras com seguro total para todo o território nacional.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-brand-primary">
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-brand-secondary" /> Prova de medidas com hora agendada</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-brand-secondary" /> Capital de São Paulo e Grande SP</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-brand-secondary" /> Envio segurado para todo o Brasil</span>
+            </div>
           </div>
         </div>
       </section>

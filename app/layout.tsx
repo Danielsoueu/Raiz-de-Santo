@@ -33,15 +33,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Raiz de Santo - Roupas e costura afro",
+    default: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
     template: "%s | Raiz de Santo",
   },
-  description: "Roupas de Umbanda e Candomblé sob medida em SP. Peças com fundamento, modelagem exclusiva e mão de obra na faixa de R$ 140. Peça seu orçamento pelo WhatsApp!",
+  description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
   keywords: [
-    "roupa de santo sob medida",
+    "roupas de santo sob medida",
     "roupas de umbanda são paulo",
     "roupas de candomblé sob medida",
-    "costura afro sp"
+    "alta costura afro religiosa sp",
+    "roupa de ração sob medida",
+    "pano da costa",
+    "ojá"
   ],
   authors: [{ name: "Raiz de Santo", url: BASE_URL }],
   creator: "Raiz de Santo",
@@ -50,7 +53,7 @@ export const metadata: Metadata = {
     canonical: "https://raiz-de-santo.vercel.app/",
   },
   other: {
-    title: "Raiz de Santo - Roupas e costura afro",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
   },
   icons: {
     icon: [
@@ -70,23 +73,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://raiz-de-santo.vercel.app/",
-    title: "Raiz de Santo - Roupas e costura afro",
-    description: "Roupas de Umbanda e Candomblé sob medida em SP. Peças com fundamento, modelagem exclusiva e mão de obra na faixa de R$ 140. Peça seu orçamento pelo WhatsApp!",
-    siteName: "Raiz de santo",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+    description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
+    siteName: "Raiz de Santo",
     images: [
       {
         url: "https://ik.imagekit.io/czbsplwyj/Raizdesanto.png",
         width: 1200,
         height: 630,
-        alt: "Raiz de Santo - Roupas e costura afro",
+        alt: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
       },
     ],
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raiz de Santo - Roupas e costura afro",
-    description: "Roupas de Umbanda e Candomblé sob medida em SP. Peças com fundamento, modelagem exclusiva e mão de obra na faixa de R$ 140. Peça seu orçamento pelo WhatsApp!",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+    description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
     images: ["https://ik.imagekit.io/czbsplwyj/Raizdesanto.png"],
   },
   robots: {
@@ -112,7 +115,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
-        <meta name="title" content="Raiz de Santo - Roupas e costura afro" />
+        <meta name="title" content="Raiz de Santo | Roupas de Santo Sob Medida em São Paulo" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-512x512.png" type="image/png" sizes="512x512" />

@@ -14,6 +14,8 @@ import {
   Video
 } from 'lucide-react';
 import Link from 'next/link';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { trackWhatsAppClick } from '../../lib/analytics';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para confecção de roupas de Umbanda sob medida.";
 const phoneHref = "tel:+5511969035273";
@@ -21,6 +23,8 @@ const phoneHref = "tel:+5511969035273";
 export default function UmbandaClient() {
   return (
     <div className="min-h-screen bg-brand-bg font-sans overflow-x-hidden">
+      <Breadcrumbs items={[{ label: "Roupas de Umbanda" }]} />
+
       {/* Hero Section */}
       <header className="pt-8 md:pt-14 pb-16 px-4 sm:px-6 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -103,8 +107,18 @@ export default function UmbandaClient() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Roupa de Ração Branca", desc: "Em percal 200 fios ou puro algodão respirável, leve e resistente para longas giras e trabalhos de desenvolvimento." },
-              { title: "Saias de Roda para Umbanda", desc: "Com 4 a 7 metros de roda, barra reforçada, armação no ponto certo e cós elástico com cordão para não apertar." },
+              { 
+                title: "Roupa de Ração Branca", 
+                desc: "Em percal 200 fios ou puro algodão respirável, leve e resistente para longas giras e trabalhos de desenvolvimento.",
+                link: "/roupas-umbanda/roupa-de-racao",
+                linkText: "Página da Roupa de Ração"
+              },
+              { 
+                title: "Saias de Roda para Umbanda", 
+                desc: "Com 4 a 7 metros de roda, barra reforçada, armação no ponto certo e cós elástico com cordão para não apertar.",
+                link: "/roupas-umbanda/saia-de-umbanda",
+                linkText: "Página de Saias de Gira"
+              },
               { title: "Calças e Calçolões", desc: "Modelagem anatômica que não trava os movimentos ao se ajoelhar ou incorporar." },
               { title: "Trajes para Caboclos e Boiadeiros", desc: "Tecidos rústicos como sarja de algodão e linho, com corte resistente e acabamentos rústicos autênticos." },
               { title: "Roupas para Pretos Velhos", desc: "Algodão macio, xadrez clássico, saias simples com rendas discretas e aventais tradicionais sob medida." },
@@ -122,13 +136,23 @@ export default function UmbandaClient() {
                     <Sparkles className="w-5 h-5 text-brand-secondary" />
                   </div>
                   <h3 className="font-serif font-bold text-xl text-brand-primary mb-2">{product.title}</h3>
-                  <p className="text-xs sm:text-sm text-brand-ink/70 leading-relaxed font-light">{product.desc}</p>
+                  <p className="text-xs sm:text-sm text-brand-ink/70 leading-relaxed font-light mb-3">{product.desc}</p>
+                  
+                  {product.link && (
+                    <Link
+                      href={product.link}
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-brand-secondary hover:underline mb-2"
+                    >
+                      {product.linkText} <ChevronRight className="w-3 h-3" />
+                    </Link>
+                  )}
                 </div>
                 <div className="mt-6 pt-4 border-t border-brand-accent/15">
                   <a 
                     href={`https://wa.me/5511969035273?text=${encodeURIComponent(`Olá! Gostaria de encomendar ${product.title} de Umbanda sob medida.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick(`umbanda_${product.title.toLowerCase().replace(/\s+/g, '_')}`)}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-primary hover:text-brand-secondary transition-colors uppercase tracking-wider"
                   >
                     Orçar modelo <ChevronRight className="w-3.5 h-3.5" />

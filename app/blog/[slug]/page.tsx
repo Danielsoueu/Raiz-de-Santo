@@ -61,7 +61,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.description,
+    "image": [LOGO_URL],
     "datePublished": post.datePublished,
+    "dateModified": post.datePublished,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/blog/${post.slug}`
+    },
     "author": {
       "@type": "Organization",
       "name": "Raiz de Santo",

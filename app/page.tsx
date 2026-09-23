@@ -2,31 +2,31 @@ import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Raiz de Santo - Roupas e costura afro",
-  description: "Roupas de Umbanda e Candomblé sob medida em SP. Peças com fundamento, modelagem exclusiva e mão de obra na faixa de R$ 140. Peça seu orçamento pelo WhatsApp!",
+  title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+  description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
   alternates: {
     canonical: "https://raiz-de-santo.vercel.app/",
   },
   other: {
-    title: "Raiz de Santo - Roupas e costura afro",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
   },
   openGraph: {
     type: "website",
     url: "https://raiz-de-santo.vercel.app/",
-    title: "Raiz de Santo - Roupas e costura afro",
-    description: "Roupas de Umbanda e Candomblé sob medida em SP. Peças com fundamento, modelagem exclusiva e mão de obra na faixa de R$ 140. Peça seu orçamento pelo WhatsApp!",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+    description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
     images: [
       {
         url: "https://ik.imagekit.io/czbsplwyj/Raizdesanto.png",
-        alt: "Raiz de Santo - Roupas e costura afro",
+        alt: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
       },
     ],
-    siteName: "Raiz de santo",
+    siteName: "Raiz de Santo",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raiz de Santo - Roupas e costura afro",
-    description: "Roupas de Umbanda e Candomblé sob medida em SP. Peças com fundamento, modelagem exclusiva e mão de obra na faixa de R$ 140. Peça seu orçamento pelo WhatsApp!",
+    title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+    description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
     images: ["https://ik.imagekit.io/czbsplwyj/Raizdesanto.png"],
   },
 };

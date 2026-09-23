@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { trackWhatsAppClick } from "../../lib/analytics";
 import { 
   Heart, 
   Sparkles, 
@@ -19,6 +21,8 @@ const phoneHref = "tel:+5511969035273";
 export default function SobreClient() {
   return (
     <div className="min-h-screen bg-brand-bg font-sans overflow-x-hidden">
+      <Breadcrumbs items={[{ label: "Sobre o Atelier" }]} />
+
       {/* Hero Section */}
       <header className="relative pt-8 md:pt-14 pb-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center relative z-10">

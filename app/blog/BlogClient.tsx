@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { BookOpen, ChevronRight, Clock, Calendar } from 'lucide-react';
 import Link from "next/link";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const blogPosts = [
   {
@@ -45,6 +46,8 @@ const blogPosts = [
 export default function BlogClient() {
   return (
     <div className="min-h-screen bg-brand-bg font-sans">
+      <Breadcrumbs items={[{ label: "Blog" }]} />
+
       {/* Hero Section */}
       <header className="pt-12 md:pt-16 pb-14 px-4 sm:px-6 relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">

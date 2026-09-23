@@ -21,6 +21,8 @@ import {
   RotateCcw
 } from "lucide-react";
 import { useState } from "react";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { trackContactFormSubmit, trackWhatsAppClick } from "../../lib/analytics";
 
 const whatsappNumber = "5511969035273";
 const displayPhone = "(11) 96903-5273";
@@ -128,6 +130,8 @@ export default function ContatoClient() {
     const generatedUrl = `https://wa.me/${whatsappNumber}?text=${messageText}`;
     setWhatsappRedirectUrl(generatedUrl);
 
+    trackContactFormSubmit(formData.tradicao || "Geral");
+
     // Simulate reliable submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -151,6 +155,8 @@ export default function ContatoClient() {
 
   return (
     <div className="min-h-screen bg-brand-bg font-sans overflow-x-hidden">
+      <Breadcrumbs items={[{ label: "Contato & Orçamento" }]} />
+
       {/* Hero Section */}
       <header className="pt-12 md:pt-16 pb-16 px-4 sm:px-6 relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">

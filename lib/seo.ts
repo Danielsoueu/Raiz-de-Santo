@@ -17,10 +17,8 @@ export const localBusinessSchema = {
   "description": "Atelier de alta costura afro-religiosa sob medida em São Paulo. Especialistas em roupas artesanais de Umbanda e Candomblé com modelagem anatômica, tecidos nobres e acabamento para anos de rituais.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Atendimento Presencial com Hora Marcada no Atelier",
     "addressLocality": "São Paulo",
     "addressRegion": "SP",
-    "postalCode": "01000-000",
     "addressCountry": "BR"
   },
   "geo": {

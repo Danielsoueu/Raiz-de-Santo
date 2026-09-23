@@ -3,10 +3,10 @@ import CandombleClient from "./CandombleClient";
 import { buildMetadata, generateBreadcrumbSchema } from "../../lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Roupas de Candomblé Sob Medida | Ketu, Angola e Jeje | Raiz de Santo",
+  title: "Roupas de Candomblé Sob Medida em São Paulo | Raiz de Santo",
   description: "Trajes de Candomblé sob medida em São Paulo: camisus, saias de baiana com roda ampla, panos da costa e kits de obrigação. Envio para todo o Brasil.",
   path: "/roupas-candomble",
-  keywords: "roupas de candomblé sob medida, pano da costa candomble, camisu lese, saia de baiana sp"
+  keywords: "roupas de candomblé são paulo, roupa de candomble sob medida sp, pano da costa alaká, camisu lese"
 });
 
 export default function CandomblePage() {
