@@ -58,10 +58,11 @@ export default function HomeClient() {
                 Pedir Orçamento no WhatsApp
               </a>
               <Link 
-                href="/sobre"
-                className="group inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-widest text-xs border-b-2 border-brand-secondary pb-1 hover:text-brand-secondary transition-colors"
+                href="/catalogo"
+                className="w-full sm:w-auto bg-white border border-brand-primary/20 text-brand-primary px-6 py-4 sm:py-5 rounded-full text-sm sm:text-base font-bold hover:bg-brand-accent/20 transition-all flex items-center justify-center gap-2 shadow-sm"
               >
-                Conheça nosso atelier <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Sparkles className="w-4 h-4 text-brand-secondary" />
+                Ver Catálogo de Peças
               </Link>
             </div>
           </motion.div>

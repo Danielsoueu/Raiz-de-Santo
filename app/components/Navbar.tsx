@@ -19,6 +19,7 @@ const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orça
 const phoneHref = "tel:+5511969035273";
 
 const navLinks = [
+  { href: "/catalogo", label: "Catálogo" },
   { href: "/roupas-umbanda", label: "Umbanda" },
   { href: "/roupas-candomble", label: "Candomblé" },
   { href: "/costura-sob-medida", label: "Sob Medida" },

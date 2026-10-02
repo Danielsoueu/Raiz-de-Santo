@@ -200,6 +200,11 @@ export default function RootLayout({
               </h3>
               <ul className="space-y-3.5 text-sm font-medium">
                 <li>
+                  <Link href="/catalogo" className="text-brand-ink/80 hover:text-brand-secondary transition-colors inline-block py-1 font-bold text-brand-primary">
+                    Catálogo de Peças
+                  </Link>
+                </li>
+                <li>
                   <Link href="/roupas-umbanda" className="text-brand-ink/80 hover:text-brand-secondary transition-colors inline-block py-1">
                     Roupas para Umbanda
                   </Link>

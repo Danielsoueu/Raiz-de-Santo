@@ -142,6 +142,9 @@ export function buildMetadata({ title, description, path, keywords, image }: Bui
   return {
     title,
     description,
+    other: {
+      title,
+    },
     keywords: keywords || "roupa de santo sob medida, roupas de umbanda são paulo, roupas de candomblé sob medida, costura religiosa, atelier afro-religioso",
     metadataBase: new URL(BASE_URL),
     alternates: {
