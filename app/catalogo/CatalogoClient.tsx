@@ -75,16 +75,16 @@ export default function CatalogoClient() {
     let tempoEstimado = "7 a 10 dias úteis";
 
     if (simTipo === 'conjunto') {
-      base = simTecido === 'cliente' ? 200 : simTecido === 'algodao' ? 320 : 420;
-      tempoEstimado = "10 a 14 dias úteis";
+      base = simTecido === 'cliente' ? 150 : simTecido === 'algodao' ? 150 : 180;
+      tempoEstimado = "7 a 10 dias úteis";
     } else if (simTipo === 'saia') {
-      base = simTecido === 'cliente' ? 120 : simTecido === 'algodao' ? 190 : 260;
+      base = simTecido === 'cliente' ? 100 : simTecido === 'algodao' ? 130 : 170;
       tempoEstimado = "5 a 8 dias úteis";
     } else if (simTipo === 'racao') {
-      base = simTecido === 'cliente' ? 130 : simTecido === 'algodao' ? 190 : 250;
-      tempoEstimado = "6 a 9 dias úteis";
+      base = simTecido === 'cliente' ? 120 : simTecido === 'algodao' ? 150 : 180;
+      tempoEstimado = "5 a 7 dias úteis";
     } else {
-      base = simTecido === 'cliente' ? 50 : simTecido === 'algodao' ? 85 : 120;
+      base = simTecido === 'cliente' ? 40 : simTecido === 'algodao' ? 60 : 80;
       tempoEstimado = "3 a 5 dias úteis";
     }
 
@@ -103,12 +103,15 @@ export default function CatalogoClient() {
 
   // WhatsApp Link por modelo
   const gerarLinkWhatsAppModelo = (item: CatalogoItem) => {
-    const texto = `Olá! Estava navegando no catálogo da Raiz de Santo e me encantei pelo modelo:
+    const isKit = item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao';
+    const precoLabel = isKit ? "R$ 150 (Kit Completo)" : `R$ ${item.precoBase}`;
+    const texto = `Olá! Estava navegando no catálogo da Raiz de Santo e quero encomendar o modelo:
 *${item.nome}* (Código: *${item.codigo}*)
+Preço: *${precoLabel}*
 Tradição: ${item.tradicao}
 Tecido: ${item.tecido}
 
-Gostaria de saber mais informações e solicitar um orçamento sob medida para o meu corpo!`;
+Gostaria de fechar o pedido sob medida com vocês!`;
     return `https://wa.me/${defaultWhatsappNumber}?text=${encodeURIComponent(texto)}`;
   };
 
@@ -160,8 +163,8 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-brand-ink/70">
-            <span className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-xl border border-brand-accent/30 shadow-xs">
-              <Scissors className="w-4 h-4 text-brand-secondary" /> Mão de obra a partir de R$ 150
+            <span className="flex items-center gap-1.5 bg-brand-primary text-white font-bold px-4 py-2 rounded-xl shadow-xs">
+              <Scissors className="w-4 h-4 text-brand-secondary" /> Todos os Kits por R$ 150
             </span>
             <span className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-xl border border-brand-accent/30 shadow-xs">
               <Ruler className="w-4 h-4 text-brand-secondary" /> Prova presencial em SP ou sob medida à distância
@@ -367,9 +370,15 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                   {/* Preço e Botões */}
                   <div className="pt-4 border-t border-brand-accent/20 flex flex-col gap-2.5">
                     <div className="flex items-baseline justify-between">
-                      <span className="text-[11px] text-brand-ink/60">Confecção sob medida:</span>
+                      <span className="text-[11px] text-brand-ink/60">
+                        {item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao' ? 'Kit Completo:' : 'Confecção sob medida:'}
+                      </span>
                       <span className="text-xs sm:text-sm font-bold text-brand-primary">
-                        a partir de <strong className="text-base text-brand-secondary">R$ {item.precoBase}</strong>
+                        {item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao' ? (
+                          <span className="text-lg font-black text-brand-secondary">R$ 150</span>
+                        ) : (
+                          <>a partir de <strong className="text-base text-brand-secondary">R$ {item.precoBase}</strong></>
+                        )}
                       </span>
                     </div>
 
@@ -562,11 +571,22 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
 
                   {/* Bloco de Preço & Ação */}
                   <div className="pt-4 border-t border-brand-accent/20 flex flex-col gap-3">
-                    <div className="flex items-baseline justify-between">
-                      <span className="text-xs text-brand-ink/60">Estimativa sob medida:</span>
-                      <span className="text-sm font-bold text-brand-primary">
-                        a partir de <strong className="text-xl text-brand-secondary">R$ {itemSelecionado.precoBase}</strong>
-                      </span>
+                    <div className="flex items-baseline justify-between bg-brand-bg px-4 py-3 rounded-2xl border border-brand-accent/30">
+                      <div>
+                        <span className="text-xs text-brand-ink/60 block">
+                          {itemSelecionado.tipoPeca === 'conjunto' || itemSelecionado.tipoPeca === 'racao' 
+                            ? 'Valor do Kit Completo:' 
+                            : 'Estimativa sob medida:'}
+                        </span>
+                        <span className="text-[11px] text-brand-ink/50">
+                          {itemSelecionado.tipoPeca === 'conjunto' ? 'Saia + Ojá + Bata / Pano inclusos' : 'Peça individual sob medida'}
+                        </span>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-2xl font-black text-brand-secondary">
+                          R$ {itemSelecionado.precoBase}
+                        </span>
+                      </div>
                     </div>
 
                     <a
@@ -577,7 +597,9 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                       className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all text-center"
                     >
                       <MessageCircle className="w-5 h-5" />
-                      Pedir Orçamento Desta Peça no WhatsApp
+                      {itemSelecionado.tipoPeca === 'conjunto' || itemSelecionado.tipoPeca === 'racao'
+                        ? 'Pedir Este Kit por R$ 150 no WhatsApp'
+                        : 'Pedir Orçamento Desta Peça no WhatsApp'}
                     </a>
                   </div>
                 </div>
