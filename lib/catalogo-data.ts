@@ -6,6 +6,8 @@ export interface CatalogoItem {
   categoriaLabel: string;
   tipoPeca: 'conjunto' | 'saia' | 'oja' | 'racao' | 'costa';
   tipoPecaLabel: string;
+  fotoPrincipal: string;
+  fotos: string[];
   descricaoCurta: string;
   descricaoCompleta: string;
   tradicao: string;
@@ -36,6 +38,13 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Baianas & Umbanda",
     tipoPeca: "conjunto",
     tipoPecaLabel: "Conjunto Completo (3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Completo%20bahiana%20.jpg?updatedAt=1790972396893",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Completo%20bahiana%20.jpg?updatedAt=1790972396893",
+      "https://ik.imagekit.io/czbsplwyj/Saia%20bahiana%20.jpg?updatedAt=1790972396820",
+      "https://ik.imagekit.io/czbsplwyj/cabe%C3%A7a%20bahiana.jpg?updatedAt=1790972396577",
+      "https://ik.imagekit.io/czbsplwyj/Detalhe%20bahiana%20.jpg?updatedAt=1790972396910"
+    ],
     descricaoCurta: "Saia rodada amarela com estampa tropical floral, barrado em bordado inglês rosa vibrante e ojá esculpido com laço.",
     descricaoCompleta: "Confeccionado artesanalmente para giras festivas e homenagens a Baianos, Oxum e Iansã. A saia possui corte amplo com roda generosa de 4,5 metros, proporcionando movimento fluido e armação natural. O barrado conta com bico de bordado inglês 100% algodão tingido em tom rosa pink com passa-fita. Acompanha ojá com entretela leve para sustentação de laço alto e bata/pano coordenado.",
     tradicao: "Umbanda e Candomblé",
@@ -72,6 +81,12 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Linha da Noite & Nanã",
     tipoPeca: "conjunto",
     tipoPecaLabel: "Conjunto Completo (3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Kit%20preto%20e%20roxo%20completo.png?updatedAt=1790972399176",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Kit%20preto%20e%20roxo%20completo.png?updatedAt=1790972399176",
+      "https://ik.imagekit.io/czbsplwyj/Preto%20e%20roxo%20completo.png?updatedAt=1790972398292",
+      "https://ik.imagekit.io/czbsplwyj/Saia%20preto%20e%20roxo.png?updatedAt=1790972397527"
+    ],
     descricaoCurta: "Saia plissada preta com barra dupla em fita de cetim lilás e renda violeta, corpete drapeado e ojá estruturado.",
     descricaoCompleta: "Criação de alta costura afro-religiosa dedicada às Senhoras Guardiãs, Pomba Giras e Nanã Buruku. A saia possui plissado tradicional com caimento pesado e rodado imponente. O acabamento da barra traz dupla faixa: fita de cetim acetinado em lilás suave e bico de renda bordada roxa. O corpete traz pala reforçada que valoriza o corpo com conforto e sustentação.",
     tradicao: "Umbanda e Candomblé",
@@ -108,6 +123,13 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Coleção Ancestralidade",
     tipoPeca: "conjunto",
     tipoPecaLabel: "Conjunto Completo (3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Colorido%201%20completo.png?updatedAt=1790972398709",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Colorido%201%20completo.png?updatedAt=1790972398709",
+      "https://ik.imagekit.io/czbsplwyj/Colorido%201%20completo%202.png?updatedAt=1790972397702",
+      "https://ik.imagekit.io/czbsplwyj/Colorido%201%20saia%20.png?updatedAt=1790972398966",
+      "https://ik.imagekit.io/czbsplwyj/Colorido%201%20cabe%C3%A7a.png?updatedAt=1790972398552"
+    ],
     descricaoCurta: "Estampa tribal geométrica em algodão africano, bustiê drapeado com pala preta de alta sustentação e ojá com renda branca.",
     descricaoCompleta: "Inspirado nas raízes ancestrais iorubás, este modelo celebra a realeza e a força das tradições afro-brasileiras. O padrão geométrico reúne tons de verde, vermelho, amarelo e preto em contraste marcante. A saia possui pala elástica canelada para conforto incomparável e barrado em bico de renda de algodão branca.",
     tradicao: "Candomblé (Ketu, Angola, Jeje) e Umbanda",
@@ -144,6 +166,10 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Candomblé & Orixás",
     tipoPeca: "conjunto",
     tipoPecaLabel: "Conjunto Completo (3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Vermelho%20e%20azul%20completo%20.png?updatedAt=1790972399000",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Vermelho%20e%20azul%20completo%20.png?updatedAt=1790972399000"
+    ],
     descricaoCurta: "Padronagem em círculos espirais vermelhos e azul turquesa com aplique de renda guipir vertical e ojá de laço duplo.",
     descricaoCompleta: "Peça de grande impacto visual que simboliza o movimento contínuo dos ventos de Oyá e a energia solar e vibrante do fogo de Xangô. Corte em godê com painéis sobrepostos que criam uma silhueta nobre ao girar. O busto traz uma faixa vertical de renda guipir azul ciano que alonga e dá acabamento nobre.",
     tradicao: "Candomblé e Umbanda Tradicional",
@@ -180,6 +206,12 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Linha de Erê & Ibeji",
     tipoPeca: "conjunto",
     tipoPecaLabel: "Conjunto Completo (3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Azul%20ere%20completo.jpg?updatedAt=1790972396733",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Azul%20ere%20completo.jpg?updatedAt=1790972396733",
+      "https://ik.imagekit.io/czbsplwyj/Cabe%C3%A7a%20azul%20ere.jpg?updatedAt=1790972396611",
+      "https://ik.imagekit.io/czbsplwyj/Detalhes%20azul%20ere.jpg?updatedAt=1790972396805"
+    ],
     descricaoCurta: "Tecido azul marinho com motivos lúdicos de casinhas, corações e doces, com barrado largo em bordado inglês marfim.",
     descricaoCompleta: "Desenvolvido com carinho para as festas e celebrações de Cosme e Damião, Ibejis e Erês. O tecido é macio ao toque, respirável e traz estampas que encantam crianças e adultos. O acabamento conta com bico de bordado inglês furadinho em tom marfim/cru que traz doçura e tradição. Disponível sob medida tanto para crianças quanto para médiuns adultos.",
     tradicao: "Umbanda e Candomblé",
@@ -216,6 +248,10 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Candomblé & Orixás",
     tipoPeca: "conjunto",
     tipoPecaLabel: "Conjunto Completo (3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Colorido%202%20completo%20.jpg?updatedAt=1790972396740",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Colorido%202%20completo%20.jpg?updatedAt=1790972396740"
+    ],
     descricaoCurta: "Padronagem em leque multicolor com verde, amarelo, telha e azul royal, barra com renda passa-fita turquesa e ojá coordenado.",
     descricaoCompleta: "Celebração às cores do arco-íris, renovação e prosperidade de Oxumarê, Caboclos e Boiadeiros. Confeccionado em algodão nobre com estampa concêntrica em leque que produz um efeito hipnótico durante as cantigas de roda. Acompanha pano da costa e ojá coordenado com acabamento em renda tingida.",
     tradicao: "Candomblé e Umbanda",
@@ -245,42 +281,6 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     ]
   },
   {
-    id: "roupa-de-racao-branca-tradicional",
-    codigo: "RDS-RACAO-07",
-    nome: "Conjunto Roupa de Ração Branca Litúrgica",
-    categoria: "racao",
-    categoriaLabel: "Fundamento & Ração",
-    tipoPeca: "racao",
-    tipoPecaLabel: "Roupa de Ração (2 a 3 Peças)",
-    descricaoCurta: "Bata tradicional decote V ou canoa, saia ou calçolão com elástico confortável e pano da costa opcional em percal puro.",
-    descricaoCompleta: "A vestimenta essencial do terreiro. Confeccionada estritamente segundo as regras litúrgicas da sua casa em percal 100% algodão 200 fios ou lese bordado. Não esquenta, permite transpiração plena durante o trabalho espiritual e tem corte anatômico que respeita todos os corpos.",
-    tradicao: "Umbanda e Candomblé (Todas as Vertentes)",
-    orixaEntidade: "Oxalá, Iemanjá, Filhos de Santo, Desenvolvimento e Preceito",
-    pecasInclusas: [
-      "Bata unissex decote V, redondo ou canoa com fendas laterais",
-      "Saia com pregas tradicionais ou Calçolão com cordão regulável",
-      "Pano da Costa branco (opcional)"
-    ],
-    tecido: "Percal 200 Fios 100% Algodão ou Tricoline Branca",
-    rendasAcabamentos: "Ponto palito, ponto crivo ou bainha simples sem metal (conforme preceito)",
-    rodaSugerida: "3 a 4 metros",
-    precoBase: 150,
-    precoEstimadoTexto: "Mão de obra sob medida a partir de R$ 150 (Conjunto)",
-    paletaCores: {
-      primaria: "#FFFFFF",
-      secundaria: "#F8FAFC",
-      destaque: "#E2E8F0",
-      nomeCores: "Branco Puro Alvo"
-    },
-    destaqueTag: "Essencial do Terreiro",
-    medidasNecessarias: ["Tórax / Busto", "Cintura", "Quadril", "Comprimento da Peça"],
-    detalhesCostura: [
-      "Zero elementos metálicos (sem zíperes ou botões metálicos)",
-      "Costura francesa com reforço em pontos de tensão (gancho e cavas)",
-      "Tecido pré-lavado para evitar encolhimento após rituais"
-    ]
-  },
-  {
     id: "saia-de-santo-avulsa-rodada",
     codigo: "RDS-SAIAS-08",
     nome: "Saia de Santo Rodada Avulsa (3m a 6m de Roda)",
@@ -288,6 +288,12 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Peças Avulsas",
     tipoPeca: "saia",
     tipoPecaLabel: "Saia Avulsa Sob Medida",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Saia%20bahiana%20.jpg?updatedAt=1790972396820",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Saia%20bahiana%20.jpg?updatedAt=1790972396820",
+      "https://ik.imagekit.io/czbsplwyj/Saia%20preto%20e%20roxo.png?updatedAt=1790972397527",
+      "https://ik.imagekit.io/czbsplwyj/Colorido%201%20saia%20.png?updatedAt=1790972398966"
+    ],
     descricaoCurta: "Saia de santo sob medida nas cores do seu Orixá ou guia, com opções de 3, 4, 5 ou 6 metros de roda e barrados exclusivos.",
     descricaoCompleta: "Você escolhe o tecido e a cor ou traz o seu tecido até nosso atelier. Modelamos com pregas tradicionais de Santo, 3 a 5 babados, ou entremeios de bordado inglês. Cós anatômico reforçado que distribui o peso da saia e não machuca a cintura.",
     tradicao: "Umbanda e Candomblé",
@@ -323,6 +329,12 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Peças Avulsas",
     tipoPeca: "oja",
     tipoPecaLabel: "Ojá Avulso Sob Medida",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/cabe%C3%A7a%20bahiana.jpg?updatedAt=1790972396577",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/cabe%C3%A7a%20bahiana.jpg?updatedAt=1790972396577",
+      "https://ik.imagekit.io/czbsplwyj/Cabe%C3%A7a%20azul%20ere.jpg?updatedAt=1790972396611",
+      "https://ik.imagekit.io/czbsplwyj/Colorido%201%20cabe%C3%A7a.png?updatedAt=1790972398552"
+    ],
     descricaoCurta: "Panos de cabeça com corte anatômico, entretelas suaves para laços altos esculpidos e acabamentos em bico de renda.",
     descricaoCompleta: "O ojá coroa a cabeça do médium ou iaô com respeito e solenidade. Confeccionamos ojás simples para o dia a dia, modelos longos para amarrações tradicionais do Candomblé, e versões armadas com entretela para festas com laços esculpidos que permanecem impecáveis durante todo o toque.",
     tradicao: "Candomblé e Umbanda",
@@ -351,6 +363,46 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     ]
   },
   {
+    id: "roupa-de-racao-branca-tradicional",
+    codigo: "RDS-RACAO-07",
+    nome: "Conjunto Roupa de Ração Branca Litúrgica",
+    categoria: "racao",
+    categoriaLabel: "Fundamento & Ração",
+    tipoPeca: "racao",
+    tipoPecaLabel: "Roupa de Ração (2 a 3 Peças)",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Raizdesanto.png",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Raizdesanto.png"
+    ],
+    descricaoCurta: "Bata tradicional decote V ou canoa, saia ou calçolão com elástico confortável e pano da costa opcional em percal puro.",
+    descricaoCompleta: "A vestimenta essencial do terreiro. Confeccionada estritamente segundo as regras litúrgicas da sua casa em percal 100% algodão 200 fios ou lese bordado. Não esquenta, permite transpiração plena durante o trabalho espiritual e tem corte anatômico que respeita todos os corpos.",
+    tradicao: "Umbanda e Candomblé (Todas as Vertentes)",
+    orixaEntidade: "Oxalá, Iemanjá, Filhos de Santo, Desenvolvimento e Preceito",
+    pecasInclusas: [
+      "Bata unissex decote V, redondo ou canoa com fendas laterais",
+      "Saia com pregas tradicionais ou Calçolão com cordão regulável",
+      "Pano da Costa branco (opcional)"
+    ],
+    tecido: "Percal 200 Fios 100% Algodão ou Tricoline Branca",
+    rendasAcabamentos: "Ponto palito, ponto crivo ou bainha simples sem metal (conforme preceito)",
+    rodaSugerida: "3 a 4 metros",
+    precoBase: 150,
+    precoEstimadoTexto: "Mão de obra sob medida a partir de R$ 150 (Conjunto)",
+    paletaCores: {
+      primaria: "#FFFFFF",
+      secundaria: "#F8FAFC",
+      destaque: "#E2E8F0",
+      nomeCores: "Branco Puro Alvo"
+    },
+    destaqueTag: "Essencial do Terreiro",
+    medidasNecessarias: ["Tórax / Busto", "Cintura", "Quadril", "Comprimento da Peça"],
+    detalhesCostura: [
+      "Zero elementos metálicos (sem zíperes ou botões metálicos)",
+      "Costura francesa com reforço em pontos de tensão (gancho e cavas)",
+      "Tecido pré-lavado para evitar encolhimento após rituais"
+    ]
+  },
+  {
     id: "pano-da-costa-fustao-lese",
     codigo: "RDS-COSTA-10",
     nome: "Panos da Costa Finos & Alakás Litúrgicos",
@@ -358,6 +410,10 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     categoriaLabel: "Peças Avulsas",
     tipoPeca: "costa",
     tipoPecaLabel: "Pano da Costa / Alaká",
+    fotoPrincipal: "https://ik.imagekit.io/czbsplwyj/Raizdesanto.png",
+    fotos: [
+      "https://ik.imagekit.io/czbsplwyj/Raizdesanto.png"
+    ],
     descricaoCurta: "Pano da costa com forro suave, fustão, gorgurinho ou lese, com franjas artesanais ou bicos de renda tradicionais.",
     descricaoCompleta: "Símbolo de proteção das costas e do ventre das filhas e filhos de santo. Confeccionamos alakás e panos da costa com caimento pesado e estruturado, perfeitos para serem usados cruzados no peito, amarrados na cintura ou pousados sobre os ombros.",
     tradicao: "Candomblé e Umbanda",
