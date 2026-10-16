@@ -1,0 +1,94 @@
+name: Publicar Post SEO Diario (Gemini)
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Gerar post SEO com Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cat << 'EOF' > publish_daily_seo_post.mjs
+          import fs from "node:fs";
+          import path from "node:path";
+          import { GoogleGenAI } from "@google/genai";
+
+          const SEO_KEYWORDS_QUEUE = [
+            { keyword: "roupas de santo são paulo", objective: "Transacional / Local", slug: "onde-comprar-roupas-de-santo-sao-paulo-sob-medida" },
+            { keyword: "roupas de umbanda e candomblé sp", objective: "Comercial / Local", slug: "roupas-de-umbanda-e-candomble-sp-confeccao-propria" },
+            { keyword: "atelier de roupas de santo zona sul sp", objective: "Costura Sob Medida", slug: "atelier-de-roupas-de-santo-zona-sul-sp-sob-medida" },
+            { keyword: "costura de roupas de santo parque bristol sp", objective: "Costura Sob Medida", slug: "costura-de-roupas-de-santo-parque-bristol-sacoma-ipiranga" },
+            { keyword: "conjunto de ração completo sp", objective: "Conjuntos", slug: "conjunto-de-racao-completo-sp-umbanda-candomble" },
+            { keyword: "saia de santo oxford branca sp", objective: "Saias", slug: "saia-de-santo-oxford-branca-sp-vantagens-cuidado" },
+            { keyword: "conjunto saia pano da costa e ojá comprar sp", objective: "Conjuntos", slug: "conjunto-saia-pano-da-costa-e-oja-comprar-sp" },
+            { keyword: "roupas de santo entrega no metrô sp", objective: "Logística / Diferencial", slug: "roupas-de-santo-entrega-no-metro-sp-como-funciona" },
+            { keyword: "roupas de santo sob medida são bernardo do campo", objective: "Costura Sob Medida", slug: "roupas-de-santo-sob-medida-sao-bernardo-do-campo" },
+            { keyword: "roupas de candomblé diadema e região", objective: "Comercial / Local", slug: "roupas-de-candomble-diadema-e-regiao-sob-medida" },
+            { keyword: "loja de roupas de umbanda santo andré e abc", objective: "Comercial / Local", slug: "loja-de-roupas-de-umbanda-santo-andre-e-abc" },
+            { keyword: "saia de umbanda barata em sp", objective: "Saias", slug: "saia-de-umbanda-barata-em-sp-direto-da-fabrica" },
+            { keyword: "onde comprar roupa de ração barata em são paulo", objective: "Informativo", slug: "onde-comprar-roupa-de-racao-barata-em-sao-paulo" },
+            { keyword: "costureira de roupas de santo em são paulo", objective: "Costura Sob Medida", slug: "costureira-de-roupas-de-santo-em-sao-paulo-sob-medida" },
+            { keyword: "pano da costa e pano de cabeça sob medida sp", objective: "Panos e Ojás", slug: "pano-da-costa-e-pano-de-cabeca-sob-medida-sp" },
+            { keyword: "saia de baiana umbanda oxford são paulo", objective: "Saias", slug: "saia-de-baiana-umbanda-oxford-sao-paulo" },
+            { keyword: "roupas de santo zona leste sp entrega metrô", objective: "Logística / Diferencial", slug: "roupas-de-santo-zona-leste-sp-entrega-metro" },
+            { keyword: "confecção própria roupas de axé são paulo", objective: "Comercial", slug: "confeccao-propria-roupas-de-axe-sao-paulo" },
+            { keyword: "roupas de santo sob medida envio para todo brasil", objective: "Nacional", slug: "roupas-de-santo-sob-medida-envio-para-todo-brasil" },
+            { keyword: "kit roupa de iaô e ração são paulo", objective: "Conjuntos", slug: "kit-roupa-de-iao-e-racao-sao-paulo-completo" }
+          ];
+
+          const BLOG_CLIENT_PATH = path.join(process.cwd(), "app/blog/BlogClient.tsx");
+          const BLOG_POST_CLIENT_PATH = path.join(process.cwd(), "app/blog/[slug]/BlogPostClient.tsx");
+
+          function formatPtBrDate(date = new Date()) {
+            const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+            return `${String(date.getDate()).padStart(2, "0")} ${months[date.getMonth()]}, ${date.getFullYear()}`;
+          }
+
+          async function run() {
+            const blogClientContent = fs.readFileSync(BLOG_CLIENT_PATH, "utf-8");
+            const blogPostClientContent = fs.readFileSync(BLOG_POST_CLIENT_PATH, "utf-8");
+
+            const nextItem = SEO_KEYWORDS_QUEUE.find((item) => !blogClientContent.includes(item.slug));
+            if (!nextItem) return;
+
+            const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+            const prompt = `Você é o redator especialista em SEO Regional do ateliê "Raiz de Santo" em São Paulo. Escreva um artigo de blog otimizado para SEO focado na palavra-chave "${nextItem.keyword}". Retorne APENAS um JSON válido com estas chaves: {"title": "Título H1 atraente com a palavra-chave (máx 75 caracteres)", "readTime": "6 min de leitura", "excerpt": "Resumo persuasivo de até 155 caracteres destacando confecção própria, sob medida e entrega no Metrô de SP.", "intro": "Parágrafo inicial completo apresentando o tema e o ateliê Raiz de Santo na Zona Sul de SP (Parque Bristol).", "section1Title": "Subtítulo H2 sobre qualidade do tecido Oxford, acabamento e tradição na Umbanda e Candomblé", "section1Body": "Dois parágrafos detalhados sobre saias em Oxford, conjuntos de ração, panos da costa e ojás.", "section2Title": "Subtítulo H2 sobre Costura Sob Medida, Entrega no Metrô de SP, Grande ABC e Envio Nacional", "section2Body": "Texto detalhando o ateliê no Parque Bristol (divisa com ABC: São Bernardo, Diadema e Santo André), entrega nas estações de Metrô de SP e envio para todo o Brasil.", "faq1Q": "Pergunta frequente 1 relacionada à palavra-chave", "faq1A": "Resposta clara e objetiva 1", "faq2Q": "Pergunta frequente 2 sobre entrega no Metrô de SP ou medidas", "faq2A": "Resposta clara e objetiva 2"}`;
+
+            const response = await ai.models.generateContent({
+              model: "gemini-2.5-flash",
+              contents: prompt,
+              config: { responseMimeType: "application/json" }
+            });
+
+            const data = JSON.parse(response.text);
+            const todayStr = formatPtBrDate();
+
+            const newCardEntry = `  {\n    slug: ${JSON.stringify(nextItem.slug)},\n    title: ${JSON.stringify(data.title)},\n    date: ${JSON.stringify(todayStr)},\n    author: "Ateliê Raiz de Santo",\n    readTime: ${JSON.stringify(data.readTime || "6 min de leitura")},\n    keyword: ${JSON.stringify(nextItem.keyword)},\n    objective: ${JSON.stringify(nextItem.objective)},\n    excerpt: ${JSON.stringify(data.excerpt)}\n  },\n`;
+            fs.writeFileSync(BLOG_CLIENT_PATH, blogClientContent.replace(/(\[\s*\n)/, `$1${newCardEntry}`), "utf-8");
+
+            const newPostObject = `  ${JSON.stringify(nextItem.slug)}: {\n    slug: ${JSON.stringify(nextItem.slug)},\n    title: ${JSON.stringify(data.title)},\n    date: ${JSON.stringify(todayStr)},\n    author: "Ateliê Raiz de Santo",\n    readTime: ${JSON.stringify(data.readTime || "6 min de leitura")},\n    keyword: ${JSON.stringify(nextItem.keyword)},\n    objective: ${JSON.stringify(nextItem.objective)},\n    content: (\n      <div className="space-y-6 text-stone-700 leading-relaxed">\n        <p>{${JSON.stringify(data.intro)}}</p>\n        <h2 className="text-2xl font-serif font-bold text-stone-900 mt-8 mb-4">{${JSON.stringify(data.section1Title)}}</h2>\n        <p>{${JSON.stringify(data.section1Body)}}</p>\n        <h2 className="text-2xl font-serif font-bold text-stone-900 mt-8 mb-4">{${JSON.stringify(data.section2Title)}}</h2>\n        <p>{${JSON.stringify(data.section2Body)}}</p>\n        <h2 className="text-2xl font-serif font-bold text-stone-900 mt-8 mb-4">Perguntas Frequentes (FAQ Regional)</h2>\n        <div className="space-y-4 bg-stone-50 p-6 rounded-xl border border-stone-200">\n          <div><h3 className="font-semibold text-stone-900">{${JSON.stringify(data.faq1Q)}}</h3><p className="text-sm mt-1">{${JSON.stringify(data.faq1A)}}</p></div>\n          <div><h3 className="font-semibold text-stone-900">{${JSON.stringify(data.faq2Q)}}</h3><p className="text-sm mt-1">{${JSON.stringify(data.faq2A)}}</p></div>\n        </div>\n      </div>\n    )\n  },\n`;
+            fs.writeFileSync(BLOG_POST_CLIENT_PATH, blogPostClientContent.replace(/(como-lavar-sua-roupa-de-santo-sem-danificar-o-axe|['"][a-z0-9-]+['"]\s*:\s*\{\s*\n\s*slug:)/, `${newPostObject}  $1`), "utf-8");
+          }
+
+          run();
+          EOF
+          node publish_daily_seo_post.mjs
+      - name: Salvar no GitHub e publicar na Vercel
+        run: |
+          git config user.name "Gemini SEO Bot - Raiz de Santo"
+          git config user.email "actions@github.com"
+          git add app/blog/
+          git diff --staged --quiet || (git commit -m "feat(blog): novo post SEO publicado automaticamente" && git push)
