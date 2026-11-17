@@ -20,6 +20,7 @@ import {
   Camera,
   Layers
 } from 'lucide-react';
+import { useDialog } from '../../lib/hooks/useDialog';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { 
   CATALOGO_ITEMS, 
@@ -39,6 +40,8 @@ export default function CatalogoClient() {
   const [itemSelecionado, setItemSelecionado] = useState<CatalogoItem | null>(null);
   const [fotoAtivaModalIndex, setFotoAtivaModalIndex] = useState<number>(0);
 
+  const modalRef = useDialog(Boolean(itemSelecionado), () => setItemSelecionado(null));
+
   // Estados do Simulador de Orçamento
   const [simTipo, setSimTipo] = useState<'conjunto' | 'saia' | 'racao' | 'oja'>('conjunto');
   const [simTecido, setSimTecido] = useState<'cliente' | 'algodao' | 'nobre'>('algodao');
@@ -56,14 +59,15 @@ export default function CatalogoClient() {
       const matchCategoria = categoriaAtiva === 'todos' || item.categoria === categoriaAtiva;
       const matchTipo = tipoPecaAtivo === 'todos' || item.tipoPeca === tipoPecaAtivo;
       
-      const termo = busca.toLowerCase().trim();
+      const normalizar = (texto: string) => texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      const termo = normalizar(busca).trim();
       const matchBusca = !termo || 
-        item.nome.toLowerCase().includes(termo) ||
-        item.codigo.toLowerCase().includes(termo) ||
-        item.tecido.toLowerCase().includes(termo) ||
-        item.orixaEntidade.toLowerCase().includes(termo) ||
-        item.tradicao.toLowerCase().includes(termo) ||
-        item.descricaoCurta.toLowerCase().includes(termo);
+        normalizar(item.nome).includes(termo) ||
+        normalizar(item.codigo).includes(termo) ||
+        normalizar(item.tecido).includes(termo) ||
+        normalizar(item.orixaEntidade).includes(termo) ||
+        normalizar(item.tradicao).includes(termo) ||
+        normalizar(item.descricaoCurta).includes(termo);
 
       return matchCategoria && matchTipo && matchBusca;
     });
@@ -88,9 +92,11 @@ export default function CatalogoClient() {
       tempoEstimado = "3 a 5 dias úteis";
     }
 
-    if (simRoda === '4m') base += 20;
-    if (simRoda === '5m') base += 45;
-    if (simRoda === '6m') base += 70;
+    if (simTipo === 'conjunto' || simTipo === 'saia') {
+      if (simRoda === '4m') base += 20;
+      if (simRoda === '5m') base += 45;
+      if (simRoda === '6m') base += 70;
+    }
 
     if (simBordado) base += 35;
 
@@ -133,8 +139,7 @@ Gostaria de fechar o pedido sob medida com vocês!`;
     const texto = `Olá! Fiz uma simulação de orçamento no catálogo da Raiz de Santo e gostaria de confirmar:
 *Item:* ${tipoMap[simTipo]}
 *Fornecimento do Tecido:* ${tecidoMap[simTecido]}
-*Roda da Saia:* ${simRoda} de roda
-*Acabamento:* ${simBordado ? "Com barrado em Bordado Inglês / Renda" : "Bainha de lenço tradicional"}
+${simTipo === 'conjunto' || simTipo === 'saia' ? `*Roda da Saia:* ${simRoda} de roda\n` : ""}*Acabamento:* ${simBordado ? "Com barrado em Bordado Inglês / Renda" : "Bainha de lenço tradicional"}
 *Estimativa gerada no site:* R$ ${orcamentoSimulado.valorMinimo} a R$ ${orcamentoSimulado.valorMaximo}
 
 Como podemos agendar as medidas ou tirar dúvidas?`;
@@ -183,7 +188,8 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-ink/40 pointer-events-none" />
               <input
-                type="text"
+                type="search"
+                aria-label="Buscar modelos no catálogo"
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
                 placeholder="Buscar por cor, orixá, tecido ou código (ex: Baiana, Erê, Wax)..."
@@ -202,7 +208,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
             </div>
 
             <div className="text-xs text-brand-ink/60 flex items-center justify-between md:justify-end gap-3">
-              <span>Mostrando <strong>{itensFiltrados.length}</strong> modelos com fotos</span>
+              <span role="status">Mostrando <strong>{itensFiltrados.length}</strong> modelos com fotos</span>
               {(categoriaAtiva !== 'todos' || tipoPecaAtivo !== 'todos' || busca) && (
                 <button
                   type="button"
@@ -227,6 +233,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                 <button
                   key={cat.id}
                   type="button"
+                  aria-pressed={ativo}
                   onClick={() => setCategoriaAtiva(cat.id)}
                   className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
                     ativo 
@@ -249,6 +256,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                 <button
                   key={tipo.id}
                   type="button"
+                  aria-pressed={ativo}
                   onClick={() => setTipoPecaAtivo(tipo.id)}
                   className={`px-2.5 py-1 rounded-md text-[11px] font-medium whitespace-nowrap transition-colors ${
                     ativo 
@@ -420,7 +428,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
       {/* Modal de Detalhes do Produto com Galeria de Fotos */}
       <AnimatePresence>
         {itemSelecionado && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -431,6 +439,11 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
             />
 
             <motion.div
+              ref={modalRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="product-dialog-title"
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -505,7 +518,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                       <div className="text-xs font-bold uppercase tracking-wider text-brand-secondary mb-1">
                         {itemSelecionado.categoriaLabel} • {itemSelecionado.tradicao}
                       </div>
-                      <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-primary leading-tight">
+                      <h2 id="product-dialog-title" className="font-serif text-2xl sm:text-3xl font-bold text-brand-primary leading-tight">
                         {itemSelecionado.nome}
                       </h2>
                       <p className="text-xs text-brand-ink/60 mt-1">

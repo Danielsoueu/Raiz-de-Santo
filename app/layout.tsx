@@ -17,8 +17,8 @@ import {
 import Navbar from "./components/Navbar";
 import { localBusinessSchema, websiteSchema, BASE_URL, LOGO_URL } from "../lib/seo";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
 const phoneHref = "tel:+5511969035273";
@@ -129,11 +129,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-16 md:pt-20 overflow-x-hidden`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-20 md:pt-24 overflow-x-hidden`}>
+        <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-white focus:p-4 focus:rounded-xl">Pular para o conteúdo</a>
         <Navbar />
         <GoogleAnalytics gaId="G-M0P4QCM8JW" />
 
-        <main className="overflow-x-hidden">{children}</main>
+        <main id="conteudo" tabIndex={-1} className="overflow-x-hidden">{children}</main>
 
         {/* Footer */}
         <footer className="py-16 md:py-20 px-6 bg-white border-t border-brand-accent/30 overflow-hidden">
