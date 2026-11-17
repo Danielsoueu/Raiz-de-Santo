@@ -1,0 +1,537 @@
+[
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-geometrico-vermelho-amarelo",
+    "codigo": "RDS-FOTO-11",
+    "nome": "Conjunto Geométrico Vermelho e Amarelo",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-geometrico-vermelho-amarelo-frente.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-geometrico-vermelho-amarelo-frente.webp",
+      "/images/catalogo/conjunto-geometrico-vermelho-amarelo-angulo.webp"
+    ],
+    "descricaoCurta": "Motivos geométricos em vermelho, amarelo, laranja e preto, com acabamento preto.",
+    "descricaoCompleta": "Motivos geométricos em vermelho, amarelo, laranja e preto, com acabamento preto. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Vermelho, amarelo, laranja e preto"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-estampado-multicolor-branco",
+    "codigo": "RDS-FOTO-12",
+    "nome": "Conjunto Multicolor com Acabamento Branco",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-estampado-multicolor-acabamento-branco.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-estampado-multicolor-acabamento-branco.webp"
+    ],
+    "descricaoCurta": "Estampa com motivos florais e geométricos em várias cores, com acabamento branco.",
+    "descricaoCompleta": "Estampa com motivos florais e geométricos em várias cores, com acabamento branco. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Verde, rosa, laranja, preto e branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-branco-bordado",
+    "codigo": "RDS-FOTO-13",
+    "nome": "Conjunto Branco Bordado",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-branco-bordado.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-branco-bordado.webp"
+    ],
+    "descricaoCurta": "Composição branca com desenhos bordados visíveis e acabamento claro.",
+    "descricaoCompleta": "Composição branca com desenhos bordados visíveis e acabamento claro. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-mosaico-laranja-rosa",
+    "codigo": "RDS-FOTO-14",
+    "nome": "Conjunto Mosaico Laranja e Rosa",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-mosaico-laranja-rosa.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-mosaico-laranja-rosa.webp"
+    ],
+    "descricaoCurta": "Composição com estampa em mosaico laranja, rosa, verde e preto, acompanhada de parte superior branca na foto.",
+    "descricaoCompleta": "Composição com estampa em mosaico laranja, rosa, verde e preto, acompanhada de parte superior branca na foto. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Laranja, rosa, verde, preto e branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-estampado-azul-rosa",
+    "codigo": "RDS-FOTO-15",
+    "nome": "Conjunto Estampado Azul e Rosa",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-estampado-azul-rosa.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-estampado-azul-rosa.webp"
+    ],
+    "descricaoCurta": "Estampa repetida em azul, rosa e verde com panos coordenados.",
+    "descricaoCompleta": "Estampa repetida em azul, rosa e verde com panos coordenados. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Azul, rosa e verde"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-floral-escuro",
+    "codigo": "RDS-FOTO-16",
+    "nome": "Conjunto Floral Escuro com Acabamento Claro",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-floral-escuro-acabamento-claro.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-floral-escuro-acabamento-claro.webp"
+    ],
+    "descricaoCurta": "Estampa floral clara sobre fundo escuro e bordas com acabamento claro.",
+    "descricaoCompleta": "Estampa floral clara sobre fundo escuro e bordas com acabamento claro. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Marrom escuro e bege"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-geometrico-roxo",
+    "codigo": "RDS-FOTO-17",
+    "nome": "Conjunto Geométrico Roxo com Acabamento Claro",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-geometrico-roxo-acabamento-claro.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-geometrico-roxo-acabamento-claro.webp"
+    ],
+    "descricaoCurta": "Padronagem de motivos geométricos em roxo, laranja e amarelo sobre fundo escuro.",
+    "descricaoCompleta": "Padronagem de motivos geométricos em roxo, laranja e amarelo sobre fundo escuro. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Roxo, laranja, amarelo e preto"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-floral-vermelho-azul",
+    "codigo": "RDS-FOTO-18",
+    "nome": "Conjunto Floral Vermelho e Azul",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-floral-vermelho-azul.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-floral-vermelho-azul.webp",
+      "/images/catalogo/saia-floral-vermelha-azul.webp"
+    ],
+    "descricaoCurta": "Flores azuis sobre fundo vermelho com folhagens verdes e acabamento branco.",
+    "descricaoCompleta": "Flores azuis sobre fundo vermelho com folhagens verdes e acabamento branco. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Vermelho, azul, verde e branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-mosaico-vermelho",
+    "codigo": "RDS-FOTO-19",
+    "nome": "Conjunto Mosaico com Acabamento Vermelho",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-mosaico-acabamento-vermelho.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-mosaico-acabamento-vermelho.webp"
+    ],
+    "descricaoCurta": "Motivos geométricos e florais em fundo multicolor com acabamento vermelho.",
+    "descricaoCompleta": "Motivos geométricos e florais em fundo multicolor com acabamento vermelho. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Vermelho, amarelo, verde, preto e branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-azul-vermelho",
+    "codigo": "RDS-FOTO-20",
+    "nome": "Conjunto Azul e Vermelho com Blusa Vermelha",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-azul-vermelho-blusa-vermelha.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-azul-vermelho-blusa-vermelha.webp"
+    ],
+    "descricaoCurta": "Saia estampada em azul e vermelho, blusa vermelha e pano claro na composição fotografada.",
+    "descricaoCompleta": "Saia estampada em azul e vermelho, blusa vermelha e pano claro na composição fotografada. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Azul, vermelho e branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-floral-amarelo-miudo",
+    "codigo": "RDS-FOTO-21",
+    "nome": "Conjunto Floral Amarelo de Estampa Miúda",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-floral-amarelo-miudo.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-floral-amarelo-miudo.webp"
+    ],
+    "descricaoCurta": "Pequenas flores vermelhas e azuis sobre fundo amarelo, com acabamento vermelho.",
+    "descricaoCompleta": "Pequenas flores vermelhas e azuis sobre fundo amarelo, com acabamento vermelho. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Amarelo, vermelho e azul"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "saia-vermelha-brilhante",
+    "codigo": "RDS-FOTO-22",
+    "nome": "Saia Vermelha de Superfície Brilhante",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "saia",
+    "tipoPecaLabel": "Saia sob medida",
+    "fotoPrincipal": "/images/catalogo/saia-vermelha-brilhante.webp",
+    "fotos": [
+      "/images/catalogo/saia-vermelha-brilhante.webp"
+    ],
+    "descricaoCurta": "Saia vermelha com superfície brilhante, recorte horizontal e cós franzido.",
+    "descricaoCompleta": "Saia vermelha com superfície brilhante, recorte horizontal e cós franzido. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "Saia sob medida; confirme modelo e medidas no orçamento"
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Vermelho"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "id": "conjunto-branco-acabamento-floral",
+    "codigo": "RDS-FOTO-23",
+    "nome": "Conjunto Branco com Acabamento Floral",
+    "categoria": "colecao",
+    "categoriaLabel": "Modelos fotografados",
+    "tipoPeca": "conjunto",
+    "tipoPecaLabel": "Composição sob medida",
+    "fotoPrincipal": "/images/catalogo/conjunto-branco-acabamento-floral.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-branco-acabamento-floral.webp"
+    ],
+    "descricaoCurta": "Composição branca com acabamento floral nas bordas e pano de cabeça coordenado.",
+    "descricaoCompleta": "Composição branca com acabamento floral nas bordas e pano de cabeça coordenado. Fotografia de referência do Raiz de Santo. Consulte quais componentes deseja encomendar e confirme materiais, medidas e acabamentos antes da confecção. A disponibilidade da estampa deve ser consultada.",
+    "pecasInclusas": [
+      "A composição será definida no orçamento: confirme saia, parte superior, panos e demais componentes desejados."
+    ],
+    "rendasAcabamentos": "Acabamento visual de referência; tipo e composição a confirmar",
+    "precoBase": null,
+    "precoEstimadoTexto": "Sob orçamento",
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Branco"
+    },
+    "destaqueTag": "Foto do ateliê"
+  }
+]

@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const schema = {
     '@context': 'https://schema.org', '@type': 'Product', '@id': `${url}#product`,
     url, name: item.nome, description: item.descricaoCompleta,
-    image: item.fotos, sku: item.codigo, material: item.tecido,
+    image: item.fotos.map(photo => photo.startsWith("/") ? `${BASE_URL}${photo}` : photo), sku: item.codigo, material: item.tecido,
     color: item.paletaCores.nomeCores,
     brand: { '@type': 'Brand', name: 'Raiz de Santo' },
     // Prices are estimates for made-to-measure orders; no checkout offer is asserted.
