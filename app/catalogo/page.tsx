@@ -24,71 +24,8 @@ export default function CatalogoPage() {
     "itemListElement": CATALOGO_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "item": {
-        "@type": "Product",
-        "@id": `${BASE_URL}/catalogo#${item.id}`,
-        "name": item.nome,
-        "sku": item.codigo,
-        "mpn": item.codigo,
-        "image": item.fotos && item.fotos.length > 0 ? item.fotos : [item.fotoPrincipal],
-        "description": item.descricaoCompleta || item.descricaoCurta,
-        "category": item.categoriaLabel,
-        "material": item.tecido,
-        "color": item.paletaCores.nomeCores,
-        "url": `${BASE_URL}/catalogo#${item.id}`,
-        "brand": {
-          "@type": "Brand",
-          "name": "Raiz de Santo"
-        },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "BRL",
-          "price": item.precoBase,
-          "priceValidUntil": "2027-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "availability": "https://schema.org/InStock",
-          "url": `${BASE_URL}/catalogo#${item.id}`,
-          "seller": {
-            "@type": "Organization",
-            "name": "Raiz de Santo"
-          },
-          "hasMerchantReturnPolicy": {
-            "@type": "MerchantReturnPolicy",
-            "applicableCountry": "BR",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 7,
-            "returnMethod": "https://schema.org/ReturnByMail",
-            "returnFees": "https://schema.org/FreeReturn"
-          },
-          "shippingDetails": {
-            "@type": "OfferShippingDetails",
-            "shippingRate": {
-              "@type": "MonetaryAmount",
-              "value": "0",
-              "currency": "BRL"
-            },
-            "shippingDestination": {
-              "@type": "DefinedRegion",
-              "addressCountry": "BR"
-            },
-            "deliveryTime": {
-              "@type": "ShippingDeliveryTime",
-              "handlingTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 3,
-                "maxValue": 7,
-                "unitCode": "DAY"
-              },
-              "transitTime": {
-                "@type": "QuantitativeValue",
-                "minValue": 2,
-                "maxValue": 5,
-                "unitCode": "DAY"
-              }
-            }
-          }
-        }
-      }
+      "url": `${BASE_URL}/catalogo/${item.id}`,
+      "name": item.nome
     }))
   };
 

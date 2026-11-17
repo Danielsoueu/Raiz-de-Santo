@@ -298,12 +298,20 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
             {itensFiltrados.map((item, idx) => (
               <motion.article
                 key={item.id}
+                id={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 className="group bg-white rounded-3xl border border-brand-accent/30 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1 cursor-pointer"
                 onClick={() => setItemSelecionado(item)}
               >
+                <Link
+                  href={`/catalogo/${item.id}`}
+                  onClick={(event) => event.stopPropagation()}
+                  className="px-5 py-3 text-sm font-semibold text-brand-primary underline underline-offset-4 hover:bg-brand-bg"
+                >
+                  Ver página de {item.nome}
+                </Link>
                 {/* Foto Real do Produto */}
                 <div className="relative aspect-3/4 overflow-hidden bg-zinc-100 flex items-center justify-center">
                   <img

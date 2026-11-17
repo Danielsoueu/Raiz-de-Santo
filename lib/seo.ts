@@ -21,11 +21,6 @@ export const localBusinessSchema = {
     "addressRegion": "SP",
     "addressCountry": "BR"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -23.55052,
-    "longitude": -46.633308
-  },
   "areaServed": [
     {
       "@type": "City",
@@ -83,7 +78,9 @@ export const localBusinessSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${BASE_URL}/#website`,
   "name": "Raiz de Santo",
+  "inLanguage": "pt-BR",
   "url": BASE_URL,
   "description": "Atelier de roupas de santo sob medida para Umbanda e Candomblé em São Paulo.",
   "publisher": {
@@ -140,7 +137,7 @@ export function buildMetadata({ title, description, path, keywords, image }: Bui
   const ogImage = image || LOGO_URL;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     other: {
       title,
