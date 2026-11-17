@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo",
+  title: { absolute: "Raiz de Santo | Roupas de Santo Sob Medida em São Paulo" },
   description: "Roupas de santo sob medida para Umbanda e Candomblé em São Paulo. Peças personalizadas, atendimento presencial e envio para todo o Brasil.",
   alternates: {
     canonical: "https://raiz-de-santo.vercel.app/",
