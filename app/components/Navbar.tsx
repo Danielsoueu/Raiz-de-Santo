@@ -13,6 +13,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useDialog } from '../../lib/hooks/useDialog';
 import { LOGO_URL } from '../../lib/seo';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
@@ -37,21 +38,19 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 15);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  const drawerRef = useDialog(isOpen, () => setIsOpen(false));
+
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const closeOnDesktop = () => { if (desktop.matches) setIsOpen(false); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
 
   return (
     <>
@@ -95,13 +94,14 @@ export default function Navbar() {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-7">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-7">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
               return (
                 <Link 
                   key={link.href} 
                   href={link.href} 
+                  aria-current={isActive ? "page" : undefined}
                   className={`text-xs font-bold uppercase tracking-wider transition-colors py-2 relative ${
                     isActive 
                       ? 'text-brand-primary font-extrabold' 
@@ -125,7 +125,7 @@ export default function Navbar() {
             {/* Direct phone link - Clickable */}
             <a 
               href={phoneHref}
-              className="hidden md:inline-flex items-center gap-1.5 text-xs font-bold text-brand-primary hover:text-brand-secondary transition-colors px-3 py-2 rounded-full hover:bg-brand-accent/20"
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-bold text-brand-primary hover:text-brand-secondary transition-colors px-3 py-2 rounded-full hover:bg-brand-accent/20"
               title="Ligar para a Raiz de Santo"
             >
               <Phone className="w-3.5 h-3.5 text-brand-secondary" />
@@ -150,6 +150,7 @@ export default function Navbar() {
               className="lg:hidden p-2.5 text-brand-primary hover:bg-brand-accent/20 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-brand-secondary min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label={isOpen ? "Fechar Menu de Navegação" : "Abrir Menu de Navegação"}
               aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -173,6 +174,12 @@ export default function Navbar() {
 
             {/* Menu Drawer */}
             <motion.div
+              ref={drawerRef}
+              id="mobile-navigation"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Menu de navegação"
+              tabIndex={-1}
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -216,11 +223,12 @@ export default function Navbar() {
                   Selecione uma opção:
                 </p>
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
                   return (
                     <Link 
                       key={link.href} 
                       href={link.href} 
+                      aria-current={isActive ? "page" : undefined}
                       onClick={() => setIsOpen(false)}
                       className={`flex items-center justify-between p-4 rounded-2xl border transition-all ${
                         isActive 

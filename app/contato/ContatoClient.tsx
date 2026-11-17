@@ -60,14 +60,13 @@ export default function ContatoClient() {
     nome: "",
     telefone: "",
     tradicao: "Umbanda",
-    tipoPeca: "Roupa de Ração",
+    tipoPeca: "Roupa de Ração Completa",
     tecido: "Quero indicação da costureira",
     prazo: "",
     mensagem: "",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState("");
 
@@ -115,42 +114,25 @@ export default function ContatoClient() {
       return;
     }
 
-    setIsSubmitting(true);
+    const messageText = `Olá, Raiz de Santo! Meu nome é ${formData.nome.trim()}.
 
-    // Prepare direct whatsapp link with encoded query
-    const messageText = `Olá, Raiz de Santo! Meu nome é ${formData.nome}.%0A%0A` +
-      `*Solicitação de Orçamento:*%0A` +
-      `• Linha/Tradição: ${formData.tradicao}%0A` +
-      `• Tipo de Peça: ${formData.tipoPeca}%0A` +
-      `• Tecido: ${formData.tecido}%0A` +
-      `• Prazo Desejado: ${formData.prazo || "A combinar"}%0A` +
-      `• Contato/WhatsApp: ${formData.telefone}%0A%0A` +
-      `*Detalhes:* ${encodeURIComponent(formData.mensagem)}`;
+*Solicitação de Orçamento:*
+• Linha/Tradição: ${formData.tradicao}
+• Tipo de Peça: ${formData.tipoPeca}
+• Tecido: ${formData.tecido}
+• Prazo Desejado: ${formData.prazo.trim() || "A combinar"}
+• Contato/WhatsApp: ${formData.telefone}
 
-    const generatedUrl = `https://wa.me/${whatsappNumber}?text=${messageText}`;
-    setWhatsappRedirectUrl(generatedUrl);
+*Detalhes:* ${formData.mensagem.trim()}`;
 
-    trackContactFormSubmit(formData.tradicao || "Geral");
-
-    // Simulate reliable submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-    }, 600);
+    setWhatsappRedirectUrl(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messageText)}`);
+    setSubmitSuccess(true);
   };
 
-  const handleResetForm = () => {
-    setFormData({
-      nome: "",
-      telefone: "",
-      tradicao: "Umbanda",
-      tipoPeca: "Roupa de Ração",
-      tecido: "Quero indicação da costureira",
-      prazo: "",
-      mensagem: "",
-    });
+  const handleEditRequest = () => {
     setErrors({});
     setSubmitSuccess(false);
+    setWhatsappRedirectUrl("");
   };
 
   return (
@@ -252,7 +234,7 @@ export default function ContatoClient() {
               Peça seu Orçamento Detalhado
             </h2>
             <p className="text-brand-ink/75 max-w-xl mx-auto text-sm sm:text-base font-light leading-relaxed">
-              Preencha os campos abaixo com as informações da sua encomenda. Retornaremos com agilidade pelo WhatsApp com os valores e prazos.
+              Preencha os campos abaixo com as informações da sua encomenda. Na próxima etapa, abra o WhatsApp e envie a mensagem para receber os valores e prazos.
             </p>
           </div>
 
@@ -271,16 +253,20 @@ export default function ContatoClient() {
 
                 <div className="space-y-3 max-w-lg mx-auto">
                   <h3 className="font-serif text-2xl sm:text-3xl text-brand-primary font-bold">
-                    Axé! Mensagem enviada com sucesso!
+                    Axé! Seu pedido está pronto para enviar!
                   </h3>
                   <p className="text-brand-ink/80 text-sm sm:text-base leading-relaxed font-light">
-                    Recebemos os detalhes do seu pedido. Nossa costureira entrará em contato pelo seu WhatsApp <strong className="font-semibold text-brand-primary">{formData.telefone}</strong> em breve com o orçamento e orientações.
+                    Clique em “Abrir no WhatsApp” e envie a mensagem para concluir a solicitação. O pedido só será recebido após o envio pelo WhatsApp.
                   </p>
                 </div>
 
                 <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                   {whatsappRedirectUrl && (
                     <a
+                      onClick={() => {
+                        trackContactFormSubmit(formData.tradicao || "Geral");
+                        trackWhatsAppClick("formulario_orcamento");
+                      }}
                       href={whatsappRedirectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -293,11 +279,11 @@ export default function ContatoClient() {
 
                   <button
                     type="button"
-                    onClick={handleResetForm}
+                    onClick={handleEditRequest}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-brand-accent/40 text-brand-primary font-semibold text-sm hover:bg-brand-bg transition-colors"
                   >
                     <RotateCcw className="w-4 h-4" />
-                    Enviar outra solicitação
+                    Editar solicitação
                   </button>
                 </div>
               </motion.div>
@@ -305,13 +291,13 @@ export default function ContatoClient() {
               <form onSubmit={handleSubmit} noValidate className="space-y-6">
                 
                 {/* Error Summary Banner if form has errors */}
-                {Object.keys(errors).length > 0 && (
-                  <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 flex items-start gap-3">
+                {Object.values(errors).some(Boolean) && (
+                  <div role="alert" className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 flex items-start gap-3">
                     <AlertCircle className="w-5 h-5 text-rose-600 mt-0.5 shrink-0" />
                     <div className="text-sm">
                       <strong className="font-semibold block mb-1">Por favor, corrija os seguintes itens:</strong>
                       <ul className="list-disc pl-5 space-y-1">
-                        {Object.values(errors).map((err, idx) => (
+                        {Object.values(errors).filter(Boolean).map((err, idx) => (
                           <li key={idx}>{err}</li>
                         ))}
                       </ul>
@@ -327,6 +313,10 @@ export default function ContatoClient() {
                     </label>
                     <input
                       id="nome"
+                      autoComplete="name"
+                      required
+                      aria-invalid={Boolean(errors.nome)}
+                      aria-describedby={errors.nome ? "nome-erro" : undefined}
                       type="text"
                       value={formData.nome}
                       onChange={(e) => {
@@ -339,7 +329,7 @@ export default function ContatoClient() {
                       }`}
                     />
                     {errors.nome && (
-                      <p className="text-xs text-rose-600 mt-1.5 font-medium flex items-center gap-1">
+                      <p id="nome-erro" className="text-xs text-rose-600 mt-1.5 font-medium flex items-center gap-1">
                         <AlertCircle className="w-3.5 h-3.5" />
                         {errors.nome}
                       </p>
@@ -353,6 +343,11 @@ export default function ContatoClient() {
                     </label>
                     <input
                       id="telefone"
+                      autoComplete="tel-national"
+                      inputMode="tel"
+                      required
+                      aria-invalid={Boolean(errors.telefone)}
+                      aria-describedby={errors.telefone ? "telefone-erro" : undefined}
                       type="tel"
                       value={formData.telefone}
                       onChange={handlePhoneChange}
@@ -362,7 +357,7 @@ export default function ContatoClient() {
                       }`}
                     />
                     {errors.telefone && (
-                      <p className="text-xs text-rose-600 mt-1.5 font-medium flex items-center gap-1">
+                      <p id="telefone-erro" className="text-xs text-rose-600 mt-1.5 font-medium flex items-center gap-1">
                         <AlertCircle className="w-3.5 h-3.5" />
                         {errors.telefone}
                       </p>
@@ -456,6 +451,9 @@ export default function ContatoClient() {
                   </label>
                   <textarea
                     id="mensagem"
+                      required
+                      aria-invalid={Boolean(errors.mensagem)}
+                      aria-describedby={errors.mensagem ? "mensagem-erro" : undefined}
                     rows={4}
                     value={formData.mensagem}
                     onChange={(e) => {
@@ -468,7 +466,7 @@ export default function ContatoClient() {
                     }`}
                   />
                   {errors.mensagem && (
-                    <p className="text-xs text-rose-600 mt-1.5 font-medium flex items-center gap-1">
+                    <p id="mensagem-erro" className="text-xs text-rose-600 mt-1.5 font-medium flex items-center gap-1">
                       <AlertCircle className="w-3.5 h-3.5" />
                       {errors.mensagem}
                     </p>
@@ -478,25 +476,15 @@ export default function ContatoClient() {
                 {/* Submit Button */}
                 <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <p className="text-xs text-brand-ink/60 font-light text-center sm:text-left">
-                    🔒 Seus dados não são compartilhados. Resposta rápida via WhatsApp.
+                    Seus dados serão incluídos na mensagem que você enviar pelo WhatsApp.
                   </p>
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide shadow-lg hover:bg-brand-primary/90 active:scale-95 transition-all disabled:opacity-50"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        <span>Enviando solicitação...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 text-brand-secondary" />
-                        <span>Solicitar Orçamento Gratuito</span>
-                      </>
-                    )}
+                    <Send className="w-4 h-4 text-brand-secondary" />
+                    <span>Preparar pedido no WhatsApp</span>
                   </button>
                 </div>
               </form>

@@ -444,12 +444,13 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
 
 export const CATEGORIAS_FILTRO = [
   { id: 'todos', label: 'Todos os Modelos', count: CATALOGO_ITEMS.length },
-  { id: 'umbanda', label: 'Umbanda & Baianas', count: 2 },
-  { id: 'candomble', label: 'Candomblé & Orixás', count: 3 },
+  { id: 'umbanda', label: 'Umbanda & Baianas', count: 1 },
+  { id: 'candomble', label: 'Candomblé & Orixás', count: 2 },
   { id: 'noite', label: 'Linha da Noite & Nanã', count: 1 },
   { id: 'ere', label: 'Erê & Ibeji', count: 1 },
   { id: 'etnico', label: 'Coleção Ancestralidade', count: 1 },
-  { id: 'avulso', label: 'Peças Avulsas & Ração', count: 3 },
+  { id: 'avulso', label: 'Peças Avulsas', count: 3 },
+  { id: 'racao', label: 'Roupas de Ração', count: 1 },
 ];
 
 export const TIPOS_PECA_FILTRO = [
