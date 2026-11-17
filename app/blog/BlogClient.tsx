@@ -78,7 +78,7 @@ export default function BlogClient() {
                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-brand-accent/20 group-hover:bg-brand-primary group-hover:text-white transition-all">
                         <Calendar className="w-5 h-5 text-brand-secondary" />
                        </div>
-                       <span className="text-[10px] font-bold uppercase tracking-widest text-brand-ink/40">{new Date(post.datePublished).toLocaleDateString("pt-BR", { timeZone: "America/Sao_Paulo" })}</span>
+                       <span className="text-[10px] font-bold uppercase tracking-widest text-brand-ink/40">{new Date(post.datePublished).toLocaleDateString("pt-BR", { timeZone: "UTC" })}</span>
                     </div>
                     
                     <h2 className="font-serif text-2xl text-brand-primary mb-6 leading-tight group-hover:text-brand-secondary transition-colors line-clamp-3">{post.title}</h2>
