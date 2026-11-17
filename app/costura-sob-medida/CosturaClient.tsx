@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import Breadcrumbs from '../components/Breadcrumbs';
-import { trackWhatsAppClick } from '../../lib/analytics';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de agendar uma medição ou orçamento para costura sob medida de roupas de santo.";
 const phoneHref = "tel:+5511969035273";

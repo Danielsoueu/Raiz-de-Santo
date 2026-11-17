@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import BlogPostClient from "./BlogPostClient";
@@ -95,6 +96,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         />
       )}
       <BlogPostClient slug={resolvedParams.slug} />
+      <section className="max-w-4xl mx-auto px-6 pb-16 space-y-5" aria-labelledby="encomenda-artigo">
+        <h2 id="encomenda-artigo" className="font-serif text-2xl text-brand-primary">Do cuidado com a peça à sua próxima encomenda</h2>
+        <p>Conheça nossos modelos sob medida e converse com o ateliê sobre tecidos, acabamentos e as orientações da sua casa.</p>
+        <div className="flex flex-wrap gap-5 text-brand-primary underline">
+          <Link href="/roupas-umbanda/roupa-de-racao">Roupas de ração</Link>
+          <Link href="/roupas-candomble/pano-da-costa">Panos da costa</Link>
+          <Link href="/catalogo">Ver modelos e valores de referência</Link>
+          <Link href="/guia-de-medidas">Aprenda a tirar suas medidas</Link>
+          <Link href="/contato">Pedir orçamento</Link>
+        </div>
+      </section>
     </>
   );
 }

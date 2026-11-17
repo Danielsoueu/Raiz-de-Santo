@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import Breadcrumbs from '../components/Breadcrumbs';
-import { trackWhatsAppClick } from '../../lib/analytics';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para confecção de roupas de Candomblé sob medida.";
 const phoneHref = "tel:+5511969035273";
@@ -155,7 +154,6 @@ export default function CandombleClient() {
                     href={`https://wa.me/5511969035273?text=${encodeURIComponent(`Olá! Gostaria de encomendar ${product.title} para Candomblé sob medida.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackWhatsAppClick(`candomble_${product.title.toLowerCase().replace(/\s+/g, '_')}`)}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-primary hover:text-brand-secondary transition-colors uppercase tracking-wider"
                   >
                     Orçar modelo <ChevronRight className="w-3.5 h-3.5" />

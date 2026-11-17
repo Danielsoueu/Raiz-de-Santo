@@ -66,3 +66,22 @@ Referências oficiais:
 - https://developers.google.com/search/docs/appearance/ai-features
 - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 - https://developers.openai.com/api/docs/bots
+
+## Medição de pedidos
+
+`ContactTracking` registra `click_whatsapp` uma vez por clique real em links do
+WhatsApp, em todas as páginas. Parâmetros próprios: `event_label` e `page_path`
+(sem a consulta da URL, telefone, texto da mensagem ou tradição religiosa).
+`quote_prepared` registra a preparação de um formulário válido. Nenhum dos dois
+confirma envio, recebimento de mensagem ou venda. Não usar `generate_lead` para
+simular uma venda ou mensagem confirmada.
+
+Para conferir: usar DebugView/Tempo real do GA4 com a medição habilitada no
+navegador; preparar um pedido e clicar uma vez no WhatsApp. Esperar um evento
+`quote_prepared` e um `click_whatsapp`. Sem dados novos, não concluir que o
+rastreamento falhou: consentimento, bloqueadores e latência podem afetar a coleta.
+O cadastro de eventos principais e a validação na propriedade GA4 precisam de
+acesso administrativo próprio; não foram alterados pelo código.
+
+Registrar manualmente orçamentos recebidos e vendas concluídas no controle do
+ateliê. Comparar com contatos do site sem tratar um clique como uma venda.

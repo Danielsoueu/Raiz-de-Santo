@@ -1,3 +1,4 @@
+import { ORDER_DEADLINE } from "../../lib/order-info";
 import type { Metadata } from "next";
 import ContatoClient from "./ContatoClient";
 import { buildMetadata, generateBreadcrumbSchema, generateFaqSchema } from "../../lib/seo";
@@ -12,7 +13,7 @@ export const metadata: Metadata = buildMetadata({
 const faqs = [
   {
     question: "Quanto tempo demora para ficar pronto?",
-    answer: "Depende da complexidade da peça e da nossa agenda no momento do pedido. Combinamos o prazo desde o início, de forma realista — e cumprimos o que prometemos. Em geral, peças simples ficam prontas em 2 a 3 semanas. Trajes mais elaborados ou kits de obrigação podem levar mais tempo."
+    answer: ORDER_DEADLINE
   },
   {
     question: "Posso trazer meu próprio tecido?",

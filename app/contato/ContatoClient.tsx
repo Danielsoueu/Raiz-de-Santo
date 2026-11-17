@@ -1,4 +1,5 @@
 "use client";
+import { ORDER_DEADLINE } from "../../lib/order-info";
 
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -22,7 +23,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
-import { trackContactFormSubmit, trackWhatsAppClick } from "../../lib/analytics";
+import { trackContactFormSubmit } from "../../lib/analytics";
 
 const whatsappNumber = "5511969035273";
 const displayPhone = "(11) 96903-5273";
@@ -32,7 +33,7 @@ const defaultWhatsappUrl = `https://wa.me/${whatsappNumber}?text=Olá! Gostaria 
 const faqs = [
   {
     question: "Quanto tempo demora para ficar pronto?",
-    answer: "Depende da complexidade da peça e da nossa agenda no momento do pedido. Combinamos o prazo desde o início, de forma realista — e cumprimos o que prometemos. Em geral, peças simples ficam prontas em 2 a 3 semanas. Trajes mais elaborados ou kits de obrigação podem levar mais tempo. Nos avise com antecedência sempre que puder."
+    answer: ORDER_DEADLINE
   },
   {
     question: "Posso trazer meu próprio tecido?",
@@ -127,6 +128,7 @@ export default function ContatoClient() {
 
     setWhatsappRedirectUrl(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(messageText)}`);
     setSubmitSuccess(true);
+    trackContactFormSubmit();
   };
 
   const handleEditRequest = () => {
@@ -222,6 +224,8 @@ export default function ContatoClient() {
         </div>
       </section>
 
+      <p className="max-w-4xl mx-auto px-6 pt-8"><Link href="/guia-de-medidas" className="underline text-brand-primary">Precisa de ajuda? Consulte o guia de medidas.</Link></p>
+
       {/* Seção Principal: Formulário de Orçamento com Validação, Mensagens de Erro e Sucesso */}
       <section className="py-20 px-4 sm:px-6 bg-brand-bg">
         <div className="max-w-4xl mx-auto">
@@ -263,10 +267,6 @@ export default function ContatoClient() {
                 <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                   {whatsappRedirectUrl && (
                     <a
-                      onClick={() => {
-                        trackContactFormSubmit(formData.tradicao || "Geral");
-                        trackWhatsAppClick("formulario_orcamento");
-                      }}
                       href={whatsappRedirectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -540,7 +540,7 @@ export default function ContatoClient() {
                 Mão de Obra Transparente
               </h3>
               <p className="text-sm text-brand-ink/75 leading-relaxed font-light">
-                Mão de obra artesanal a partir de <strong className="font-bold text-brand-primary">R$150</strong> para peças de ração sob medida. Sem taxas surpresas.
+                Kits de referência a partir de <strong className="font-bold text-brand-primary">R$150</strong> para confecção sob medida. Confirme peças, materiais e valor final no orçamento.
               </p>
               <div className="pt-4 border-t border-brand-accent/20 space-y-3">
                 <div className="flex items-center gap-2 text-xs text-brand-ink/80 font-medium">

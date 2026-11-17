@@ -1,21 +1,22 @@
-/**
- * Google Analytics 4 Helper for tracking key conversion events
- */
-export function trackWhatsAppClick(label: string = "geral") {
-  if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-    (window as any).gtag("event", "click_whatsapp", {
-      event_category: "conversion",
-      event_label: label,
-      value: 1,
-    });
+/** Contact intent only: a click is not proof of a sent message or a sale. */
+function trackEvent(name: string, parameters: Record<string, string | number>) {
+  if (typeof window === 'undefined') return;
+  const analyticsWindow = window as Window & { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
+  const safeParameters = { ...parameters, page_path: window.location.pathname };
+  if (typeof analyticsWindow.gtag === 'function') {
+    analyticsWindow.gtag('event', name, safeParameters);
+  } else {
+    analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+    // GA4 processes argument objects; queue until its script has loaded.
+    function queue(...args: unknown[]) { analyticsWindow.dataLayer!.push(arguments); }
+    queue('event', name, safeParameters);
   }
 }
 
-export function trackContactFormSubmit(serviceType: string = "sob_medida") {
-  if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-    (window as any).gtag("event", "generate_lead", {
-      event_category: "conversion",
-      event_label: serviceType,
-    });
-  }
+export function trackWhatsAppClick(label = 'site') {
+  trackEvent('click_whatsapp', { event_category: 'contact', event_label: label });
+}
+
+export function trackContactFormSubmit() {
+  trackEvent('quote_prepared', { event_category: 'contact' });
 }

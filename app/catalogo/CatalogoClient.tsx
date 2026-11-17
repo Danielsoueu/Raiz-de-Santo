@@ -28,7 +28,7 @@ import {
   TIPOS_PECA_FILTRO, 
   CatalogoItem 
 } from '../../lib/catalogo-data';
-import { trackWhatsAppClick } from '../../lib/analytics';
+import { ORDER_DEADLINE, ORDER_PRICE_NOTE } from '../../lib/order-info';
 
 const phoneHref = "tel:+5511969035273";
 const defaultWhatsappNumber = "5511969035273";
@@ -76,20 +76,16 @@ export default function CatalogoClient() {
   // Cálculo da Simulação
   const orcamentoSimulado = useMemo(() => {
     let base = 0;
-    let tempoEstimado = "7 a 10 dias úteis";
+    const tempoEstimado = ORDER_DEADLINE;
 
     if (simTipo === 'conjunto') {
       base = simTecido === 'cliente' ? 150 : simTecido === 'algodao' ? 150 : 180;
-      tempoEstimado = "7 a 10 dias úteis";
     } else if (simTipo === 'saia') {
       base = simTecido === 'cliente' ? 100 : simTecido === 'algodao' ? 130 : 170;
-      tempoEstimado = "5 a 8 dias úteis";
     } else if (simTipo === 'racao') {
       base = simTecido === 'cliente' ? 120 : simTecido === 'algodao' ? 150 : 180;
-      tempoEstimado = "5 a 7 dias úteis";
     } else {
       base = simTecido === 'cliente' ? 40 : simTecido === 'algodao' ? 60 : 80;
-      tempoEstimado = "3 a 5 dias úteis";
     }
 
     if (simTipo === 'conjunto' || simTipo === 'saia') {
@@ -110,7 +106,7 @@ export default function CatalogoClient() {
   // WhatsApp Link por modelo
   const gerarLinkWhatsAppModelo = (item: CatalogoItem) => {
     const isKit = item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao';
-    const precoLabel = isKit ? "R$ 150 (Kit Completo)" : `R$ ${item.precoBase}`;
+    const precoLabel = isKit ? `A partir de R$ ${item.precoBase} (Kit Completo)` : `A partir de R$ ${item.precoBase}`;
     const texto = `Olá! Estava navegando no catálogo da Raiz de Santo e quero encomendar o modelo:
 *${item.nome}* (Código: *${item.codigo}*)
 Preço: *${precoLabel}*
@@ -169,7 +165,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-brand-ink/70">
             <span className="flex items-center gap-1.5 bg-brand-primary text-white font-bold px-4 py-2 rounded-xl shadow-xs">
-              <Scissors className="w-4 h-4 text-brand-secondary" /> Todos os Kits por R$ 150
+              <Scissors className="w-4 h-4 text-brand-secondary" /> Kits a partir de R$ 150
             </span>
             <span className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-xl border border-brand-accent/30 shadow-xs">
               <Ruler className="w-4 h-4 text-brand-secondary" /> Prova presencial em SP ou sob medida à distância
@@ -181,6 +177,10 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
         </div>
       </section>
 
+      <div className="max-w-4xl mx-auto px-6 pb-8 text-sm leading-relaxed space-y-3">
+        <p>{ORDER_PRICE_NOTE}</p><p>{ORDER_DEADLINE}</p>
+        <Link href="/guia-de-medidas" className="underline text-brand-primary">Veja como tirar suas medidas para pedir orçamento</Link>
+      </div>
       {/* Barra de Filtros e Busca */}
       <section className="sticky top-16 md:top-20 z-40 bg-brand-bg/95 backdrop-blur-md py-4 border-y border-brand-accent/20 px-4 sm:px-6 shadow-xs">
         <div className="max-w-7xl mx-auto space-y-3.5">
@@ -391,7 +391,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                       </span>
                       <span className="text-xs sm:text-sm font-bold text-brand-primary">
                         {item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao' ? (
-                          <span className="text-lg font-black text-brand-secondary">R$ 150</span>
+                          <span className="text-lg font-black text-brand-secondary">A partir de R$ {item.precoBase}</span>
                         ) : (
                           <>a partir de <strong className="text-base text-brand-secondary">R$ {item.precoBase}</strong></>
                         )}
@@ -417,7 +417,6 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                         rel="noopener noreferrer"
                         onClick={(e) => {
                           e.stopPropagation();
-                          trackWhatsAppClick(`catalogo_card_${item.codigo}`);
                         }}
                         className="w-full py-2.5 px-3 rounded-xl bg-brand-primary hover:bg-brand-primary/90 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all text-center"
                       >
@@ -600,12 +599,12 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                             : 'Estimativa sob medida:'}
                         </span>
                         <span className="text-[11px] text-brand-ink/50">
-                          {itemSelecionado.tipoPeca === 'conjunto' ? 'Saia + Ojá + Bata / Pano inclusos' : 'Peça individual sob medida'}
+                          {itemSelecionado.tipoPeca === 'conjunto' ? 'Confira as peças inclusas na descrição' : 'Peça individual sob medida'}
                         </span>
                       </div>
                       <div className="text-right">
                         <span className="text-2xl font-black text-brand-secondary">
-                          R$ {itemSelecionado.precoBase}
+                          A partir de R$ {itemSelecionado.precoBase}
                         </span>
                       </div>
                     </div>
@@ -614,12 +613,11 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                       href={gerarLinkWhatsAppModelo(itemSelecionado)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick(`catalogo_modal_${itemSelecionado.codigo}`)}
                       className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-3.5 px-6 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all text-center"
                     >
                       <MessageCircle className="w-5 h-5" />
                       {itemSelecionado.tipoPeca === 'conjunto' || itemSelecionado.tipoPeca === 'racao'
-                        ? 'Pedir Este Kit por R$ 150 no WhatsApp'
+                        ? 'Pedir Orçamento Deste Kit no WhatsApp'
                         : 'Pedir Orçamento Desta Peça no WhatsApp'}
                     </a>
                   </div>
@@ -780,13 +778,13 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                 </div>
 
                 <p className="text-xs text-brand-ink/75 leading-relaxed mb-6 font-light">
-                  *Valores estimados para mão de obra especializada no atelier em São Paulo. O valor pode variar de acordo com estampas específicas, aviamentos ou pedidos expressos.
+                  {ORDER_PRICE_NOTE}
                 </p>
 
                 <div className="bg-white rounded-2xl p-4 border border-brand-accent/20 space-y-2.5 text-xs text-brand-ink/80 mb-6">
                   <p className="font-bold text-brand-primary pb-1.5 border-b border-brand-accent/20">Resumo da Simulação:</p>
-                  <div className="flex justify-between">
-                    <span>Prazo médio de confecção:</span>
+                  <div className="space-y-2">
+                    <span>Prazo de confecção:</span>
                     <strong className="text-brand-primary flex items-center gap-1">
                       <Clock className="w-3 h-3 text-brand-secondary" />
                       {orcamentoSimulado.tempoEstimado}
@@ -808,7 +806,6 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                   href={gerarLinkWhatsAppSimulacao()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("catalogo_simulador_whatsapp")}
                   className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-4 px-6 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-lg active:scale-95 transition-all text-center"
                 >
                   <MessageCircle className="w-5 h-5" />

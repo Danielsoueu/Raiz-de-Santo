@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
-import { trackWhatsAppClick } from "../../lib/analytics";
 import { 
   Heart, 
   Sparkles, 
