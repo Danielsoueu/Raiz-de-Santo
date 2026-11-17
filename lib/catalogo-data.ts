@@ -1,8 +1,10 @@
+import photographedItems from "./photo-catalog.json";
+import photoOverrides from "./catalog-photo-overrides.json";
 export interface CatalogoItem {
   id: string;
   codigo: string;
   nome: string;
-  categoria: 'umbanda' | 'candomble' | 'noite' | 'ere' | 'etnico' | 'racao' | 'avulso';
+  categoria: 'umbanda' | 'candomble' | 'noite' | 'ere' | 'etnico' | 'racao' | 'avulso' | 'colecao';
   categoriaLabel: string;
   tipoPeca: 'conjunto' | 'saia' | 'oja' | 'racao' | 'costa';
   tipoPecaLabel: string;
@@ -16,7 +18,7 @@ export interface CatalogoItem {
   tecido: string;
   rendasAcabamentos: string;
   rodaSugerida: string;
-  precoBase: number;
+  precoBase: number | null;
   precoEstimadoTexto: string;
   paletaCores: {
     primaria: string;
@@ -29,7 +31,7 @@ export interface CatalogoItem {
   detalhesCostura: string[];
 }
 
-export const CATALOGO_ITEMS: CatalogoItem[] = [
+const LEGACY_CATALOGO_ITEMS: CatalogoItem[] = [
   {
     id: "conjunto-baiana-floral-amarelo",
     codigo: "RDS-BAIANA-01",
@@ -442,20 +444,26 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
   }
 ];
 
-export const CATEGORIAS_FILTRO = [
-  { id: 'todos', label: 'Todos os Modelos', count: CATALOGO_ITEMS.length },
-  { id: 'umbanda', label: 'Umbanda & Baianas', count: 1 },
-  { id: 'candomble', label: 'Candomblé & Orixás', count: 2 },
-  { id: 'noite', label: 'Linha da Noite & Nanã', count: 1 },
-  { id: 'ere', label: 'Erê & Ibeji', count: 1 },
-  { id: 'etnico', label: 'Coleção Ancestralidade', count: 1 },
-  { id: 'avulso', label: 'Peças Avulsas', count: 3 },
-  { id: 'racao', label: 'Roupas de Ração', count: 1 },
+export const CATALOGO_ITEMS: CatalogoItem[] = [
+  ...photographedItems as CatalogoItem[],
+  ...LEGACY_CATALOGO_ITEMS.map(item => ({ ...item, ...(photoOverrides as Record<string, Partial<CatalogoItem>>)[item.id] })),
 ];
+
+export const CATEGORIAS_FILTRO = [
+  { id: 'todos', label: 'Todos os Modelos' },
+  { id: 'colecao', label: 'Novas fotos do ateliê' },
+  { id: 'umbanda', label: 'Umbanda & Baianas' },
+  { id: 'candomble', label: 'Candomblé & Orixás' },
+  { id: 'noite', label: 'Linha da Noite' },
+  { id: 'ere', label: 'Estampas Lúdicas' },
+  { id: 'etnico', label: 'Estampas Geométricas' },
+  { id: 'avulso', label: 'Peças Avulsas' },
+  { id: 'racao', label: 'Roupas de Ração' },
+].map(category => ({ ...category, count: category.id === 'todos' ? CATALOGO_ITEMS.length : CATALOGO_ITEMS.filter(item => item.categoria === category.id).length }));
 
 export const TIPOS_PECA_FILTRO = [
   { id: 'todos', label: 'Todas as Peças' },
-  { id: 'conjunto', label: 'Conjunto Completo' },
+  { id: 'conjunto', label: 'Conjuntos' },
   { id: 'saia', label: 'Saias de Santo' },
   { id: 'oja', label: 'Ojá / Cabeça' },
   { id: 'racao', label: 'Roupas de Ração' },

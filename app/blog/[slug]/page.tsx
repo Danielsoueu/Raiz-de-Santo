@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import EditorialArticle from "./EditorialArticle";
+import editorialPosts from "../../../lib/editorial-posts.json";
 import BlogPostClient from "./BlogPostClient";
 import { buildMetadata, BASE_URL, LOGO_URL } from "../../../lib/seo";
 
@@ -16,12 +18,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = posts.find((p) => p.slug === resolvedParams.slug);
   if (!post) notFound();
   
-  return buildMetadata({
+  const editorial = editorialPosts.find(item => item.slug === post.slug);
+  const metadata = buildMetadata({
     title: post?.title || "Blog | Raiz de Santo",
     description: post?.description || "Dicas de axé e fundamentos de confecção de roupas de santo sob medida.",
     path: `/blog/${resolvedParams.slug}`,
-    keywords: "vestimentas religiosas, axé, roupas de umbanda, roupas de candomblé, pano da costa, roupa de ração"
+    image: editorial?.image,
+    keywords: editorial?.keyword || "vestimentas religiosas, roupas de umbanda, roupas de candomblé, pano da costa, roupa de ração"
   });
+  return { ...metadata, openGraph: { ...metadata.openGraph, type: "article", publishedTime: post.datePublished, authors: ["Raiz de Santo"] } };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,9 +37,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const articleSchema = post ? {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": post.title,
+    "headline": post.shortTitle,
+    "inLanguage": "pt-BR",
     "description": post.description,
-    "image": [LOGO_URL],
+    "image": [editorialPosts.find(item => item.slug === post.slug)?.image ? `${BASE_URL}${editorialPosts.find(item => item.slug === post.slug)!.image}` : LOGO_URL],
     "datePublished": post.datePublished,
     "dateModified": post.datePublished,
     "mainEntityOfPage": {
@@ -95,7 +101,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       )}
-      <BlogPostClient slug={resolvedParams.slug} />
+      {editorialPosts.some(item => item.slug === resolvedParams.slug) ? <EditorialArticle slug={resolvedParams.slug} /> : <BlogPostClient slug={resolvedParams.slug} />}
       <section className="max-w-4xl mx-auto px-6 pb-16 space-y-5" aria-labelledby="encomenda-artigo">
         <h2 id="encomenda-artigo" className="font-serif text-2xl text-brand-primary">Do cuidado com a peça à sua próxima encomenda</h2>
         <p>Conheça nossos modelos sob medida e converse com o ateliê sobre tecidos, acabamentos e as orientações da sua casa.</p>

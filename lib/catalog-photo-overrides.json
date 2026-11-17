@@ -1,0 +1,167 @@
+{
+  "conjunto-baiana-floral-amarelo": {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "nome": "Conjunto Floral Amarelo com Acabamento Rosa",
+    "fotoPrincipal": "/images/catalogo/conjunto-floral-amarelo-acabamento-rosa.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-floral-amarelo-acabamento-rosa.webp"
+    ],
+    "descricaoCurta": "Fundo amarelo, flores grandes e folhagens verdes, com acabamento rosa.",
+    "descricaoCompleta": "Fundo amarelo, flores grandes e folhagens verdes, com acabamento rosa. Referência fotografada no Raiz de Santo. As medidas, os materiais, as peças inclusas e os acabamentos da encomenda serão confirmados no orçamento.",
+    "rendasAcabamentos": "Acabamento conforme referência; composição a confirmar",
+    "pecasInclusas": [
+      "Consulte a composição do kit e confirme quais peças integrarão a encomenda."
+    ],
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Amarelo, verde, rosa e vermelho"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  "conjunto-etnico-africano-geometrico": {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "nome": "Conjunto Geométrico Preto, Verde e Vermelho",
+    "fotoPrincipal": "/images/catalogo/conjunto-geometrico-preto-verde-vermelho.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-geometrico-preto-verde-vermelho.webp"
+    ],
+    "descricaoCurta": "Estampa geométrica multicolor sobre fundo escuro e faixa de cintura preta.",
+    "descricaoCompleta": "Estampa geométrica multicolor sobre fundo escuro e faixa de cintura preta. Referência fotografada no Raiz de Santo. As medidas, os materiais, as peças inclusas e os acabamentos da encomenda serão confirmados no orçamento.",
+    "rendasAcabamentos": "Acabamento conforme referência; composição a confirmar",
+    "pecasInclusas": [
+      "Consulte a composição do kit e confirme quais peças integrarão a encomenda."
+    ],
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Preto, verde, vermelho e amarelo"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  "conjunto-espiral-xango-iansa": {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "nome": "Conjunto de Círculos Vermelho e Turquesa",
+    "fotoPrincipal": "/images/catalogo/conjunto-circulos-vermelho-turquesa.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-circulos-vermelho-turquesa.webp"
+    ],
+    "descricaoCurta": "Estampa de círculos em vermelho e azul, com acabamento turquesa na parte superior.",
+    "descricaoCompleta": "Estampa de círculos em vermelho e azul, com acabamento turquesa na parte superior. Referência fotografada no Raiz de Santo. As medidas, os materiais, as peças inclusas e os acabamentos da encomenda serão confirmados no orçamento.",
+    "rendasAcabamentos": "Acabamento conforme referência; composição a confirmar",
+    "pecasInclusas": [
+      "Consulte a composição do kit e confirme quais peças integrarão a encomenda."
+    ],
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Vermelho, turquesa e preto"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  "conjunto-ere-azul-marinho": {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "nome": "Conjunto Azul-Marinho com Estampa Lúdica",
+    "fotoPrincipal": "/images/catalogo/conjunto-azul-marinho-estampa-ludica.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-azul-marinho-estampa-ludica.webp"
+    ],
+    "descricaoCurta": "Fundo azul-marinho com pequenos desenhos claros e amarelos, e acabamento claro.",
+    "descricaoCompleta": "Fundo azul-marinho com pequenos desenhos claros e amarelos, e acabamento claro. Referência fotografada no Raiz de Santo. As medidas, os materiais, as peças inclusas e os acabamentos da encomenda serão confirmados no orçamento.",
+    "rendasAcabamentos": "Acabamento conforme referência; composição a confirmar",
+    "pecasInclusas": [
+      "Consulte a composição do kit e confirme quais peças integrarão a encomenda."
+    ],
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Azul-marinho, branco e amarelo"
+    },
+    "destaqueTag": "Foto do ateliê"
+  },
+  "conjunto-mandala-oxumare-colorido": {
+    "tradicao": "Uso conforme as orientações da sua casa",
+    "orixaEntidade": "Consulte a sua casa sobre cores e uso",
+    "tecido": "Composição e disponibilidade a confirmar no orçamento",
+    "rodaSugerida": "Roda e comprimento definidos na encomenda",
+    "medidasNecessarias": [
+      "Busto ou tórax",
+      "Cintura",
+      "Quadril",
+      "Comprimento desejado"
+    ],
+    "detalhesCostura": [
+      "Modelagem e acabamento definidos com o ateliê antes da produção"
+    ],
+    "nome": "Conjunto de Ondas Multicolor com Acabamento Azul",
+    "fotoPrincipal": "/images/catalogo/conjunto-ondas-multicolor-acabamento-azul.webp",
+    "fotos": [
+      "/images/catalogo/conjunto-ondas-multicolor-acabamento-azul.webp"
+    ],
+    "descricaoCurta": "Padronagem de ondas em azul, verde, amarelo e laranja com acabamento azul.",
+    "descricaoCompleta": "Padronagem de ondas em azul, verde, amarelo e laranja com acabamento azul. Referência fotografada no Raiz de Santo. As medidas, os materiais, as peças inclusas e os acabamentos da encomenda serão confirmados no orçamento.",
+    "rendasAcabamentos": "Acabamento conforme referência; composição a confirmar",
+    "pecasInclusas": [
+      "Consulte a composição do kit e confirme quais peças integrarão a encomenda."
+    ],
+    "paletaCores": {
+      "primaria": "#523c21",
+      "secundaria": "#d4af37",
+      "destaque": "#faf9f6",
+      "nomeCores": "Azul, verde, amarelo e laranja"
+    },
+    "destaqueTag": "Foto do ateliê"
+  }
+}

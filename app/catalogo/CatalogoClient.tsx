@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -106,7 +107,7 @@ export default function CatalogoClient() {
   // WhatsApp Link por modelo
   const gerarLinkWhatsAppModelo = (item: CatalogoItem) => {
     const isKit = item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao';
-    const precoLabel = isKit ? `A partir de R$ ${item.precoBase} (Kit Completo)` : `A partir de R$ ${item.precoBase}`;
+    const precoLabel = item.precoEstimadoTexto;
     const texto = `Olá! Estava navegando no catálogo da Raiz de Santo e quero encomendar o modelo:
 *${item.nome}* (Código: *${item.codigo}*)
 Preço: *${precoLabel}*
@@ -160,18 +161,18 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
             <span className="italic text-brand-secondary font-normal">Criações Reais do Nosso Atelier</span>
           </h1>
           <p className="text-base sm:text-lg text-brand-ink/75 max-w-3xl mx-auto leading-relaxed font-light mb-6">
-            Confira as fotos e detalhes dos nossos modelos para <strong>Umbanda e Candomblé</strong>. Cada peça é confeccionada à mão com respeito ao fundamento da sua casa, tecidos 100% algodão e modelagem anatômica para giros impecáveis.
+            Confira as fotos e detalhes dos nossos modelos para <strong>Umbanda e Candomblé</strong>. Cada peça é confeccionada à mão com respeito ao fundamento da sua casa, materiais e modelagem definidos para cada encomenda.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-brand-ink/70">
             <span className="flex items-center gap-1.5 bg-brand-primary text-white font-bold px-4 py-2 rounded-xl shadow-xs">
-              <Scissors className="w-4 h-4 text-brand-secondary" /> Kits a partir de R$ 150
+              <Scissors className="w-4 h-4 text-brand-secondary" /> Modelos sob medida
             </span>
             <span className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-xl border border-brand-accent/30 shadow-xs">
               <Ruler className="w-4 h-4 text-brand-secondary" /> Prova presencial em SP ou sob medida à distância
             </span>
             <span className="flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-xl border border-brand-accent/30 shadow-xs">
-              <ShieldCheck className="w-4 h-4 text-brand-secondary" /> Acabamentos em costura francesa anti-desfiamento
+              <ShieldCheck className="w-4 h-4 text-brand-secondary" /> Confirme materiais e acabamentos no orçamento
             </span>
           </div>
         </div>
@@ -314,10 +315,13 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                 </Link>
                 {/* Foto Real do Produto */}
                 <div className="relative aspect-3/4 overflow-hidden bg-zinc-100 flex items-center justify-center">
-                  <img
+                  <Image
+                    width={1050}
+                    height={1400}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     src={item.fotoPrincipal}
                     alt={item.nome}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                     loading={idx < 3 ? "eager" : "lazy"}
                   />
@@ -390,11 +394,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                         {item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao' ? 'Kit Completo:' : 'Confecção sob medida:'}
                       </span>
                       <span className="text-xs sm:text-sm font-bold text-brand-primary">
-                        {item.tipoPeca === 'conjunto' || item.tipoPeca === 'racao' ? (
-                          <span className="text-lg font-black text-brand-secondary">A partir de R$ {item.precoBase}</span>
-                        ) : (
-                          <>a partir de <strong className="text-base text-brand-secondary">R$ {item.precoBase}</strong></>
-                        )}
+                        {item.precoEstimadoTexto}
                       </span>
                     </div>
 
@@ -604,7 +604,7 @@ Como podemos agendar as medidas ou tirar dúvidas?`;
                       </div>
                       <div className="text-right">
                         <span className="text-2xl font-black text-brand-secondary">
-                          A partir de R$ {itemSelecionado.precoBase}
+                          {itemSelecionado.precoEstimadoTexto}
                         </span>
                       </div>
                     </div>

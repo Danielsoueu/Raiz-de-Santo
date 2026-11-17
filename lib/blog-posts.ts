@@ -1,4 +1,5 @@
-export const BLOG_POSTS = [
+import editorialPosts from "./editorial-posts.json";
+const LEGACY_POSTS = [
   {
     slug: "como-lavar-sua-roupa-de-santo-sem-danificar-o-axe",
     title: "Como lavar sua roupa de santo sem danificar o axé passo a passo | Raiz de Santo",
@@ -35,3 +36,5 @@ export const BLOG_POSTS = [
     datePublished: "2026-05-01T09:00:00Z"
   }
 ];
+
+export const BLOG_POSTS = [...editorialPosts, ...LEGACY_POSTS];
