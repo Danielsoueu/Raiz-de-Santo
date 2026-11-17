@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/roupas-umbanda/roupa-de-racao', '/roupas-umbanda/saia-de-umbanda',
     '/roupas-candomble', '/roupas-candomble/pano-da-costa',
     '/roupas-candomble/oja-pano-de-cabeca', '/costura-sob-medida',
-    '/sobre', '/contato', '/blog'];
+    '/sobre', '/contato', '/blog', '/guia-de-medidas'];
   return [
     ...pages.map(path => ({ url: `${BASE_URL}${path}` })),
     ...CATALOGO_ITEMS.map(item => ({ url: `${BASE_URL}/catalogo/${item.id}` })),

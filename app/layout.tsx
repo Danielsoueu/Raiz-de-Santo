@@ -14,6 +14,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
+import ContactTracking from "./components/ContactTracking";
 import Navbar from "./components/Navbar";
 import { localBusinessSchema, websiteSchema, BASE_URL, LOGO_URL } from "../lib/seo";
 
@@ -132,6 +133,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-brand-bg text-brand-ink selection:bg-brand-secondary/30 pt-20 md:pt-24 overflow-x-hidden`}>
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-white focus:p-4 focus:rounded-xl">Pular para o conteúdo</a>
         <Navbar />
+        <ContactTracking />
         <GoogleAnalytics gaId="G-M0P4QCM8JW" />
 
         <main id="conteudo" tabIndex={-1} className="overflow-x-hidden">{children}</main>
@@ -307,6 +309,7 @@ export default function RootLayout({
               <Link href="/sobre" className="hover:text-brand-primary transition-colors">Sobre Nós</Link>
               <span>•</span>
               <Link href="/contato" className="hover:text-brand-primary transition-colors">Contato</Link>
+              <Link href="/guia-de-medidas" className="hover:text-brand-primary transition-colors">Guia de medidas</Link>
               <span>•</span>
               <Link href="/blog" className="hover:text-brand-primary transition-colors">Blog</Link>
             </div>

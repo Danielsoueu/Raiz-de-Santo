@@ -58,7 +58,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Bordado inglês trabalhado rosa pink, passa-fita de algodão e acabamento interno em costura francesa",
     rodaSugerida: "4,5 a 5 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit Completo por R$ 150",
+    precoEstimadoTexto: "Kit completo a partir de R$ 150",
     paletaCores: {
       primaria: "#EAB308",
       secundaria: "#EC4899",
@@ -100,7 +100,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Bico de renda guipir violeta e fita de cetim acetinado lilás",
     rodaSugerida: "4 a 5 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit Completo por R$ 150",
+    precoEstimadoTexto: "Kit completo a partir de R$ 150",
     paletaCores: {
       primaria: "#18181B",
       secundaria: "#7C3AED",
@@ -143,7 +143,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Bico de renda de algodão branca artesanal e pala com elastano duplo",
     rodaSugerida: "4 a 4,5 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit Completo por R$ 150",
+    precoEstimadoTexto: "Kit completo a partir de R$ 150",
     paletaCores: {
       primaria: "#15803D",
       secundaria: "#B91C1C",
@@ -183,7 +183,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Aplique vertical em renda guipir azul celeste e bainha de alta precisão",
     rodaSugerida: "4 a 5 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit Completo por R$ 150",
+    precoEstimadoTexto: "Kit completo a partir de R$ 150",
     paletaCores: {
       primaria: "#DC2626",
       secundaria: "#06B6D4",
@@ -225,7 +225,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Bordado inglês trabalhado vazado em algodão cru e elástico suave",
     rodaSugerida: "3,5 a 4,5 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit Completo por R$ 150 (Adulto ou Infantil)",
+    precoEstimadoTexto: "Kit completo a partir de R$ 150 (Adulto ou Infantil)",
     paletaCores: {
       primaria: "#1E3A8A",
       secundaria: "#F59E0B",
@@ -265,7 +265,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Renda de bico turquesa e bainha de lenço reforçada",
     rodaSugerida: "4,5 a 5 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit Completo por R$ 150",
+    precoEstimadoTexto: "Kit completo a partir de R$ 150",
     paletaCores: {
       primaria: "#0284C7",
       secundaria: "#EAB308",
@@ -387,7 +387,7 @@ export const CATALOGO_ITEMS: CatalogoItem[] = [
     rendasAcabamentos: "Ponto palito, ponto crivo ou bainha simples sem metal (conforme preceito)",
     rodaSugerida: "3 a 4 metros",
     precoBase: 150,
-    precoEstimadoTexto: "Kit de Ração Completo por R$ 150",
+    precoEstimadoTexto: "Kit de ração a partir de R$ 150",
     paletaCores: {
       primaria: "#FFFFFF",
       secundaria: "#F8FAFC",

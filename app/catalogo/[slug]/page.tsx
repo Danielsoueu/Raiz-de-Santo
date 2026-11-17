@@ -1,3 +1,4 @@
+import { ORDER_DEADLINE } from '../../../lib/order-info';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -67,7 +68,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div><dt className="font-semibold">Acabamentos</dt><dd>{item.rendasAcabamentos}</dd></div>
             <div><dt className="font-semibold">Medida de referência</dt><dd>{item.rodaSugerida}</dd></div>
           </dl>
+          <p>{ORDER_DEADLINE}</p>
           <h2 className="font-serif text-2xl text-brand-primary">Medidas para o orçamento</h2>
+          <Link href="/guia-de-medidas" className="underline">Como tirar essas medidas</Link>
           <ul className="list-disc pl-5 space-y-2">{item.medidasNecessarias.map(measure => <li key={measure}>{measure}</li>)}</ul>
           <p>Atendimento em São Paulo com agendamento e envio para todo o Brasil. <Link href="/contato" className="underline">Fale com o ateliê</Link> para combinar a encomenda.</p>
         </div>

@@ -19,7 +19,6 @@ import {
   Heart,
   Phone
 } from 'lucide-react';
-import { trackWhatsAppClick } from '../lib/analytics';
 
 const whatsappUrl = "https://wa.me/5511969035273?text=Olá! Gostaria de um orçamento para roupas de santo sob medida.";
 const phoneHref = "tel:+5511969035273";
@@ -51,7 +50,6 @@ export default function HomeClient() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick("hero_cta")}
                 className="w-full sm:w-auto bg-brand-primary text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-lg font-bold hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3"
               >
                 <MessageCircle className="w-5 h-5 text-brand-secondary" />
@@ -176,7 +174,6 @@ export default function HomeClient() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("card_servico_umbanda")}
                   className="w-full py-3.5 px-5 rounded-full bg-brand-primary text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-brand-secondary hover:text-brand-primary transition-all shadow-md active:scale-95"
                 >
                   <MessageCircle className="w-4 h-4 text-brand-secondary" />
@@ -226,7 +223,6 @@ export default function HomeClient() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("card_servico_candomble")}
                   className="w-full py-3.5 px-5 rounded-full bg-brand-secondary text-brand-primary text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white transition-all shadow-md active:scale-95"
                 >
                   <MessageCircle className="w-4 h-4 text-brand-primary" />
@@ -276,7 +272,6 @@ export default function HomeClient() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("card_servico_sob_medida")}
                   className="w-full py-3.5 px-5 rounded-full bg-brand-primary text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-brand-secondary hover:text-brand-primary transition-all shadow-md active:scale-95"
                 >
                   <MessageCircle className="w-4 h-4 text-brand-secondary" />
@@ -616,7 +611,6 @@ export default function HomeClient() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick(`atendimento_${item.title.toLowerCase().replace(/\s+/g, '_')}`)}
                   className="font-bold text-xs uppercase tracking-widest text-brand-primary border-b border-brand-secondary pb-1 hover:text-brand-secondary transition-colors inline-block mx-auto"
                 >
                   Falar com a costureira
